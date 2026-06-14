@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>lab-02-broadcast-agent · 架构与代码详解</title>
+<style>
+  :root{
+    --bg:#0c1410; --bg2:#11201a; --panel:#15271f; --panel2:#1a3027;
+    --border:#244536; --border2:#2f5a45;
+    --leaf:#3fae73; --leaf2:#5fd494; --mint:#bdeccd; --soft:#8fc9a8;
+    --txt:#dceee4; --dim:#7fa890; --white:#f2fbf6;
+    --code:#0a1712; --kw:#5fd494; --str:#9cd8b0; --cmt:#5a7d68; --num:#e0b96a;
+    --accent:#e0b96a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:linear-gradient(160deg,#0a120e,#0c1410 40%,#0e1b15);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif;
+    line-height:1.7; padding:0 0 80px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  header{
+    text-align:center;padding:64px 24px 48px;
+    background:radial-gradient(ellipse at top,rgba(63,174,115,.12),transparent 70%);
+    border-bottom:1px solid var(--border);
+  }
+  header .tag{
+    display:inline-block;font-size:13px;letter-spacing:2px;color:var(--leaf2);
+    border:1px solid var(--border2);border-radius:20px;padding:4px 16px;margin-bottom:20px;
+    background:rgba(63,174,115,.08);
+  }
+  header h1{font-size:38px;font-weight:700;color:var(--white);letter-spacing:-.5px}
+  header h1 .accent{color:var(--leaf2)}
+  header p{margin-top:14px;color:var(--soft);font-size:17px;max-width:640px;margin-left:auto;margin-right:auto}
+  .pills{margin-top:24px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .pill{font-size:13px;color:var(--mint);background:var(--panel);border:1px solid var(--border);
+        padding:6px 14px;border-radius:8px}
+  h2{
+    font-size:26px;color:var(--white);margin:56px 0 8px;font-weight:700;
+    display:flex;align-items:center;gap:12px;
+  }
+  h2 .ico{
+    width:34px;height:34px;display:grid;place-items:center;border-radius:9px;
+    background:linear-gradient(135deg,var(--leaf),var(--leaf2));color:#06140d;font-size:18px;font-weight:800;
+    box-shadow:0 4px 14px rgba(63,174,115,.3);
+  }
+  h2 + .sub{color:var(--dim);margin-bottom:22px;font-size:15px}
+  h3{font-size:19px;color:var(--leaf2);margin:30px 0 10px;font-weight:650}
+  p{margin:10px 0}
+  .lead{color:var(--soft)}
+  code.inl{background:var(--code);color:var(--mint);padding:2px 7px;border-radius:5px;
+           font-family:"SF Mono",Menlo,monospace;font-size:.86em;border:1px solid var(--border)}
+  /* flow diagram */
+  .flow{
+    display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin:28px 0;
+    background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 20px;
+  }
+  .stage{flex:1;min-width:150px;text-align:center;padding:8px 6px;position:relative}
+  .stage .n{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1px}
+  .stage .t{color:var(--white);font-weight:650;margin:6px 0 4px;font-size:15px}
+  .stage .d{color:var(--dim);font-size:13px;line-height:1.5}
+  .stage .emoji{font-size:26px;display:block;margin-bottom:6px}
+  .arrow{display:flex;align-items:center;color:var(--leaf);font-size:22px;padding:0 2px}
+  @media(max-width:760px){.arrow{transform:rotate(90deg);justify-content:center;width:100%;padding:4px 0}}
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:22px 0}
+  .card{
+    background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;
+    transition:.2s;
+  }
+  .card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+  .card .h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .card .h .e{font-size:22px}
+  .card .h .name{color:var(--white);font-weight:650;font-size:16px}
+  .card .file{font-family:"SF Mono",Menlo,monospace;font-size:12px;color:var(--leaf2);margin-bottom:10px}
+  .card p{font-size:14px;color:var(--soft);margin:6px 0}
+  /* code block */
+  pre{
+    background:var(--code);border:1px solid var(--border);border-radius:12px;
+    padding:18px 20px;overflow-x:auto;margin:16px 0;font-size:13.5px;line-height:1.6;
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+  }
+  pre .c{color:var(--cmt)} pre .k{color:var(--kw)} pre .s{color:var(--str)}
+  pre .n{color:var(--num)} pre .f{color:var(--mint)}
+  /* concept boxes */
+  .concept{
+    background:linear-gradient(135deg,var(--panel2),var(--panel));
+    border:1px solid var(--border2);border-left:4px solid var(--leaf);
+    border-radius:10px;padding:18px 22px;margin:18px 0;
+  }
+  .concept .label{color:var(--leaf2);font-weight:700;font-size:13px;letter-spacing:1px;margin-bottom:6px}
+  .concept p{color:var(--soft);font-size:14.5px}
+  /* compare table */
+  .cmp{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;
+       background:var(--panel);border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+  .cmp th{background:var(--panel2);color:var(--mint);text-align:left;padding:13px 16px;font-weight:650;border-bottom:1px solid var(--border)}
+  .cmp td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--soft)}
+  .cmp tr:last-child td{border-bottom:none}
+  .cmp .bad{color:#e08a6a} .cmp .good{color:var(--leaf2)}
+  .kp{display:inline-block;font-size:11px;background:rgba(224,185,106,.14);color:var(--accent);
+      border:1px solid rgba(224,185,106,.3);padding:2px 8px;border-radius:6px;font-weight:600;margin-left:6px}
+  ul.clean{margin:10px 0 10px 4px;list-style:none}
+  ul.clean li{padding:6px 0 6px 26px;position:relative;color:var(--soft);font-size:14.5px}
+  ul.clean li:before{content:"▸";position:absolute;left:6px;color:var(--leaf)}
+  footer{text-align:center;color:var(--dim);font-size:13px;margin-top:60px;padding-top:24px;border-top:1px solid var(--border)}
+  .toc{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:28px}
+  .toc a{font-size:13px;color:var(--soft);text-decoration:none;border:1px solid var(--border);
+         padding:6px 12px;border-radius:8px;transition:.15s}
+  .toc a:hover{color:var(--leaf2);border-color:var(--border2);background:var(--panel)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">PARALLIGHT LAB · 02</div>
+  <h1>广播 <span class="accent">Agent</span> · 今日播报</h1>
+  <p>一个每天自动抓取 AI 资讯、用子 agent 隔离摘要、去重后推送到你邮箱/飞书的自动化管线 —— 本质是一堂 <strong>Context Engineering（上下文工程）</strong> 的实战课。</p>
+  <div class="pills">
+    <span class="pill">Python</span>
+    <span class="pill">Anthropic SDK</span>
+    <span class="pill">MCP</span>
+    <span class="pill">GitHub Actions</span>
+    <span class="pill">多源抓取</span>
+  </div>
+  <nav class="toc">
+    <a href="#overview">总览</a>
+    <a href="#flow">数据流</a>
+    <a href="#concepts">四个核心概念</a>
+    <a href="#modules">模块详解</a>
+    <a href="#compare">正确 vs 反面</a>
+    <a href="#deploy">部署 & 调度</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+<!-- OVERVIEW -->
+<h2 id="overview"><span class="ico">①</span>这个项目在做什么</h2>
+<div class="sub">一句话：把「读一堆信息源 → 总结 → 每天定时推送给你」这件事,做成无人值守的 agent。</div>
+<p class="lead">它真正的教学目标不是「抓资讯」,而是借这个场景演示 <strong>当上下文（context）会爆炸时,工程上怎么省 token、省注意力</strong>。整个代码库刻意保留了一个「反面教材」开关 <code class="inl">--naive</code>,让你亲眼量出好坏两种写法的 <code class="inl">input_tokens</code> 差距。</p>
+
+<div class="grid">
+  <div class="card">
+    <div class="h"><span class="e">📡</span><span class="name">抓取</span></div>
+    <p>从 3 个数据源拉取当天的<strong>轻量条目</strong>（标题/链接/元数据,不抓正文）。</p>
+  </div>
+  <div class="card">
+    <div class="h"><span class="e">🧪</span><span class="name">隔离摘要</span></div>
+    <p>每个源派一个<strong>子 agent</strong>,在干净窗口里读条目、只回传一段精炼摘要。</p>
+  </div>
+  <div class="card">
+    <div class="h"><span class="e">📝</span><span class="name">去重 & 记忆</span></div>
+    <p>把历史播报<strong>卸载</strong>到 <code class="inl">digest.md</code> 文件,明天读回来去重。</p>
+  </div>
+  <div class="card">
+    <div class="h"><span class="e">📤</span><span class="name">投递</span></div>
+    <p>按配置选 <strong>Gmail / 飞书 / 本地</strong> 三种渠道之一推送。</p>
+  </div>
+</div>
+
+<!-- FLOW -->
+<h2 id="flow"><span class="ico">②</span>一次运行的数据流</h2>
+<div class="sub">入口 <code class="inl">run_broadcast.py</code> → <code class="inl">run_correct()</code> 的完整链路</div>
+<div class="flow">
+  <div class="stage"><span class="emoji">🌐</span><div class="n">SOURCES</div><div class="t">gather()</div><div class="d">arXiv / HN / GitHub Trending 各自 fetch,只取轻量条目</div></div>
+  <div class="arrow">→</div>
+  <div class="stage"><span class="emoji">🧪</span><div class="n">ISOLATE</div><div class="t">summarize_source()</div><div class="d">每源一个子 agent,干净窗口内摘要,回传 ≤600 token</div></div>
+  <div class="arrow">→</div>
+  <div class="stage"><span class="emoji">🧩</span><div class="n">COMPOSE</div><div class="t">complete()</div><div class="d">主 agent 只读「各源摘要」合成一份播报,原文从不进主窗口</div></div>
+  <div class="arrow">→</div>
+  <div class="stage"><span class="emoji">📝</span><div class="n">DEDUP</div><div class="t">digest.dedup()</div><div class="d">读回 digest.md,按 URL 指纹过滤掉昨天播过的</div></div>
+  <div class="arrow">→</div>
+  <div class="stage"><span class="emoji">📤</span><div class="n">DELIVER</div><div class="t">deliver()</div><div class="d">推送 + 把今天的播报追加写回 digest.md</div></div>
+</div>
+
+<!-- CONCEPTS -->
+<h2 id="concepts"><span class="ico">③</span>四个核心概念（这才是重点）</h2>
+<div class="sub">整个代码库就是为了把这 4 个 Context Engineering 手法变成你能跑、能量化的东西。</div>
+
+<div class="concept">
+  <div class="label">① 按需检索 · RETRIEVAL ON DEMAND</div>
+  <p><strong>先只抓轻量信号,正文按需才取。</strong><code class="inl">gather()</code> 只拿标题/链接/摘要元数据,绝不一上来就把每个链接的整页 HTML、整篇 PDF 拉进来。正文是「重」的,只有真正需要时才取。</p>
+</div>
+<div class="concept">
+  <div class="label">② 隔离 · ISOLATION</div>
+  <p><strong>每个数据源派一个子 agent,在独立上下文里干活。</strong>子 agent 读条目烧掉的 token 留在它自己的调用里,主流程<strong>只拿回一段摘要</strong>。这样主上下文永远小,且各源互不污染。</p>
+</div>
+<div class="concept">
+  <div class="label">③ 卸载 · OFFLOAD</div>
+  <p><strong>agent 的「记性」不在模型里,在 <code class="inl">digest.md</code> 这个文件里。</strong>每天的播报写到上下文窗口<strong>之外</strong>的文件,明天读回来续上。删了这个文件,agent 就失忆 —— 记忆在文件,不在模型。</p>
+</div>
+<div class="concept">
+  <div class="label">④ 压缩 · COMPACTION</div>
+  <p><strong>历史不全量带进上下文,只回最近一小段。</strong><code class="inl">history_compacted()</code> 只取文件末尾 ~800 字符,避免上下文随天数线性膨胀。去重也只比对 URL 指纹,不是把整个历史塞回模型。</p>
+</div>
+
+<!-- MODULES -->
+<h2 id="modules"><span class="ico">④</span>模块逐个详解</h2>
+<div class="sub">building blocks 是给定的,你练的是「指挥」它们组装。</div>
+
+<h3>🎯 run_broadcast.py — 主编排</h3>
+<p class="lead">整个 lab 的指挥中心。提供两条路径,核心对比点全在这里:</p>
+<pre><span class="c"># 按需检索:先只抓每个源的轻量条目,不抓正文</span>
+<span class="k">def</span> <span class="f">gather</span>() -> dict:
+    <span class="k">for</span> name, mod <span class="k">in</span> SOURCES.items():
+        <span class="k">if not</span> CFG[<span class="s">"sources"</span>][name][<span class="s">"enabled"</span>]: <span class="k">continue</span>
+        <span class="k">try</span>:
+            out[name] = mod.<span class="f">fetch</span>(CFG)   <span class="c"># 只要标题/链接/元数据</span>
+        <span class="k">except</span> Exception <span class="k">as</span> e:
+            <span class="f">print</span>(<span class="s">f"⚠️ {name} 抓取失败:{e}(跳过)"</span>)  <span class="c"># 一个源挂了不拖垮全局</span>
+
+<span class="k">def</span> <span class="f">run_correct</span>() -> str:
+    items_by_source = <span class="f">gather</span>()
+    <span class="k">for</span> name, items <span class="k">in</span> items_by_source.items():
+        res = <span class="f">summarize_source</span>(name, items, kws, budget)  <span class="c"># 隔离:子 agent</span>
+        sub_tokens += res[<span class="s">"usage"</span>].input_tokens          <span class="c"># 子窗口的 token</span>
+        summaries.append(...)
+    <span class="c"># 👉 指挥点:主流程只把『各源摘要』喂给最终编排,原文从没进主窗口</span>
+    resp = <span class="f">complete</span>([{<span class="s">"role"</span>:<span class="s">"user"</span>, <span class="s">"content"</span>: joined_summaries}])
+    main_in = resp.usage.input_tokens   <span class="c"># ← 量这个,和 --naive 对比</span></pre>
+
+<div class="grid">
+  <div class="card">
+    <div class="h"><span class="e">🔌</span><span class="name">agent_llm.py</span></div>
+    <div class="file">broadcast/agent_llm.py</div>
+    <p>到 Parallight 代理的 LLM 客户端,薄包装 Anthropic SDK。两个函数:<code class="inl">complete()</code> 发一次调用、<code class="inl">text_of()</code> 抽文本。重点是暴露 <code class="inl">resp.usage.input_tokens</code> 用于量化。</p>
+  </div>
+  <div class="card">
+    <div class="h"><span class="e">🧪</span><span class="name">summarize.py</span></div>
+    <div class="file">broadcast/summarize.py</div>
+    <p>隔离的实现。给子 agent 一个 system prompt:「你是某个源的摘要子 agent,只看这一个源,挑 3–6 条最相关的,只输出 markdown 列表」。返回摘要 + usage。</p>
+  </div>
+  <div class="card">
+    <div class="h"><span class="e">📝</span><span class="name">digest.py</span></div>
+    <div class="file">broadcast/digest.py</div>
+    <p>卸载 + 压缩 + 去重。<code class="inl">_key()</code> 用 URL 当条目指纹,<code class="inl">load_seen()</code> 读历史,<code class="inl">dedup()</code> 过滤,<code class="inl">append()</code> 追加,<code class="inl">history_compacted()</code> 只回末尾一小段。</p>
+  </div>
+  <div class="card">
+    <div class="h"><span class="e">📨</span><span class="name">deliver/</span></div>
+    <div class="file">broadcast/deliver/</div>
+    <p>渠道分发器。<code class="inl">__init__.py</code> 按 channel 选 <code class="inl">mailer</code>（Gmail SMTP）或 <code class="inl">feishu</code>（webhook）。返回 <code class="inl">{ok, reason}</code> 便于定位「没发出去」vs「发了没收到」。</p>
+  </div>
+</div>
+
+<h3>🌐 三个数据源 — 真实工程的三种取数姿态</h3>
+<table class="cmp">
+  <tr><th>源</th><th>文件</th><th>取数方式</th><th>工程教学点</th></tr>
+  <tr><td><strong>arXiv</strong></td><td>sources/arxiv.py</td><td>官方 Atom API + feedparser</td><td>复用 Lab-1 的 <span class="good">429 纪律</span>:共享 client、自定义 UA、间隔 ≥3 秒、撞 429 直接抛不盲目重试</td></tr>
+  <tr><td><strong>Hacker News</strong></td><td>sources/hackernews.py</td><td>Algolia 搜索 API（无 auth）</td><td>用 <code class="inl">search_by_date</code> + <code class="inl">points&gt;N</code> 过滤低分噪声,一次请求带回标题/分数/评论数</td></tr>
+  <tr><td><strong>GitHub Trending</strong></td><td>sources/github_trending.py</td><td>爬 HTML（BeautifulSoup）</td><td><span class="bad">没有官方 API 是常态</span>:爬 HTML 拿「今日新增 star」速度信号,但选择器会随改版失效</td></tr>
+</table>
+<p class="lead">三个源都导出统一接口 <code class="inl">fetch(cfg) → [轻量条目]</code>,每条形如 <code class="inl">{source, title, url, meta}</code> —— 这种统一契约让主流程能无差别地遍历它们。</p>
+
+<!-- COMPARE -->
+<h2 id="compare"><span class="ico">⑤</span>正确版 vs 反面教材</h2>
+<div class="sub">跑 <code class="inl">python run_broadcast.py --naive</code> 看 token 爆炸,这是整堂课最直观的一刀。</div>
+<table class="cmp">
+  <tr><th></th><th class="bad">--naive（反面教材）</th><th class="good">正常跑（正确版）</th></tr>
+  <tr><td><strong>取数</strong></td><td class="bad">连每个链接的<strong>整页正文</strong>都抓回来</td><td class="good">只取轻量条目（标题/链接/元数据）</td></tr>
+  <tr><td><strong>上下文</strong></td><td class="bad">所有源的全文塞进<strong>一个主上下文</strong></td><td class="good">每源子 agent 隔离,主流程只收摘要</td></tr>
+  <tr><td><strong>主窗口 input_tokens</strong></td><td class="bad">爆炸 💥</td><td class="good">小很多 ✓</td></tr>
+  <tr><td><strong>体感</strong></td><td class="bad">又慢、又贵、又糊</td><td class="good">快、省、信噪比高</td></tr>
+</table>
+<div class="concept">
+  <div class="label">为什么这样设计</div>
+  <p>反面教材不是 bug,是<strong>刻意保留的对照实验</strong>。两次运行打印的 <code class="inl">input_tokens</code> 差距,就是「隔离 + 按需检索」省下来的真金白银。这比任何 PPT 都有说服力。</p>
+</div>
+
+<!-- DEPLOY -->
+<h2 id="deploy"><span class="ico">⑥</span>部署与调度 — MCP 没有时钟</h2>
+<div class="sub">闹钟必须在外面:调度器决定 WHEN,agent 决定 WHAT,MCP/API 是真去碰外部世界的手。</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="h"><span class="e">🔗</span><span class="name">用别人的 MCP</span></div>
+    <div class="file">.mcp.json</div>
+    <p>一段 config 就接上官方 GitHub MCP server（<code class="inl">@modelcontextprotocol/server-github</code>）。不用自己写工具代码,在 Claude Code 里直接调用。token 从环境变量注入。</p>
+  </div>
+  <div class="card">
+    <div class="h"><span class="e">⏰</span><span class="name">cron_entry.py</span></div>
+    <div class="file">cron_entry.py</div>
+    <p>无人值守入口,本质就是 <code class="inl">run_broadcast.main()</code>。区别只在「谁来叫醒它」。<strong>幂等</strong>:cron 可能重复触发,digest 去重保证重跑不刷屏。</p>
+  </div>
+  <div class="card">
+    <div class="h"><span class="e">🚀</span><span class="name">GitHub Actions</span></div>
+    <div class="file">deploy/daily.yml</div>
+    <p><code class="inl">schedule: cron "17 1 * * *"</code>（避开整点高峰）让 GitHub 每天免费替你跑、关机照跑。密钥放仓库 Secrets,跑完把 digest.md 提交回仓库。</p>
+  </div>
+</div>
+
+<div class="concept">
+  <div class="label">kp-04 · 渠道选择与「凭据即密码」</div>
+  <p>Gmail vs 飞书的选择取决于<strong>「你在哪发、你在哪读」</strong>:GFW 只挡「从大陆<strong>读</strong> Gmail」,不挡「从境外<strong>发</strong> Gmail」。飞书 webhook 的 URL <strong>本身就是凭据</strong>,谁拿到谁能发 —— 所有密钥只进 <code class="inl">.env</code> / Secrets,绝不进 git。</p>
+</div>
+
+<h3>课堂主线顺序</h3>
+<ul class="clean">
+  <li><strong>P1</strong> 用别人的 MCP —— 在 Claude Code 里调 GitHub MCP，不写工具代码<span class="kp">.mcp.json</span></li>
+  <li><strong>P2</strong> <code class="inl">--naive</code> 看 token 爆炸 → 正常跑看隔离+按需省了多少<span class="kp">量化对照</span></li>
+  <li><strong>P3</strong> 再跑一次,看它据 digest.md 去重<span class="kp">卸载+压缩</span></li>
+  <li><strong>P4</strong> 邮箱/飞书收到真实播报<span class="kp">投递</span></li>
+  <li><strong>P5</strong> 用 GitHub MCP 把它推上 Actions,每天免费自动跑<span class="kp">调度</span></li>
+</ul>
+
+<footer>
+  lab-02-broadcast-agent · 架构与代码详解 &nbsp;·&nbsp; Parallight Lab<br>
+  「building blocks 是给的,你练的是指挥它们组装,以及在指挥点处做 context 取舍。」
+</footer>
+
+</div>
+</body>
+</html>

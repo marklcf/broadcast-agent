@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP 详解 · lab-02-broadcast-agent</title>
+<style>
+  :root{
+    --bg:#0c1410; --bg2:#11201a; --panel:#15271f; --panel2:#1a3027;
+    --border:#244536; --border2:#2f5a45;
+    --leaf:#3fae73; --leaf2:#5fd494; --mint:#bdeccd; --soft:#8fc9a8;
+    --txt:#dceee4; --dim:#7fa890; --white:#f2fbf6;
+    --code:#0a1712; --kw:#5fd494; --str:#9cd8b0; --cmt:#5a7d68; --num:#e0b96a; --fn:#bdeccd;
+    --accent:#e0b96a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:linear-gradient(160deg,#0a120e,#0c1410 40%,#0e1b15);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif;
+    line-height:1.7;padding:0 0 80px;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  header{
+    text-align:center;padding:60px 24px 44px;
+    background:radial-gradient(ellipse at top,rgba(63,174,115,.14),transparent 70%);
+    border-bottom:1px solid var(--border);
+  }
+  header .tag{display:inline-block;font-size:13px;letter-spacing:2px;color:var(--leaf2);
+    border:1px solid var(--border2);border-radius:20px;padding:4px 16px;margin-bottom:18px;background:rgba(63,174,115,.08)}
+  header h1{font-size:36px;font-weight:700;color:var(--white);letter-spacing:-.5px}
+  header h1 .accent{color:var(--leaf2)}
+  header p{margin-top:14px;color:var(--soft);font-size:16px;max-width:660px;margin-left:auto;margin-right:auto}
+  .toc{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+  .toc a{font-size:13px;color:var(--soft);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:8px;transition:.15s}
+  .toc a:hover{color:var(--leaf2);border-color:var(--border2);background:var(--panel)}
+  h2{font-size:25px;color:var(--white);margin:54px 0 8px;font-weight:700;display:flex;align-items:center;gap:12px}
+  h2 .ico{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;
+    background:linear-gradient(135deg,var(--leaf),var(--leaf2));color:#06140d;font-size:17px;font-weight:800;box-shadow:0 4px 14px rgba(63,174,115,.3)}
+  h2 + .sub{color:var(--dim);margin-bottom:22px;font-size:15px}
+  h3{font-size:18px;color:var(--leaf2);margin:28px 0 10px;font-weight:650}
+  p{margin:10px 0} .lead{color:var(--soft)}
+  code.inl{background:var(--code);color:var(--mint);padding:2px 7px;border-radius:5px;font-family:"SF Mono",Menlo,monospace;font-size:.86em;border:1px solid var(--border)}
+  pre{background:var(--code);border:1px solid var(--border);border-radius:12px;padding:18px 20px;overflow-x:auto;margin:16px 0;font-size:13px;line-height:1.6;font-family:"SF Mono",Menlo,Consolas,monospace}
+  pre .c{color:var(--cmt)} pre .k{color:var(--kw)} pre .s{color:var(--str)} pre .n{color:var(--num)} pre .f{color:var(--fn)} pre .p{color:var(--dim)}
+  .concept{background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid var(--border2);border-left:4px solid var(--leaf);border-radius:10px;padding:18px 22px;margin:18px 0}
+  .concept .label{color:var(--leaf2);font-weight:700;font-size:13px;letter-spacing:1px;margin-bottom:6px}
+  .concept p{color:var(--soft);font-size:14.5px}
+  .warn{border-left-color:var(--accent)} .warn .label{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;background:var(--panel);border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+  th{background:var(--panel2);color:var(--mint);text-align:left;padding:12px 16px;font-weight:650;border-bottom:1px solid var(--border)}
+  td{padding:11px 16px;border-bottom:1px solid var(--border);color:var(--soft);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td code,th code{background:var(--code);color:var(--mint);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border)}
+  .good{color:var(--leaf2)} .bad{color:#e08a6a}
+  /* architecture diagram */
+  .arch{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:30px 24px;margin:24px 0}
+  .layer{display:flex;align-items:center;gap:16px;margin:0 auto;max-width:760px}
+  .box{flex:1;background:var(--panel2);border:1px solid var(--border2);border-radius:12px;padding:16px 18px;text-align:center}
+  .box .role{font-size:11px;letter-spacing:1px;color:var(--accent);font-weight:700}
+  .box .name{color:var(--white);font-weight:650;margin:5px 0 3px;font-size:15px}
+  .box .desc{color:var(--dim);font-size:12.5px;line-height:1.45}
+  .conn{text-align:center;color:var(--leaf);font-size:13px;padding:10px 0;letter-spacing:1px}
+  .conn .l{color:var(--dim);font-size:12px}
+  /* sequence flow */
+  .seq{counter-reset:step;margin:22px 0}
+  .step{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)}
+  .step:last-child{border-bottom:none}
+  .step .num{counter-increment:step;flex:none;width:30px;height:30px;border-radius:50%;
+    background:linear-gradient(135deg,var(--leaf),var(--leaf2));color:#06140d;font-weight:800;display:grid;place-items:center;font-size:14px}
+  .step .num:before{content:counter(step)}
+  .step .body{flex:1}
+  .step .body .t{color:var(--white);font-weight:650;font-size:15px}
+  .step .body .d{color:var(--soft);font-size:14px;margin-top:3px}
+  .step .body .mono{font-family:"SF Mono",Menlo,monospace;font-size:12.5px;color:var(--leaf2);margin-top:4px}
+  ul.clean{margin:10px 0 10px 4px;list-style:none}
+  ul.clean li{padding:6px 0 6px 26px;position:relative;color:var(--soft);font-size:14.5px}
+  ul.clean li:before{content:"▸";position:absolute;left:6px;color:var(--leaf)}
+  .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+  .tri{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px}
+  .tri .e{font-size:24px} .tri .n{color:var(--white);font-weight:650;margin:8px 0 4px}
+  .tri .d{color:var(--dim);font-size:13px}
+  @media(max-width:680px){.triad{grid-template-columns:1fr}.layer{flex-direction:column}}
+  footer{text-align:center;color:var(--dim);font-size:13px;margin-top:60px;padding-top:24px;border-top:1px solid var(--border)}
+  .pill{display:inline-block;font-size:11px;background:rgba(224,185,106,.14);color:var(--accent);border:1px solid rgba(224,185,106,.3);padding:2px 8px;border-radius:6px;font-weight:600;margin-left:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">PARALLIGHT LAB · 02 · MCP 专页</div>
+  <h1>MCP <span class="accent">Model Context Protocol</span></h1>
+  <p>这一页只讲一件事:在这个 lab 里,「用别人的 MCP」到底是怎么<strong>接上、发现、调用、收尾</strong>的 —— 从一段 config 到 agent 真去碰 GitHub 的完整链路。</p>
+  <nav class="toc">
+    <a href="#what">MCP 是什么</a>
+    <a href="#arch">三层架构</a>
+    <a href="#config">配置:.mcp.json</a>
+    <a href="#discover">发现:tools/list</a>
+    <a href="#primitives">三积木</a>
+    <a href="#call">调用:tools/call</a>
+    <a href="#flow">完整流程</a>
+    <a href="#p5">P5:用 MCP 搭自动化</a>
+    <a href="#boundary">MCP 的边界</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+<!-- WHAT -->
+<h2 id="what"><span class="ico">①</span>MCP 是什么 · 在本 lab 的角色</h2>
+<div class="sub">一句话:MCP 是「agent ↔ 工具」之间的标准协议。你<strong>消费</strong>别人发布好的工具,而不<strong>实现</strong>它。</div>
+<p class="lead">本 lab 不让你写一行 GitHub API 代码。你只在 <code class="inl">.mcp.json</code> 里加一段 config,Claude Code 就能凭空多出一排 GitHub 工具(查 repo、读文件、列 issue、看 PR、搜代码……)。这些工具的实现全在<strong>别人发布的 server 进程</strong>里 —— 官方的 <code class="inl">@modelcontextprotocol/server-github</code>。</p>
+
+<div class="concept">
+  <div class="label">用 vs 造</div>
+  <p>本 lab 的 MCP 出现在<strong>两个阶段</strong>:<strong>P1</strong> 用它读 GitHub 数据(只读 token)、<strong>P5</strong> 用它建仓+推 workflow 文件搭自动化(写 token)。<strong>同一个 GitHub MCP,两次不同用途</strong>。这节课只「用」别人的;「造」自己的 MCP server 是后面的课。</p>
+</div>
+
+<!-- ARCH -->
+<h2 id="arch"><span class="ico">②</span>三层架构 · Host / Client / Server</h2>
+<div class="sub">对应 slides 第 7 幕。这是理解后面一切调用的地图。</div>
+<div class="arch">
+  <div class="layer">
+    <div class="box">
+      <div class="role">HOST</div>
+      <div class="name">Claude Code</div>
+      <div class="desc">你的 agent 运行环境,模型在这里思考、决定调哪个工具</div>
+    </div>
+    <div class="box">
+      <div class="role">CLIENT</div>
+      <div class="name">那条连接</div>
+      <div class="desc">Host 内部维护的、连到 server 的协议连接;负责 tools/list 发现、tools/call 转发</div>
+    </div>
+    <div class="box">
+      <div class="role">SERVER</div>
+      <div class="name">github 进程</div>
+      <div class="desc">npx 启动的 server-github;真正持有 GitHub API 实现 + 你的 token</div>
+    </div>
+  </div>
+  <div class="conn">↑ <span class="l">JSON-RPC over stdio(标准输入输出管道)</span> ↑</div>
+  <div class="conn" style="color:var(--accent)">github 进程 ⟷ <span class="l" style="color:var(--soft)">真实 GitHub REST API</span></div>
+</div>
+<div class="concept warn">
+  <div class="label">关键直觉</div>
+  <p>模型<strong>能看到的只有工具的「描述 + input schema」,看不到任何实现</strong>。它先靠 <code class="inl">tools/list</code> 发现有哪些工具,再用 <code class="inl">tools/call</code> 请求执行 —— 真正干活的是 server 进程,模型只是「点单」。</p>
+</div>
+
+<!-- CONFIG -->
+<h2 id="config"><span class="ico">③</span>配置 · <code style="font-size:.8em">.mcp.json</code> 逐字段</h2>
+<div class="sub">整个「接上别人 MCP」就靠这 11 行 —— 没有一行 GitHub API 实现代码。</div>
+<pre>{
+  <span class="s">"mcpServers"</span>: {
+    <span class="s">"github"</span>: {                                          <span class="c">// ← 工具前缀,/mcp 里看到的就叫 github</span>
+      <span class="s">"command"</span>: <span class="s">"npx"</span>,                                  <span class="c">// 用 npx 启动(不必预装)</span>
+      <span class="s">"args"</span>: [<span class="s">"-y"</span>, <span class="s">"@modelcontextprotocol/server-github"</span>], <span class="c">// 别人发布好的 server 包</span>
+      <span class="s">"env"</span>: {
+        <span class="s">"GITHUB_PERSONAL_ACCESS_TOKEN"</span>: <span class="s">"${GITHUB_PERSONAL_ACCESS_TOKEN}"</span>  <span class="c">// 从环境注入,不写死</span>
+      }
+    }
+  }
+}</pre>
+<table>
+  <tr><th>字段</th><th>作用</th></tr>
+  <tr><td><code>"github"</code></td><td>server 的名字 = 工具命名空间前缀。Claude Code 里 <code>/mcp</code> 看到的一排工具都挂在它下面。</td></tr>
+  <tr><td><code>command</code> + <code>args</code></td><td>怎么启动这个 server。<code>npx -y</code> 表示按需下载并运行,无需手动 install。</td></tr>
+  <tr><td><code>env</code></td><td>传给 server 进程的环境变量。<code>${...}</code> 语法从你的 shell / <code>.env</code> 注入 token,<strong>凭据不进 git</strong>。</td></tr>
+</table>
+
+<!-- DISCOVER -->
+<h2 id="discover"><span class="ico">④</span>发现 · <code style="font-size:.8em">/mcp</code> 与 <code style="font-size:.8em">tools/list</code></h2>
+<div class="sub">工具是怎么「凭空出现」的?Client 在背后发了一次 tools/list。</div>
+<p class="lead">在 Claude Code 里输入 <code class="inl">/mcp</code>,你会看到 github 那排工具。想看 server <strong>内部到底长什么样</strong>(每个工具的描述、input schema),用官方 <strong>MCP Inspector</strong> 的 CLI 模式直接 dump:</p>
+<pre><span class="c"># 先让 token 进环境</span>
+<span class="k">export</span> GITHUB_PERSONAL_ACCESS_TOKEN=<span class="p">&lt;你的-token&gt;</span>
+
+<span class="c"># dump server 暴露的全部工具:名字 + 描述 + inputSchema</span>
+npx @modelcontextprotocol/inspector --cli \
+  -e GITHUB_PERSONAL_ACCESS_TOKEN=<span class="n">$GITHUB_PERSONAL_ACCESS_TOKEN</span> \
+  npx -y @modelcontextprotocol/server-github \
+  --method <span class="s">tools/list</span></pre>
+<div class="concept">
+  <div class="label">这正是模型 client 背后做的事</div>
+  <p>打印出的 JSON 里,每个工具就是 <code class="inl">name</code> + <code class="inl">description</code> + <code class="inl">inputSchema</code>。Client 先 <code class="inl">tools/list</code> <strong>发现</strong>工具,把这些描述喂给模型;<strong>模型据此决定调谁、传什么参数</strong> —— 它看得到 schema,看不到实现。Inspector 让你绕过模型、自己当 client,看清协议本身。</p>
+</div>
+
+<!-- PRIMITIVES -->
+<h2 id="primitives"><span class="ico">⑤</span>三积木 · Tools / Resources / Prompts</h2>
+<div class="sub">一个 MCP server 可以暴露三种 primitive。本 lab 主要用 tools。</div>
+<div class="triad">
+  <div class="tri"><div class="e">🔧</div><div class="n">Tools</div><div class="d">能「做」的动作。<code style="font-size:11px">tools/list</code> 发现、<code style="font-size:11px">tools/call</code> 执行。如 search_repositories、list_issues。</div></div>
+  <div class="tri"><div class="e">📄</div><div class="n">Resources</div><div class="d">能「读」的资源。<code style="font-size:11px">resources/list</code> 列出。如某个文件、某条数据的只读快照。</div></div>
+  <div class="tri"><div class="e">💬</div><div class="n">Prompts</div><div class="d">能复用的提示词模板。<code style="font-size:11px">prompts/list</code> 列出。预置好的、可参数化的对话起点。</div></div>
+</div>
+<pre><span class="c"># 把 --method 换掉,各看一眼另两种 primitive</span>
+  --method <span class="s">resources/list</span>   <span class="c"># 能「读」的资源</span>
+  --method <span class="s">prompts/list</span>     <span class="c"># 能复用的提示词模板</span></pre>
+
+<!-- CALL -->
+<h2 id="call"><span class="ico">⑥</span>调用 · <code style="font-size:.8em">tools/call</code></h2>
+<div class="sub">你可以让模型来调,也可以自己当 client 直接调(绕过模型)。</div>
+<h3>方式 A · 自己当 client,直接调(Inspector)</h3>
+<pre><span class="c"># tools/call:指定工具名 + 参数,不经过模型</span>
+npx @modelcontextprotocol/inspector --cli \
+  -e GITHUB_PERSONAL_ACCESS_TOKEN=<span class="n">$GITHUB_PERSONAL_ACCESS_TOKEN</span> \
+  npx -y @modelcontextprotocol/server-github \
+  --method <span class="s">tools/call</span> \
+  --tool-name <span class="f">search_repositories</span> \
+  --tool-arg <span class="s">query=modelcontextprotocol</span></pre>
+<h3>方式 B · 指挥 agent 用(自然语言,本 lab 的主线)</h3>
+<p class="lead">不写代码,用自然语言指挥,并<strong>明确要求走 MCP 工具</strong>:</p>
+<div class="concept">
+  <div class="label">P1 的指挥语</div>
+  <p>「用 <strong>GitHub MCP 工具</strong>(不要用 <code class="inl">gh</code>),看一下 <code class="inl">anthropics/anthropic-sdk-python</code> 的几条 open issue + 最近几个 commit,挑出对我们这门课有用的。」</p>
+</div>
+<p class="lead">盯着 agent 调的是 <code class="inl">list_issues</code> / <code class="inl">list_commits</code> / <code class="inl">get_file_contents</code> 这些 <strong>MCP 工具</strong>,拿回真实 GitHub 数据。</p>
+<div class="concept warn">
+  <div class="label">⚠️ 常见陷阱:agent 偷用 gh</div>
+  <p>你机器里有 <code class="inl">gh</code> CLI,agent 默认爱用它。一旦它开始敲 <code class="inl">gh</code>,<strong>拦住</strong>:「走 GitHub MCP 工具,我要看 MCP 在干活。」—— 这节课的魂就是<strong>看见 MCP 替你做事</strong>,用 gh 就白上了。</p>
+</div>
+
+<!-- FLOW -->
+<h2 id="flow"><span class="ico">⑦</span>完整调用流程 · 从一句话到 GitHub 数据</h2>
+<div class="sub">把前面拆开的环节串起来 —— 一次「用 MCP 读 issue」背后发生了什么。</div>
+<div class="seq">
+  <div class="step"><div class="num"></div><div class="body"><div class="t">启动 server</div><div class="d">Claude Code 读 <code class="inl">.mcp.json</code>,按 command/args 用 npx 拉起 github server 进程,把 token 经 env 注入。</div><div class="mono">npx -y @modelcontextprotocol/server-github</div></div></div>
+  <div class="step"><div class="num"></div><div class="body"><div class="t">发现工具</div><div class="d">Client 通过 stdio 向 server 发 <code class="inl">tools/list</code>,拿回所有工具的 name + description + inputSchema。</div><div class="mono">Client → Server: tools/list  ⟶  [search_repositories, list_issues, ...]</div></div></div>
+  <div class="step"><div class="num"></div><div class="body"><div class="t">模型决策</div><div class="d">你用自然语言提需求。模型只看工具描述 + schema,决定「该调 list_issues,参数 owner/repo」。</div><div class="mono">model: 「我要用 list_issues(owner=anthropics, repo=...)」</div></div></div>
+  <div class="step"><div class="num"></div><div class="body"><div class="t">转发调用</div><div class="d">Client 把模型的选择封成 <code class="inl">tools/call</code> 请求发给 server。</div><div class="mono">Client → Server: tools/call { name:"list_issues", arguments:{...} }</div></div></div>
+  <div class="step"><div class="num"></div><div class="body"><div class="t">server 干活</div><div class="d">server 进程用 token 调真实 GitHub REST API,拿回 JSON。</div><div class="mono">github 进程 → GitHub API → 真实 issue 数据</div></div></div>
+  <div class="step"><div class="num"></div><div class="body"><div class="t">结果回灌</div><div class="d">结果经 Client 回到模型上下文,模型据此继续推理、给你最终答案。</div><div class="mono">Server → Client → model context → 你看到的回答</div></div></div>
+</div>
+
+<!-- P5 -->
+<h2 id="p5"><span class="ico">⑧</span>P5 · 同一个 MCP,这次用来搭自动化</h2>
+<div class="sub">P1 用 MCP「读」,P5 用 MCP「写」——建仓 + 推 workflow 文件。</div>
+<div class="concept">
+  <div class="label">P5 的指挥语(只用写权限工具)</div>
+  <p>「用 <strong>GitHub MCP 工具</strong>(<code class="inl">create_repository</code> / <code class="inl">push_files</code>),新建一个 private 仓库 <code class="inl">my-daily-broadcast</code>,把 broadcast 代码推上去(<strong>绝不 push <code class="inl">.env</code> / <code class="inl">.venv</code></strong>),再把 <code class="inl">deploy/daily.yml</code> 推到 <code class="inl">.github/workflows/daily.yml</code>。全程只用 MCP 工具,不要 <code class="inl">gh</code>、不要 <code class="inl">git push</code>。」</p>
+</div>
+<table>
+  <tr><th>阶段</th><th>用到的 MCP 工具</th><th>需要的 token 权限</th></tr>
+  <tr><td>P1 读数据</td><td><code>list_issues</code> <code>list_commits</code> <code>get_file_contents</code> <code>search_repositories</code></td><td class="good">只读 · fine-grained,只勾 public_repo 读</td></tr>
+  <tr><td>P5 搭自动化</td><td><code>create_repository</code> <code>push_files</code> / <code>create_or_update_file</code></td><td class="bad">写 · classic PAT,勾 <code>repo</code> + <code>workflow</code></td></tr>
+</table>
+<div class="concept warn">
+  <div class="label">kp-04 活教材:最小权限,按需升级</div>
+  <p>P1 给只读、P5 才升到写。<strong>权限按需给、当 secret 管、用完可删</strong>。GitHub MCP 用的就是 <code class="inl">.mcp.json</code> 里那个 <code class="inl">GITHUB_PERSONAL_ACCESS_TOKEN</code>,P5 时把它换成有写权限的。</p>
+</div>
+
+<!-- BOUNDARY -->
+<h2 id="boundary"><span class="ico">⑨</span>MCP 的边界 · 它做不到什么</h2>
+<div class="sub">诚实地用工具:看清 MCP 能干什么、不能干什么。</div>
+<div class="concept warn">
+  <div class="label">边界 1 · MCP 没有时钟(kp-05)</div>
+  <p>能不能让 GitHub MCP 自己每天定时跑?—— <strong>不能</strong>。MCP server 是「手」,<strong>被调用才动</strong>。「每天定时」必须交给外部调度器(本 lab 是 <strong>GitHub Actions cron</strong>)。三层:<code class="inl">Actions cron(WHEN) → cron_entry.py(WHAT) → MCP/API(碰世界的手)</code>。别把 GitHub MCP(手)和 GitHub Actions(闹钟+免费算力)搞混。</p>
+</div>
+<div class="concept warn">
+  <div class="label">边界 2 · MCP 不能设 secret</div>
+  <p>GitHub MCP <strong>没有设 secret 的工具</strong>(secret 要 libsodium 加密)。所以配 Actions Secrets 这一步<strong>只能</strong>退回网页 / <code class="inl">gh secret set</code> —— 而且 agent 要明说「这步 MCP 没有工具,所以用 gh」。<strong>能建仓、能推文件(MCP)≠ 能设密(MCP 不行)</strong>。</p>
+</div>
+
+<h3>✅ 学完这页你应该能说出</h3>
+<ul class="clean">
+  <li>用别人的 MCP = 加一段 config,Client 靠 <code class="inl">tools/list</code> 自动发现工具,你没写一行工具实现。</li>
+  <li>模型只看到工具的<strong>描述 + input schema</strong>,看不到实现;调用走 <code class="inl">tools/call</code>。</li>
+  <li>三层:Host(Claude Code)/ Client(连接)/ Server(github 进程);三积木:tools / resources / prompts。</li>
+  <li>MCP <strong>没有时钟</strong>、<strong>不能设密</strong> —— 调度交给 Actions,设密退回 gh。这才是诚实地用工具。</li>
+</ul>
+
+<footer>
+  MCP 专页 · lab-02-broadcast-agent &nbsp;·&nbsp; Parallight Lab<br>
+  「用别人的 MCP:一段 config 接上工具,Client 发现、模型点单、server 干活。」
+</footer>
+
+</div>
+</body>
+</html>
