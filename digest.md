@@ -117,3 +117,57 @@
 ---
 
 *今日主线：Agent 的可靠性（控制流 + 评测）与生产化（安全 + 推理优化）同步推进*
+
+
+## 2026-06-15 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报
+
+> 聚焦 Agent 可靠性、上下文工程与多模态推理，共 9 条精选
+
+---
+
+## 🔬 前沿研究
+
+**1. 流式实时推理框架 AdaSR**
+让 LLM 在动态音视频流输入下边接收边推理，打破"读完再想"的静态假设。对 agent 实时处理与 context engineering 场景有直接参考价值。
+→ [arxiv.org/abs/2606.14694](http://arxiv.org/abs/2606.14694v1)
+
+**2. 多模态推理链一致性研究 CORA**
+揭示多模态 LLM 推理过程中 thinking 与 answer 之间的内在矛盾，通过 RLVR 对齐二者。对构建可靠 agent 推理链有方法论价值。
+→ [arxiv.org/abs/2606.14691](http://arxiv.org/abs/2606.14691v1)
+
+**3. VLM 内部"注视头"机制 Gaze Heads**
+发现 VLM 内部存在专门追踪图像区域的注意力机制，揭示多模态模型如何将视觉 context 映射到语言生成。
+→ [arxiv.org/abs/2606.14703](http://arxiv.org/abs/2606.14703v1)
+
+---
+
+## 🛠️ 工具与工程
+
+**4. LMCache — LLM KV Cache 加速层**
+显著降低长上下文推理延迟，直接提升 RAG pipeline 与 agent 上下文工程效率。**基础设施层优先关注。**
+
+**5. Statewright — 状态机约束 Agent 行为**
+用可视化状态机限定 agent 执行流，解决 LLM agent 行为不确定性问题。Agent 可靠性工程的实用方案。
+
+**6. Rowboat — Multi-Agent 开源 IDE**（YC S24）
+专为构建与调试多 agent 系统设计的集成开发环境，agent 编排开发者值得评估。
+
+**7. NVIDIA SkillSpector — Agent 技能安全扫描器**
+检测 agent skills 中的漏洞与恶意模式，agent 生态安全基础设施，随 agent 部署规模扩大重要性上升。
+
+**8. aisuite — 统一多模型调用接口**（吴恩达出品）
+单一接口接入多家 GenAI 提供商，构建多模型 agent 或评估 RAG pipeline 时的实用抽象层。
+→ [github.com/andrewyng/aisuite](https://github.com/andrewyng/aisuite)
+
+---
+
+## 📦 开源产品
+
+**9. Onyx — 企业级开源 RAG 对话前端**（YC W24）
+支持接入内部知识库，适合需要自托管 RAG 对话系统的团队直接评估部署。
+
+---
+
+**今日主线**：Agent 可靠性（状态机约束 + 推理链对齐 + 安全扫描）与上下文效率（KV Cache + 流式推理）是当前工程侧两大核心命题。
