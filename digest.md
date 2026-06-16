@@ -171,3 +171,66 @@
 ---
 
 **今日主线**：Agent 可靠性（状态机约束 + 推理链对齐 + 安全扫描）与上下文效率（KV Cache + 流式推理）是当前工程侧两大核心命题。
+
+
+## 2026-06-16 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+> 按重要性排序，去重整合，覆盖研究、工具与工程三大方向
+
+---
+
+## 🔬 研究洞察
+
+**1. LLM 内部隐藏价值信号（The Value Axis）**
+揭示 LLM 内部隐式编码了"当前策略是否走对轨道"的价值信号，对理解 agent 内部规划质量与状态表示有直接参考意义。
+[→ arxiv](http://arxiv.org/abs/2606.17056v1)
+
+**2. 上下文感知 RL 提升 Agent 推理（ContextRL）**
+训练 LLM agent 在长上下文（工具调用轨迹、图像细节）中精准定位关键证据，直接提升 agentic 场景下的推理与工具使用能力。
+[→ arxiv](http://arxiv.org/abs/2606.17053v1)
+
+**3. 元分析全流程 Agent 基准**
+基于 Nature Portfolio 构建，覆盖文献检索 → 研究筛选 → 统计聚合全链路，是评估 LLM agent 系统性科学推理（含 RAG）的高质量测试床。
+[→ arxiv](http://arxiv.org/abs/2606.17041v1)
+
+---
+
+## 🛠️ 开发工具
+
+**4. Rowboat — 开源多 Agent 系统 IDE**
+构建、编排、调试复杂 LLM agent 架构的一站式开发环境，适合需要快速搭建多 agent 流水线的工程团队。
+
+**5. Statewright — 可视化状态机定义 Agent 流程**
+用状态机约束 LLM agent 行为，解决复杂工作流中稳定性不足的核心痛点。
+
+**6. NVIDIA/SkillSpector — Agent 技能安全扫描器**
+检测 agent skills 中的漏洞与恶意模式，生产部署前的安全审查必备工具。
+
+**7. Agent-Reach — 免费扩展 Agent 上下文信息源**
+为 AI agent 提供"眼睛"，无需 API 费用抓取 Twitter/Reddit/YouTube/GitHub 等平台内容。
+[→ GitHub](https://github.com/Panniantong/Agent-Reach)
+
+---
+
+## 🏗️ 工程落地
+
+**8. Onyx — 开源企业级 AI 对话平台**
+自带 RAG 与知识库接入，是快速落地内部 AI 助手的成熟基座。
+
+**9. Nao Labs — "Cursor for Data"**
+AI agent 驱动的数据工作流自动化工具，展示了 LLM 在复杂数据分析场景的实际落地路径。
+[→ HN 讨论](https://news.ycombinator.com/item?id=43938607)
+
+**10. ai-engineering-from-scratch — AI 工程知识体系**
+从零构建 LLM agent + RAG 工程能力的系统性学习仓库，适合补全知识栈。
+[→ GitHub](https://github.com/rohitg00/ai-engineering-from-scratch)
+
+**11. AIConsole — 开源桌面端 AI 编辑器**
+支持深度定制工作流，适合关注本地 agent 上下文控制与任务执行的开发者。
+[→ 官网](https://aiconsole.ai)
+
+---
+
+*今日重点关注：**#5 Statewright** 和 **#6 SkillSpector** 分别从「可靠性」与「安全性」两端补足了 agent 工程化落地的短板，值得重点评估。*
