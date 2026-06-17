@@ -234,3 +234,61 @@ AI agent 驱动的数据工作流自动化工具，展示了 LLM 在复杂数据
 ---
 
 *今日重点关注：**#5 Statewright** 和 **#6 SkillSpector** 分别从「可靠性」与「安全性」两端补足了 agent 工程化落地的短板，值得重点评估。*
+
+
+## 2026-06-17 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报 · 精选
+
+> 去重合并，按重要性排序，聚焦 agent 核心进展
+
+---
+
+## 🔬 前沿研究
+
+**1. 验证驱动的推理时自主改进**
+Generator-Verifier 框架让机器人 agent 在推理阶段实现自我纠错与持续学习，"验证即改进"思路可直接迁移至 LLM agent 的推理时 Steering 设计，是今日最具方法论迁移价值的研究。
+→ [Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement](http://arxiv.org/abs/2606.18247v1)
+
+**2. 具身 Agent 自演化记忆与主动反思**
+EvolveNav 为导航 agent 引入动态自演化记忆与预反思机制，解决静态先验导致的重复犯错问题，是 agent 记忆管理与自我改进方向的典型实现参考。
+→ [EvolveNav: Zero-Shot Object Goal Navigation](http://arxiv.org/abs/2606.18235v1)
+
+**3. LLM Agent 自动化科研复现审计**
+ReproRepo 用 LLM agent 替代人工进行代码复现审计，解决现有基准难以规模化的痛点，可作为评估 agent 真实工程能力的新标尺。
+→ [ReproRepo: Scaling Reproducibility Audits](http://arxiv.org/abs/2606.18237v1)
+
+---
+
+## 🛠️ 工具与基础设施
+
+**4. Rowboat — Multi-Agent 开源 IDE**（YC S24）
+专为构建与调试多 agent 系统设计，是当前 agent 开发工具链中最直接的基础设施，工程落地必看。
+
+**5. Statewright — 可视化状态机约束 Agent 行为**
+用状态机显式约束 agent 执行路径，从架构层面解决 LLM 不确定性问题，是 agent 可靠性工程的新思路。
+
+**6. Agent-Reach — 零费用多平台内容抓取**
+为 agent 提供"眼睛"，支持 Twitter/Reddit/YouTube/GitHub 等平台内容获取，无需 API 费用，是 RAG 与上下文工程的实用外部信息源工具。
+
+**7. Onyx — 开源 Chat UI**（YC W24，254 pts）
+支持多后端接入的对话界面，适合快速搭建带 RAG/agent 能力的内部知识库产品，社区热度验证了其实用性。
+
+---
+
+## 📚 学习资源
+
+**8. autoresearch — Karpathy 出品的 AI 自动研究 Agent**
+在单 GPU 上运行完整的 agentic research loop，是 ML 研究场景下 agent 落地范式的极佳示范。
+→ [karpathy/autoresearch](https://github.com/karpathy/autoresearch)
+
+**9. hello-agents — 中文 Agent 系统教程**
+DataWhale 出品《从零构建智能体》，覆盖原理到实践，是中文社区建立 LLM agent 知识体系的最快路径。
+→ [datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents)
+
+**10. AI Engineering From Scratch — 工程实战课程**
+覆盖 RAG、agent 等核心模块，从构建到上线全链路，高 Star 数印证工程实用性。
+
+---
+
+**今日关键趋势** · 推理时自我改进（研究层）× 状态机可靠性约束（工程层）× Multi-Agent IDE（工具层）三条线索同步推进，agent 从"能跑"走向"可靠、可控、可持续改进"的工程化阶段信号明显。
