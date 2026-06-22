@@ -532,3 +532,45 @@ RAG / context engineering 在推荐场景的落地研究，探讨如何高效将
 ---
 
 > **编辑按：** 今日主线是 **context 工程化**——从压缩（headroom）、结构化（推荐论文）到技能注入（Cybersecurity-Skills），贯穿工具层与理论层；agent 可靠性方向则有状态机（Statewright）与专用 IDE（Rowboat）两条路径值得持续关注。
+
+
+## 2026-06-22 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent & Context Engineering 播报
+
+> 共 7 条，按重要性排序
+
+---
+
+## 🔥 重点关注
+
+**1. headroom — RAG/工具输出上下文压缩，减少 60–95% token**
+在 chunks 或工具输出进入 LLM 前自动压缩上下文，内置 MCP server 接口，是当前 context engineering 最直接可用的工具。
+
+**2. cognee — 开源 AI Agent 跨会话记忆平台**
+通过自托管知识图谱为 agent 提供持久长期记忆，直接解决 agent 上下文持久化这一核心痛点。
+👉 https://github.com/topoteretes/cognee
+
+**3. deer-flow (ByteDance) — 开源长周期 SuperAgent 框架**
+集成沙箱、记忆、工具调用、子 agent 编排与消息网关，可处理分钟至小时级复杂任务，工程完整度高。
+👉 https://github.com/bytedance/deer-flow
+
+---
+
+## 🛠 工程工具
+
+**4. Rowboat — 多 Agent 系统开源 IDE（YC S24）**
+专为多 agent 系统设计的开发环境，对 agent orchestration 工程化落地有直接参考价值。
+
+**5. Statewright — 用可视化状态机约束 Agent 行为**
+以状态机为核心控制 LLM agent 的行为边界，从架构层面降低不确定性，设计思路值得借鉴。
+
+**6. Onyx — 带 RAG 能力的开源 Chat UI（YC W24，254pts）**
+高热度开源对话界面，内置 RAG 支持，可作为 LLM 应用前端或 RAG 集成底座直接复用。
+
+---
+
+## 🔬 前沿案例
+
+**7. OpenMontage — 首个开源 Agentic 视频生产系统**
+12 条 pipeline、52 个工具、500+ agent skills，是迄今最大规模 agent skill 工程化的公开案例，适合研究复杂 agent 系统架构。
