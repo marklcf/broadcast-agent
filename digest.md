@@ -574,3 +574,69 @@ RAG / context engineering 在推荐场景的落地研究，探讨如何高效将
 
 **7. OpenMontage — 首个开源 Agentic 视频生产系统**
 12 条 pipeline、52 个工具、500+ agent skills，是迄今最大规模 agent skill 工程化的公开案例，适合研究复杂 agent 系统架构。
+
+
+## 2026-06-23 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报 | Agent & RAG 专题
+
+---
+
+## 🔥 重点关注
+
+**1. 字节跳动开源长时程 SuperAgent 框架 deer-flow**
+支持沙箱、持久记忆、工具调用、子 agent 编排与消息网关，可处理分钟到小时级复杂任务，是目前开源 multi-agent orchestration 最完整的工程参考之一。
+
+**2. Randomized YaRN：突破 LLM 训练长度上限**
+提出随机化 YaRN 训练策略，使模型更好地泛化到超出训练长度的序列，直接影响 RAG 检索窗口与 long-context agent 的实用上限。
+→ [arxiv.org/abs/2606.23687v1](http://arxiv.org/abs/2606.23687v1)
+
+---
+
+## 🛠️ Agent 工程工具
+
+**3. Rowboat：multi-agent 系统的开源 IDE**
+专为构建、调试多 agent 系统设计的开发环境，agent 工具链中少见的 IDE 级产品，适合有工程化需求的团队评估。
+
+**4. Statewright：用可视化状态机约束 agent 行为**
+以状态机显式管理 agent 流转逻辑，解决 LLM 不确定性导致的可靠性问题，是 agent 落地工程化的有效思路。
+
+---
+
+## 🧠 Agent 记忆专题
+
+**5. cognee：基于知识图谱的开源 agent 长期记忆平台**
+自托管知识图谱引擎，为 agent 提供跨会话持久化记忆，直接解决 context 连续性断裂问题。
+
+**6. hindsight：会自我演化的 agent 记忆**
+Agent Memory That Learns，记忆随使用动态优化，是对传统 RAG 检索范式的新补充，值得跟踪其实现机制。
+→ [github.com/vectorize-io/hindsight](https://github.com/vectorize-io/hindsight)
+
+---
+
+## 📦 RAG & 知识库
+
+**7. Onyx：开源企业知识库对话 UI（YC W24）**
+支持多数据源接入的开源 RAG 对话界面，适合需要自建企业内部知识问答系统的团队直接参考部署。
+
+**8. AIR：多模态 LLM 中代码与推理的自适应交织**
+研究 agent 在多模态任务中动态决策何时调用代码工具，与 MCP/工具调用设计直接相关，是工具使用范式的前沿进展。
+→ [arxiv.org/abs/2606.23678v1](http://arxiv.org/abs/2606.23678v1)
+
+---
+
+## 🔬 垂直应用 & 技能库
+
+**9. OpenMontage：首个开源 agentic 视频生产系统**
+12 条 pipeline、52 个工具、500+ agent skills，是大规模 agent skill 编排的具体落地案例，可作为复杂 agent 系统设计参考。
+
+**10. Anthropic-Cybersecurity-Skills：817 条结构化安全技能库**
+遵循 agentskills.io 标准，映射 MITRE 等 6 大框架，是构建安全领域 LLM agent 的高质量数据基础。
+
+**11. PsyBridge：心理健康评估的 LLM 混合智能框架**
+将 LLM 与结构化多维数据融合用于临床决策支持，是 RAG + 领域知识增强 agent 的典型应用，关注其可解释性设计。
+→ [arxiv.org/abs/2606.23673v1](http://arxiv.org/abs/2606.23673v1)
+
+---
+
+> 今日核心主线：**agent 工程化（编排 + 记忆 + 工具调用）** 持续成熟，从框架到 IDE 再到记忆机制均有新进展；长上下文能力突破为 RAG 和 agent 打开新空间。
