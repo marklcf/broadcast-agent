@@ -719,3 +719,46 @@ Agent Memory That Learns，记忆随使用动态优化，是对传统 RAG 检索
 *   **多平台 Agent 插件市集**：`wshobson/agents` 直接提供了一批现成的复杂 Agent 配置与技能（支持 Claude Code、Cursor 等），即插即用，极具借鉴价值。
     👉 [查看项目](https://github.com/wshobson/agents)
 *   **开箱即用的企业级知识库前端**：`Onyx` 是一款支持企业级权限隔离的开源 AI 聊天界面，内置完善 RAG 管道，可作为内部问答 Agent 的现成前端。
+
+
+## 2026-06-26 · 📡 今日播报 · Parallight Lab
+
+这里为您合成了一份精炼的【今日 AI Agent 与大模型前沿播报】。
+
+去重并按**“底层理论突破 > 基础设施工具 > 垂直应用落地”**的重要性排序如下：
+
+---
+
+### 🎙️ 今日 AI 前线播报
+
+**1. [底层突破] 突破依赖标准答案的瓶颈：无需真实结果的强化学习框架 RiVER**
+*   **摘要**：当前 LLM 的强化学习奖励验证高度依赖真实结果（Ground-Truth）。最新提出的 RiIVER 框架，成功在无标准答案的情况下优化模型，这对提升复杂任务下 AI Agent 的自主决策与推理能力具有直接的革命性意义。
+*   🔗 [阅读论文](http://arxiv.org/abs/2606.27369v1)
+
+**2. [底层理论] 揭示生成概率与正确性的关联：解码可靠性新洞察**
+*   **摘要**：研究深入剖析了 LLM 解码概率分布与生成结果正确性之间的底层关联。这为开发者通过 Context Engineering（上下文工程）和优化解码策略，提升 Agent 最终输出的可靠性提供了关键理论支撑。
+*   🔗 [阅读论文](http://arxiv.org/abs/2606.27359v1)
+
+**3. [核心基建] 数据解析基石：MinerU 赋能高质量 RAG 与 Agent 工作流**
+*   **摘要**：复杂的 PDF 和 Office 文档处理一直是痛。MinerU 能将其精准转换为 LLM 友好的 Markdown/JSON 格式，是构建高质量企业级 RAG 和数据密集型 Agentic 工作流不可或缺的底层数据解析引擎。
+*   🔗 [查看项目](https://github.com/opendatalab/MinerU)
+
+**4. [开发工具] Statewright：用可视化状态机终结 Agent 失控**
+*   **摘要**：针对 LLM Agent 常见的不确定性和“幻觉”失控问题，Statewright 提出通过可视化状态机严格约束 Agent 的行为流程，为构建高可靠性、高确定性的企业级 Agent 系统提供了直接参考。
+
+**5. [开发工具] Rowboat：YC 背书的多 Agent 系统 IDE**
+*   **摘要**：多智能体编排开发迎来了专用 IDE。Rowboat（获 YC 支持）专为系统化管理多 Agent 工作流而设计，极大降低了工程师构建和监控复杂 Agent 协同网络的门槛。
+
+**6. [云原生生态] AWS 官方 Agent Toolkit：打通真实云环境**
+*   **摘要**：亚马逊云科技官方放出了包含 MCP 服务器、技能和插件的工具集合，这是开发者接入真实云环境、构建具备实操能力 AI Agent 的现成“武器库”。
+
+**7. [复杂编排] OpenMontage：内置 500+ 技能的 Agentic 视频制作系统**
+*   **摘要**：该开源系统集成了 12 条流水线、52 个工具和 500+ 项技能，实现视频制作的全自动化。它是研究和验证“多节点、多工具复杂 Agent 工作流编排”的极佳架构范本。
+
+**8. [垂直应用] 金融投研双星：多 Agent 并行对抗与多源数据分析**
+*   **摘要**：金融领域迎来了强力的 Agent 落地案例。**ai-berkley** 展示了如何用多 Agent 并行对抗架构自动化深度价值投研；而 **daily_stock_analysis** 则融合多源行情与实时新闻，实现了多模态金融数据 LLM 分析的自动推送。
+*   🔗 [ai-berkshire](https://github.com/xbtlin/ai-berkshire) | [daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis)
+
+**9. [垂直应用] 复杂交互与高热度工具：数字孪生医疗与高优企业 RAG**
+*   **摘要**：在个性化医疗场景，一种基于 LLM 的**数字孪生架构**正被用作认知辅助 Agent，验证了 LLM 在复杂交互系统中的潜力。此外，获 HN 超高热度（254pts）的开源 Chat UI **Onyx**，凭借内置的完善 RAG pipeline，成为企业级文档对话的优选方案；另有安全领域研究者整理了 **817 个结构化 Cybersecurity Skills**，极具 Context 构建参考价值。
+*   🔗 [数字孪生论文](http://arxiv.org/abs/2606.27334v1) | [Onyx 讨论](https://news.ycombinator.com/item?id=46045987) | [安全 Agent 技能](https://github.com/mukul975/Anthropic-Cybersecurity-Skills)
