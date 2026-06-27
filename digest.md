@@ -762,3 +762,29 @@ Agent Memory That Learns，记忆随使用动态优化，是对传统 RAG 检索
 **9. [垂直应用] 复杂交互与高热度工具：数字孪生医疗与高优企业 RAG**
 *   **摘要**：在个性化医疗场景，一种基于 LLM 的**数字孪生架构**正被用作认知辅助 Agent，验证了 LLM 在复杂交互系统中的潜力。此外，获 HN 超高热度（254pts）的开源 Chat UI **Onyx**，凭借内置的完善 RAG pipeline，成为企业级文档对话的优选方案；另有安全领域研究者整理了 **817 个结构化 Cybersecurity Skills**，极具 Context 构建参考价值。
 *   🔗 [数字孪生论文](http://arxiv.org/abs/2606.27334v1) | [Onyx 讨论](https://news.ycombinator.com/item?id=46045987) | [安全 Agent 技能](https://github.com/mukul975/Anthropic-Cybersecurity-Skills)
+
+
+## 2026-06-27 · 📡 今日播报 · Parallight Lab
+
+一份精炼的今日 AI 与开源前沿播报。已将各源信息去重、合并，并按**“底层突破 > 工程基建 > 框架参考 > 前沿应用”**的重要性逻辑为您排序：
+
+### 🎙️ 今日 AI 前沿播报
+
+**1. 🧠 [底层突破] 无需真实答案的强化学习**
+*   **RiVER 框架**：提出无需 Ground-Truth 即可进行强化学习验证的新范式，打破了传统 RLVR 训练的数据局限，对提升 LLM 及 Agent 在复杂未知任务中的推理能力极具价值。
+
+**2. 📄 [工程基建] 驱动 RAG 与 Agent 的数据预处理利器**
+*   **MinerU**：火爆开源圈的工具，能将复杂的 PDF 和 Office 文档精准解析为 LLM 易于消化的 Markdown/JSON，是构建知识库和 Agentic 工作流的必备前置基建。
+
+**3. ⚙️ [工程基建] 解决 Agent 易跑飞痛点的控制引擎**
+*   **Statewright**：基于可视化状态机来控制 AI Agents 的工作流引擎，从工程底层提供可靠性，解决大模型行动不可控的痛点。
+
+**4. 🔌 [工程基建] 官方示范如何用 MCP 接入云服务**
+*   **AWS Agent Toolkit**：AWS 官方提供的 MCP servers 和插件集合，是理解和实践如何使用 Model Context Protocol 将真实云服务集成进 AI Agent 的绝佳示例。
+
+**5. 🛠️ [框架参考] 复杂多智能体协同的绝佳样板**
+
+**6. 🔍 [基建与组件] 拓展 Agent 感知与自愈能力**
+*   **Superlog**：主打“自动安装并能修 Bug”的 AI 观测工具，可作为搭建自愈型工作流的底层组件。([官网](https://superlog.sh/))
+
+**7. 🧬 [理论与前沿应用] 概率边界与数字孪生**
