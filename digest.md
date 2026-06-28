@@ -788,3 +788,58 @@ Agent Memory That Learns，记忆随使用动态优化，是对传统 RAG 检索
 *   **Superlog**：主打“自动安装并能修 Bug”的 AI 观测工具，可作为搭建自愈型工作流的底层组件。([官网](https://superlog.sh/))
 
 **7. 🧬 [理论与前沿应用] 概率边界与数字孪生**
+
+
+## 2026-06-28 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+> 聚焦 Agent 工程与研究前沿，去重整合自 arxiv / HackerNews / GitHub Trending
+
+---
+
+## 🔧 工具链与平台
+
+**1. Statewright — 用可视化状态机约束 Agent 行为**
+用状态机建模 agent 行为流程，直击 LLM agent 不可预测、难调试的核心痛点。HN 126pts，社区共鸣强，适合需要可靠性保障的生产级 agent。
+
+**2. Rowboat — 多 Agent 系统的开源 IDE**
+目前少有的专为 multi-agent 系统设计的构建与调试工具链，值得关注其对 agent 协作流程的抽象方式。
+
+**3. cognee — 开源 AI 长期记忆平台**
+基于自托管知识图谱，为 agent 提供跨会话持久化记忆，是 RAG 的结构化升级替代方案，直接解决 agent 状态持久化痛点。
+
+**4. Onyx — 可自托管的 RAG 聊天前端（YC W24）**
+HN 254pts 高热，私有化部署 RAG 应用的完整前端方案，适合对数据主权有要求的场景。
+
+---
+
+## 🚀 落地案例
+
+**5. ai-berkshire — 多 Agent 并行价值投资研究框架**
+基于 Claude Code/Codex，展示 multi-agent 对抗式分析在实际场景的落地，对构建专业领域研究 agent 有直接参考价值。
+
+**6. video-use — Coding Agent 驱动视频编辑**
+browser-use 团队新作，agent 从 Web 自动化延伸至创意工具领域，代表 agent 能力边界的新扩展方向。
+→ [GitHub](https://github.com/browser-use/video-use)
+
+**7. Language-Based Digital Twins for Elderly Cognitive Assistance**
+LLM 驱动的数字孪生做个性化认知辅助，实质是长期记忆 + 对话 agent 的完整落地案例，对 context engineering 和持久化 agent 设计有借鉴。
+
+---
+
+## 📚 研究与学习资源
+
+**8. RiVER — 无需 Ground-Truth 的 RL 奖励框架**
+提出排名诱导奖励（Ranking-Induced Verifiable Reward），让 LLM 在无标准答案的开放任务中自我改进，对 agent 自主学习机制有直接参考价值。
+
+**9. 序列概率与 LLM 正确性的对齐关系**
+系统分析 token/序列级概率何时能反映输出正确性，直接影响 RAG 重排序、agent 解码策略等核心设计决策。
+
+**10. claude-howto — Claude Code Agent 可视化实战指南**
+从基础概念到高级 agent 的完整图解教程，含即用模板，快速掌握 context 工程与 agent 构建范式的捷径。
+→ [GitHub](https://github.com/luongnv89/claude-howto)
+
+---
+
+**今日关键趋势：** Agent 可靠性（状态机约束）× 记忆持久化（知识图谱）× 无监督自我改进（无 GT 的 RL）三条线同步推进，工具链成熟度正在快速提升。
