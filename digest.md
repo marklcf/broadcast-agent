@@ -920,3 +920,41 @@ Statewright 致力于解决 LLM Agent 执行不可控、易跑偏的可靠性痛
 - **Superlog**：主打自动安装的可观测性工具，为复杂 Agent 运行轨迹提供 trace 与 bug 定位修复支持。[https://superlog.sh/](https://superlog.sh/)
 - **AIConsole**：开源桌面端 AI 编辑器，适合需要精细控制 Prompt 和 Context Engineering 的开发者。[https://aiconsole.ai](https://aiconsole.ai)
 - **Onyx**：开源 Chat UI，内置 RAG 管道并支持多 LLM 接入，适合快速搭建企业级 AI 知识库前端。[https://news.ycombinator.com/item?id=46045987](https://news.ycombinator.com/item?id=46045987)
+
+
+## 2026-07-01 · 📡 今日播报 · Parallight Lab
+
+**今日 AI Agent 前沿播报**
+
+本期播报聚焦 LLM Agent 领域的最新进展，涵盖了从底层工程脚手架、多智能体协同框架到可靠性评估与能力增强的核心动态。资讯已去重并按重要性排序：
+
+**1. Google 官方推出 Agent 工程化脚手架：agents-cli**
+*   **摘要**：Google 官方开源了 CLI 工具，旨在帮助开发者快速创建、评估和部署 AI Agent。该工具为 Agent 的全生命周期管理提供了一套完整的标准化工程脚手架，大幅降低了企业级 Agent 的落地门槛。
+*   **链接**：[https://github.com/google/agents-cli](https://github.com/google/agents-cli)
+
+**2. 降低多 Agent 编排门槛：开源 IDE 与可视化状态机约束**
+*   **摘要**：随着多 Agent 系统复杂度增加，工程编排与行为约束成为核心痛点。开源多 Agent 集成开发环境 **Rowboat** 直接降低了协同工作的构建难度；而 **Statewright** 则创新性地采用可视化状态机来严格约束 LLM Agent 的行为边界，有效解决了 Agent 在复杂流程中易跑偏、不可靠的问题。
+*   **链接**：
+
+**3. 金融与研究领域多 Agent 实战：从价值投资到实时交易**
+*   **摘要**：多 Agent 协同在复杂垂直领域展现出强大潜力。**ai-berkshire** 构建了基于多 Agent 并行对抗的价值投资研究框架；**Vibe-Trading** 则展示了 LLM Agent 如何应用于实时数据分析与金融交易决策。这些项目为多 Agent 编排提供了优秀的实战参考。
+*   **链接**：
+    *   Vibe-Trading: [https://github.com/HKUDS/Vibe-Trading](https://github.com/HKUDS/Vibe-Trading)
+
+**4. 突破长周期任务瓶颈：密集监督信号与可复用技能组合**
+*   **摘要**：针对长时序 Agent 任务中结果奖励过于稀疏、多步任务解决能力弱的痛点，学术界提出新解法：**QVal** 以低成本提取密集监督信号评估中间动作质量；**Generative Skill Composition** 则将过程知识封装为模块化、可复用的技能，以提升复杂任务的解决率。
+*   **链接**：
+    *   QVal: [http://arxiv.org/abs/2606.32034v1](http://arxiv.org/abs/2606.32034v1)
+    *   Generative Skill Composition: [http://arxiv.org/abs/2606.32025v1](http://arxiv.org/abs/2606.32025v1)
+
+**5. 提升 Agent 可靠性：元认知反馈与结构化数据处理**
+*   **摘要**：Agent 的自我监控与数据处理能力直接决定其可靠性。新研究引入**元认知反馈机制**的强化学习，使 LLM 能忠实表达不确定性，直击高置信幻觉与知识边界认知缺失痛点；同时，**When LLMs Read Tables Carefully** 量化并缓解了 LLM 处理表格时的数据引用错误（DRE），对提升 RAG 系统等结构化数据环境中的准确性极具参考价值。
+*   **链接**：
+    *   Metacognitive Feedback: [http://arxiv.org/abs/2606.32032v1](http://arxiv.org/abs/2606.32032v1)
+    *   Read Tables Carefully: [http://arxiv.org/abs/2606.32029v1](http://arxiv.org/abs/2606.32029v1)
+
+**6. 垂直业务流与本地编排工具的落地实践**
+*   **摘要**：Agent 正在重塑各类业务工作流。**video-use** 利用 Coding Agent 实现视频编辑自动化，展示了 Agent 操控复杂软件的优秀实践；**hiring-agent** 自动评估简历，是特定业务流 Agent 的参考实现；**Nao Labs**（数据领域的 Cursor）以自然语言重塑数据分析流；**AIConsole** 则提供深度自定义的本地 Agent 编排桌面端方案；**Onyx** 为搭建带知识库和工具调用的定制化 Agent 前端提供了直接参考。
+*   **链接**：
+    *   hiring-agent: [https://github.com/interviewstreet/hiring-agent](https://github.com/interviewstreet/hiring-agent)
+    *   Nao Labs: [https://news.ycombinator.com/item?id=43938607](https://news.ycombinator.com/item?id=43938607)
