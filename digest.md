@@ -958,3 +958,45 @@ Statewright 致力于解决 LLM Agent 执行不可控、易跑偏的可靠性痛
 *   **链接**：
     *   hiring-agent: [https://github.com/interviewstreet/hiring-agent](https://github.com/interviewstreet/hiring-agent)
     *   Nao Labs: [https://news.ycombinator.com/item?id=43938607](https://news.ycombinator.com/item?id=43938607)
+
+
+## 2026-07-02 · 📡 今日播报 · Parallight Lab
+
+这是一份为您精炼合成的今日 AI Agent 领域播报。内容已去重，并按**“底层可靠性/评估 > 控制与编排框架 > 垂直应用落地”**的重要性层级排序：
+
+---
+
+### 📝 今日 AI Agent 前沿播报
+
+**1. 揭示现有性能评测漏洞：代码 Agent 基准可靠性受质疑**
+系统评估了当前主流代码 Agent 性能优化基准（如 SWE-Perf）的可靠性问题，指出现有评测方法存在缺陷。这对于准确评估和研发 LLM Coding Agent 至关重要，提醒业界警惕“跑分虚高”。
+🔗 [http://arxiv.org/abs/2607.01211v1](http://arxiv.org/abs/2607.01211v1)
+
+**2. Theoria：重塑 LLM 非形式推理的可信验证**
+提出针对非形式推理状态的“重写可接受性验证”方法。该方法弥补了传统标量 LLM 评判无法审计的缺陷，为构建高可信 Agent 的推理与自我纠错机制提供了新范式。
+🔗 [http://arxiv.org/abs/2607.01223v1](http://arxiv.org/abs/2607.01223v1)
+
+**3. AutoMem：将 Agent 长期记忆管理视为可训练技能**
+将 LLM Agent 的长期记忆管理视为认知技能，通过提升文件系统操作为一等公民，自动化学习记忆的编码、检索与组织。对构建高鲁棒性 Agent 的上下文工程极具参考价值。
+🔗 [http://arxiv.org/abs/2607.01224v1](http://arxiv.org/abs/2607.01224v1)
+
+**4. Statewright：用可视化状态机终结 Agent “跑偏”**
+开源项目 Statewright 通过可视化状态机强约束 LLM Agent 的行为，直击 Agent 执行流程不可控、易陷入死循环的可靠性痛点。
+
+**5. google/agents-cli：官方 Agent 工程化脚手架**
+Google 官方推出命令行工具集，旨在将任意编程助手转化为能创建、评估和部署 AI Agent 的专家，为 Agent 的标准化开发与部署提供底层支持。
+
+**6. Rowboat：降低多 Agent 架构的工程编排门槛**
+开源的多 Agent 系统集成开发环境（IDE），让开发者能够可视化编排和构建复杂的 LLM Agent 架构，显著降低工程门槛。
+
+**7. VulnClaw：AI Agent + MCP 复杂多步安全任务落地样板**
+基于 AI Agent 结合 MCP 工具链与渗透 Skill 编排的自动化渗透测试系统。是观察 MCP 协议在复杂网络安全任务中实际落地的典型样板。
+
+**8. Vibe-Trading：具备自主决策能力的金融交易智能体**
+开源“个人交易 Agent”项目，展示了如何基于 LLM 构建能自主分析并执行金融交易的智能体，拓展了 Agent 在高风险垂直领域的应用。
+
+**9. video-use：LLM Agent 跨模态操作扩展至视频领域**
+通过 Coding Agents 实现视频自动剪辑与编辑，标志着 LLM Agent 的“计算机使用”能力从纯文本/网页交互，正式向跨模态多媒体操作扩展。
+
+**10. 垂直领域工具与开源基建速览**
+*   **book-to-skill**：将技术 PDF 转为 Claude Code skill，其核心是高效结构化外部知识供大模型使用的 RAG 技术实践。🔗 [https://github.com/virgiliojr94/book-to-skill](https://github.com/virgiliojr94/book-to-skill)
