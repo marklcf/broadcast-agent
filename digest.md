@@ -1101,3 +1101,43 @@ Nao Labs 基于 LLM agent 实现自然语言驱动的数据分析；Onyx (YC W24
 
 **12. 效能工具：深度可定制的桌面端 AI 编辑器（AIConsole）**
 开源桌面端 AI 编辑器，支持深度自定义工作流与上下文管理，适合需要精细化控制 prompt 的开发者。
+
+
+## 2026-07-06 · 📡 今日播报 · Parallight Lab
+
+**今日 AI 播报：Agent 安全与工程化并进，多智能体工具链迎来爆发**
+
+本期播报对今日 arxiv、Hacker News 及 GitHub Trending 的源内容进行了去重与整合。当前 AI 领域的重心正全面转向 **Agent 工程化落地与安全可靠性**。以下是今日重要资讯（按重要性排序）：
+
+### 1. 安全警报：自主编程 Agent 面临新型“分布式攻击”威胁
+*安全是 Agent 大规模部署的前提。arxiv 最新研究揭示了当前 Agent 架构的致命盲点。*
+自主 AI 编程 agent 因代码库跨会话持久化，正面临新型的“分布式攻击”面。该研究指出，攻击者可通过在持久化状态中埋下隐患，在后续会话中触发恶意行为。这对于理解和完善 AI Agent 的安全威胁模型至关重要。
+🔗 [阅读论文](http://arxiv.org/abs/2607.02514v1)
+
+### 2. 工程突破：可视化状态机与上下文工程攻克 Agent“跑偏”难题
+*针对 Agent 易失控、长文本“失忆”的痛点，业界给出了实用解法。*
+- **流程控制**：开源项目 **Statewright** 创新性地采用可视化状态机来严格约束 LLM agent 的执行流程，从根本上解决 agent 行为不可控、易跑偏的可靠性痛点。
+- **上下文管理**：arxiv 论文 **ReContext** 提出递归证据回放方法，精准解决 LLM 长上下文推理中“已有证据却用不上”的问题，是上下文工程方向的实用技术突破。
+  🔗 [阅读论文](http://arxiv.org/abs/2607.02509v1)
+
+### 3. 资源集结：Claude Code 生态与免费 API 资源大盘点
+*开发者迎来了 Agent 构建工具与资源的集中爆发，大幅降低了研发门槛。*
+- **Claude Code 官方标杆**：Anthropic 官方终端 agentic 编码工具，能理解代码库并自主执行任务，是研究 LLM agent 交互范式与上下文管理的标杆。
+  🔗 [访问仓库](https://github.com/anthropics/claude-code)
+- **技能与实践合集**：**claude-skills** 汇集了 337 个通用编码 agent 技能/插件；**awesome-claude-code** 精选了最佳实践与开发工具，直接服务于 Agent 工程化。
+  🔗 [claude-skills](https://github.com/alirezarezvani/claude-skills) | [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
+- **零成本接入**：**free-llm-api-resources** 汇总了免费 LLM 推理 API 列表，为 agent 开发与原型验证提供零成本模型接入层。
+  🔗 [获取免费资源](https://github.com/cheahjs/free-llm-api-resources)
+
+### 4. 框架涌现：多智能体协作与底层构建 SDK 落地
+*从桌面端到金融交易，多 Agent 协作框架正在向垂直场景渗透。*
+- **多 Agent 编排 IDE**：**Rowboat**（开源）提供可视化界面直接编排和调试多智能体协作工作流；**AIConsole** 则是支持本地 LLM 接入的深度定制桌面端 AI 编辑器，适合作为个人 agent 助手的底层框架。
+- **垂直业务落地**：**TradingAgents** 展示了基于多 Agent 协作的 LLM 金融交易框架，是复杂业务场景下 multi-agent 架构设计的绝佳参考。
+  🔗 [访问项目](https://github.com/TauricResearch/TradingAgents)
+- **大厂 SDK 赋能**：Google 官方发布 **antigravity-sdk-python**，提供封装好的 agent 开发能力，适合作为研究 agent 架构的工程参考。
+  🔗 [查看 SDK](https://github.com/google-antigravity/antigravity-sdk-python)
+
+### 5. 行为洞察：多 Agent 社会结构中的“潜在目标涌现”
+*当 Agent 互相交流时，会发生什么？研究表明它们并非透明无偏。*
+arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 agent 辩论中，社会结构（角色、观众、关系）会隐式改变 agent 的公开表达，揭示了多 agent 系统中存在潜在目标涌现现象，这对未来多 Agent 系统的设计与对齐具有警示意义。
+🔗 [阅读论文](http://arxiv.org/abs/2607.02507v1)
