@@ -1141,3 +1141,40 @@ Nao Labs 基于 LLM agent 实现自然语言驱动的数据分析；Onyx (YC W24
 *当 Agent 互相交流时，会发生什么？研究表明它们并非透明无偏。*
 arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 agent 辩论中，社会结构（角色、观众、关系）会隐式改变 agent 的公开表达，揭示了多 agent 系统中存在潜在目标涌现现象，这对未来多 Agent 系统的设计与对齐具有警示意义。
 🔗 [阅读论文](http://arxiv.org/abs/2607.02507v1)
+
+
+## 2026-07-07 · 📡 今日播报 · Parallight Lab
+
+这里为您合成的一份精炼的「今日 AI 播报」。本次播报去除了冗余信息，按**底层架构演进 > 开发工具与框架 > 复杂业务应用**的重要性排序，每条均附带链接：
+
+### 📡 今日 AI 播报：Agent 架构、工具链与上下文工程全面爆发
+
+**1. LLM-as-a-Verifier：定义大模型第四条扩展轴**
+[论文链接](http://arxiv.org/abs/2607.05391v1)
+将 LLM 验证能力定义为继预训练、后训练、测试时计算之后的第四条扩展轴，为构建具备自我审查能力的 Agent 系统提供了框架级参考。
+
+**2. CompactionRL：用强化学习解决 Agent 长上下文爆炸**
+[论文链接](http://arxiv.org/abs/2607.05378v1)
+提出用强化学习优化长程 Agent 的上下文压缩策略，解决长任务交互轨迹撑爆上下文窗口的问题，是上下文工程领域的针对性方案。
+
+**3. Statewright：用可视化状态机约束 Agent 行为**
+针对 LLM Agent 执行流程不可靠、易跑偏的痛点，引入可视化状态机严格约束 Agent 行为，提升系统可控性。
+
+**4. Rowboat：开源多 Agent 系统 IDE**
+提供可视化的多智能体构建与管理界面，大幅降低多 Agent 系统的开发门槛；与之类似的还有适合作为企业级 RAG 前端部署的开源聊天界面 Onyx（[HN讨论](https://news.ycombinator.com/item?id=46045987)）。
+
+**5. claude-skills 与 awesome-claude-code：最强编码 Agent 实用资源库**
+前者收录 345+ 个可跨 Claude Code、Cursor、Codex 等十余种编码 Agent 复用的插件；后者是 Claude Code 的最佳实践与工具链大全，均为做 Agent 能力扩展与上下文工程的实用素材。
+
+**6. last30days-skill：研究型 Agent 调研流范例**
+[GitHub 链接](https://github.com/mvanhorn/last30days-skill)
+一个 Agent 插件，能跨 Reddit、X、YouTube、HN 等多平台自动调研并合成带引用的摘要，为构建 RAG/调研型 Agent 提供了极好的参考工作流。
+
+**7. Superlog：主打“自动修 Bug”的可观测性工具**
+为 LLM Agent 提供执行轨迹追踪与自动缺陷修复能力，解决 Agent 部署后的监控与维护痛点。
+
+**8. TradingAgents：多 Agent 金融交易框架**
+展示了如何将 LLM Agent 编排为多角色协同的复杂业务决策流，对设计高复杂度的多 Agent 架构具有极高参考价值。
+
+---
+*💡 补充速览：在视觉生成领域，[Agentic Visual Generation](http://arxiv.org/abs/2607.05382v1) 探讨了 Agent 如何通过搜索突破生成模型的静态知识边界；此外，Google 官方推出了 [Antigravity Python SDK](https://github.com/google-antigravity/antigravity-sdk-python)，用于构建可调用其全部能力的 AI Agent，值得持续跟踪大厂基建动态。*
