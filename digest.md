@@ -1178,3 +1178,25 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 
 ---
 *💡 补充速览：在视觉生成领域，[Agentic Visual Generation](http://arxiv.org/abs/2607.05382v1) 探讨了 Agent 如何通过搜索突破生成模型的静态知识边界；此外，Google 官方推出了 [Antigravity Python SDK](https://github.com/google-antigravity/antigravity-sdk-python)，用于构建可调用其全部能力的 AI Agent，值得持续跟踪大厂基建动态。*
+
+
+## 2026-07-08 · 📡 今日播报 · Parallight Lab
+
+这份今日播报已对源信息进行了去重与重要性排序，按“AI基础设施与架构”、“开发工具与生态”、“Agent工程实践”、“垂直领域落地”四大板块为您精炼呈现：
+
+### 🚀 今日 AI Agent 前沿播报
+
+#### 1. 基础设施与核心架构
+*   **全双工语音大模型实现模态解耦**：提出分层声学-语义建模方法，通过模态分离与语义一致性解决全双工语音语言模型（SLM）的干扰问题，为构建支持无缝实时交互的 LLM Agent 提供了底层新思路。[阅读论文](http://arxiv.org/abs/2607.06540v1)
+*   **大型肿瘤学AI助手架构（LCA）**：提出一种模型无关的临床决策支持编排框架，通过解耦数据摄入、临床路由和AI推理，展示了在真实医疗场景中构建可扩展多模态 AI Agent 的实用架构。[阅读论文](http://arxiv.org/abs/2607.06531v1)
+
+#### 2. Agent 开发工具与集成环境
+
+#### 3. Agent 工程实践与上下文管理
+*   **planning-with-files：长任务上下文防丢失方案**：为 AI 编码 Agent 提供基于持久化 Markdown 文件的规划与多 Agent 共享状态机制，有效解决长任务中的上下文丢失问题，是 Context Engineering 的实用实践。[访问项目](https://github.com/OthmanAdi/planning-with-files)
+*   **awesome-claude-code：LLM 编码 Agent 实践索引**：Claude Code 精选资源库，涵盖顶级技能、多 Agent 编排与上下文管理方案，是研究代码大模型落地的优质合集。[访问项目](https://github.com/hesreallyhim/awesome-claude-code)
+*   **claude-plugins-official：Anthropic 官方插件目录**：由官方维护的 Claude Code 插件库，直接反映了当前 LLM Agent 工具扩展与 MCP（Model Context Protocol）生态的最新标准。[访问项目](https://github.com/anthropics/claude-plugins-official)
+*   **ELSA3D：3D 基础模型语义对齐**：提出弹性语义锚定方法，解决 3D 模型中文本与 3D 交互隐式化的问题，其语义对齐思路对多模态 Agent 的上下文工程具有参考价值。[阅读论文](http://arxiv.org/abs/2607.06565v1)
+
+#### 4. 垂直场景落地与自动化
+*   **LangBot：生产级多平台 IM Bot 框架**：内置 Agent 编排、知识库（RAG）与插件系统，适合参考 Agent 在微信等即时通讯场景的工程化落地。[访问项目](https://github.com/langbot-app/LangBot)
