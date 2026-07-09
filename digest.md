@@ -1200,3 +1200,65 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 
 #### 4. 垂直场景落地与自动化
 *   **LangBot：生产级多平台 IM Bot 框架**：内置 Agent 编排、知识库（RAG）与插件系统，适合参考 Agent 在微信等即时通讯场景的工程化落地。[访问项目](https://github.com/langbot-app/LangBot)
+
+
+## 2026-07-09 · 📡 今日播报 · Parallight Lab
+
+一份精炼的今日 AI 与开源前沿播报。已对内容进行去重与重要性排序，按**「Agent 框架与安全」**、**「Agent 技能与上下文工程」**、**「基础设施与协议集成」**三大主题为您梳理：
+
+### 🌟 今日要点
+
+- **Agent 技能优化成新范式**：微软 SkillOpt 与 arxiv 结构化轨迹分析不谋而合，均致力于从高噪声执行轨迹中提取可复用策略。
+- **多 Agent 安全评估升级**：机构级红队测试提出新框架，指出部署规则而非模型本身，才是塑造系统安全的关键。
+- **上下文管理走向结构化与动态化**：从代码库转知识图谱（Graphify）到有限记忆模型持续 Fetch（Co-LMLM），RAG 迎来工程升级。
+
+---
+
+### 一、 Agent 优化与安全评估
+
+1. **microsoft / SkillOpt [标杆项目]**
+   通过轨迹驱动编辑和验证门控，为冻结的 LLM agent 自动生成可复用的自然语言技能。提供了一种无需重训模型即可提升 Agent 能力的实用上下文工程方法。
+   🔗 [https://github.com/microsoft/SkillOpt](https://github.com/microsoft/SkillOpt)
+
+2. **Institutional Red-Teaming [安全框架]**
+   提出机构级红队测试方法，通过控制变量单一部署规则来因果归因多 Agent 系统的安全行为变化，指出部署规则（而非仅限模型本身）才是决定多 Agent 安全的关键。
+   🔗 [http://arxiv.org/abs/2607.07695v1](http://arxiv.org/abs/2607.07695v1)
+
+3. **From Noisy Traces to Root Causes [理论支撑]**
+   提出结构化轨迹分析与因果提取方法，解决 LLM Agent 反思优化时长程执行轨迹噪声大、难以直接用于策略改进的问题。（与上述 SkillOpt 方向呼应）
+   🔗 [http://arxiv.org/abs/2607.07702v1](http://arxiv.org/abs/2607.07702v1)
+
+### 二、 Agent 技能库与多源研究
+
+4. **alirezarezvani / claude-skills [生态扩展]**
+   包含 345 个 Claude Code agent 技能与插件，覆盖 30+ Agents 和 330+ skills，且兼容 12 种主流编程 agent。是构建和横向扩展 Agent 能力库的实用参考。
+   🔗 [https://github.com/alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills)
+
+5. **mvanhorn / last30days-skill [研究技能]**
+   使 AI Agent 能够跨 Reddit、X、YouTube 等多平台研究并综合生成带引用的摘要，展示了 Agent 执行多源联网研究与 RAG 的技能模板。
+   🔗 [https://github.com/mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)
+
+6. **anthropics / claude-code [官方工具]**
+   Anthropic 官方的终端 Agentic 编码工具，能理解代码库并自主执行复杂编程任务与 Git 工作流，是理解 Agent 工程落地的标杆项目。
+
+### 三、 上下文管理、基础设施与协议
+
+7. **Graphify-Labs / graphify [结构化 RAG]**
+   将任意代码库、数据库 schema、文档和视频转化为可查询的知识图谱，为 Coding Agent 提供了一种结构化的 RAG 与上下文管理新范式。
+   🔗 [https://github.com/Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)
+
+8. **Co-LMLM: Continuous-Query Limited Memory Language Models [动态检索]**
+   探索有限记忆语言模型在生成时持续从知识库 Fetch 知识的范式，为解决长上下文推理中的 RAG 动态检索与上下文管理提供新思路。
+   🔗 [http://arxiv.org/abs/2607.07707v1](http://arxiv.org/abs/2607.07707v1)
+
+9. **googleanalytics / google-analytics-mcp [协议落地]**
+   Google 官方推出的 GA MCP 服务器，让 Agent 能够直接接入和查询 Google Analytics 数据，是 MCP 协议在实际业务数据源集成的典型应用。
+   🔗 [https://github.com/googleanalytics/google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp)
+
+10. **Breaking Database Lock-in [底层基建]**
+    利用 Agent 自动重生成高性能数据读取器以绕过数据库驱动瓶颈，展示了 LLM Agent 在数据分析基础设施层的落地新范式。
+    🔗 [http://arxiv.org/abs/2607.07696v1](http://arxiv.org/abs/2607.07696v1)
+
+11. **The Key to Going Linear [推理优化]**
+    分析线性化 Transformer 中状态更新设计对模型质量的影响，为长上下文推理的效率优化提供工程参考。
+    🔗 [http://arxiv.org/abs/2607.07706v1](http://arxiv.org/abs/2607.07706v1)
