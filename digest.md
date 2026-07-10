@@ -1262,3 +1262,42 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 11. **The Key to Going Linear [推理优化]**
     分析线性化 Transformer 中状态更新设计对模型质量的影响，为长上下文推理的效率优化提供工程参考。
     🔗 [http://arxiv.org/abs/2607.07706v1](http://arxiv.org/abs/2607.07706v1)
+
+
+## 2026-07-10 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent / LLM 播报
+
+## 🔬 研究与评估
+1. **UniClawBench** — 首个面向主动型 agent 的系统化基准，评估工具使用与真实任务完成能力，直击 agent 可靠性评估痛点。
+   http://arxiv.org/abs/2607.08768v1
+
+2. **OpenCoF** — 提出通过视频帧时序展开推理的新范式，为 LLM agent 推理提供 CoT 之外的另一条路径。
+   http://arxiv.org/abs/2607.08763v1
+
+## 🛠️ Agent 能力与架构工程
+3. **microsoft/SkillOpt** — 微软出品：为冻结参数的 LLM agent 训练可复用自然语言技能，通过轨迹驱动编辑+验证门控生成部署级技能文档。代表"context/skill 工程"取代微调的新趋势。
+   https://github.com/microsoft/SkillOpt
+
+4. **Statewright** — 用可视化状态机替代脆弱的 prompt 链，让 agent 执行路径可控可调试，应对 agent 可靠性问题的新范式。
+
+5. **Rowboat (YC S24)** — 开源多 agent 系统 IDE，提供可视化编排/调试能力，可参考其 agent 协作架构设计。
+
+## 🧩 检索增强 / Context 工程基础设施
+6. **unclecode/crawl4ai** — LLM 友好格式输出的开源爬虫，RAG 数据管道与 agent 联网能力的常用基建，今日增速明显。
+   https://github.com/unclecode/crawl4ai
+
+7. **LMCache/LMCache** — 高性能 KV Cache 层，加速长上下文/多轮对话场景下的 LLM 推理，agent/RAG 系统底层性能优化关键组件。
+
+8. **Graphify-Labs/graphify** — 面向 Claude Code/Codex/Cursor 等 agent 工具的技能插件，将任意文件夹（代码/文档/视频）转为可查询知识图谱，是新形态的检索增强方案。
+   https://github.com/Graphify-Labs/graphify
+
+9. **tirth8205/code-review-graph** — 本地优先的代码智能图谱，专为 MCP/CLI 设计，让 AI 编程工具精准获取所需上下文，附实测压缩效果数据。
+
+## 💼 垂直应用与产品
+10. **Nao Labs "Cursor for Data" (YC X25)** — 面向数据工程场景的 agent 化编辑器，展示 agent 在垂直领域的落地方式。
+
+11. **Onyx (YC W24)** — 开源 Chat UI，通常绑定 RAG 能力，可作自建 RAG 应用前端参考。
+
+12. **AIConsole** — 开源桌面级 AI 编辑器。
+    （原文未附链接）
