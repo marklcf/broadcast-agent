@@ -1301,3 +1301,29 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 
 12. **AIConsole** — 开源桌面级 AI 编辑器。
     （原文未附链接）
+
+
+## 2026-07-11 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+1. **微软发布 Agent 治理工具包**：涵盖策略执行、零信任身份、执行沙箱等能力，对标 OWASP Agentic Top 10，是当前 agent 安全与合规领域的重要参考。
+   https://github.com/microsoft/agent-governance-toolkit
+
+2. **UniClawBench：面向真实任务的主动型 Agent 通用基准**：针对 LLM agent 在真实工具操作、主动决策场景下的评测空白，提出新基准，评测设计思路值得关注。
+
+3. **NVIDIA 开源一批 Agent Skills**：大厂对 agent 能力模块化封装的实践案例，可作为 skill 设计范式参考。
+   https://github.com/NVIDIA/skills
+
+4. **Statewright：用可视化状态机替代脆弱的 Prompt 链**：让多步 agent 执行流程可控、可调试，直击 agent 任务可靠性差的痛点。
+
+5. **Rowboat (YC S24)：开源多 Agent 系统 IDE**：支持可视化编排、调试与管理协作式 LLM agent，适合构建复杂 agent 系统的开发者。
+
+6. **davila7/claude-code-templates：Claude Code 配置与监控 CLI**：涉及 agent 工作流编排与上下文管理，是 Claude Code 生态与 context engineering 实践的实用工具。
+   https://github.com/davila7/claude-code-templates
+
+7. **mvanhorn/last30days-skill：跨平台检索摘要 Agent Skill**：整合 Reddit/X/YouTube/HN/Polymarket 等多源信息生成有依据摘要，是 RAG + Agent 结合的典型实战案例。
+
+8. **Onyx (YC W24)：开源 Chat UI**：支持多模型、多知识源接入，可作为自建 RAG/Agent 应用的前端底座。
+
+9. **Nao Labs (YC X25)："Cursor for Data"**：面向数据分析场景的 agent 产品，展示垂直领域落地范式。
