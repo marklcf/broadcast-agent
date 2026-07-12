@@ -1327,3 +1327,24 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 8. **Onyx (YC W24)：开源 Chat UI**：支持多模型、多知识源接入，可作为自建 RAG/Agent 应用的前端底座。
 
 9. **Nao Labs (YC X25)："Cursor for Data"**：面向数据分析场景的 agent 产品，展示垂直领域落地范式。
+
+
+## 2026-07-12 · 📡 今日播报 · Parallight Lab
+
+**今日 AI Agent 与大模型前沿播报**
+
+本期播报综合 arxiv、HackerNews 和 GitHub 趋势，为你精炼汇总今日最值得关注的 AI Agent 工程化工具、底层推理范式与评测基准（已去重并按重要性排序）：
+
+### 1. 行业基建与企业级落地
+- **OpenManus 开源通用 Agent 架构**：该项目复刻了通用 AI Agent 核心能力，开发者可通过其架构设计，快速对齐当前 Agent 工程的主流实现范式。[https://github.com/FoundationAgents/OpenManus](https://github.com/FoundationAgents/OpenManus)
+
+### 2. Agent 开发工具链与 IDE
+- **claude-code-templates**：针对 Claude Code 的 CLI 配置与监控工具，帮助开发者快速调优上下文工程并管理命令行 Agent 行为。[https://github.com/davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)
+
+### 3. 前沿推理范式与学术突破
+- **OpenCoF：视频生成推理新范式**：提出通过视频生成进行推理，突破了传统 Chain-of-Thought（CoT）的纯文本限制，为 LLM Agent 的多模态推理与决策提供了新路径。[http://arxiv.org/abs/2607.08763v1](http://arxiv.org/abs/2607.08763v1)
+
+### 4. 评测基准与应用反馈
+- **UniClawBench：真实世界任务评测基准**：填补了现有测试无法有效评估 Agent 操作日常工具能力的空白，专注于主动式 LLM Agent 在真实场景下的通用评测。[http://arxiv.org/abs/2607.08768v1](http://arxiv.org/abs/2607.08768v1)
+- **IdeaGene-Bench：科学思想“谱系”评测**：评测 AI 追踪科学思想演进的能力，对于需要处理复杂知识上下文与演进的 RAG 及 Agent 系统具有重要参考价值。[http://arxiv.org/abs/2607.08758v1](http://arxiv.org/abs/2607.08758v1)
+- **AI 学习助手大规模真实反馈**：基于超 7 万名学生客观日志的描述性分析，为真实教育场景下 AI Agent 的大规模应用提供了宝贵的数据反馈。[http://arxiv.org/abs/2607.08748v1](http://arxiv.org/abs/2607.08748v1)
