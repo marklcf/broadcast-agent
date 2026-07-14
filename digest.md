@@ -1348,3 +1348,32 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 - **UniClawBench：真实世界任务评测基准**：填补了现有测试无法有效评估 Agent 操作日常工具能力的空白，专注于主动式 LLM Agent 在真实场景下的通用评测。[http://arxiv.org/abs/2607.08768v1](http://arxiv.org/abs/2607.08768v1)
 - **IdeaGene-Bench：科学思想“谱系”评测**：评测 AI 追踪科学思想演进的能力，对于需要处理复杂知识上下文与演进的 RAG 及 Agent 系统具有重要参考价值。[http://arxiv.org/abs/2607.08758v1](http://arxiv.org/abs/2607.08758v1)
 - **AI 学习助手大规模真实反馈**：基于超 7 万名学生客观日志的描述性分析，为真实教育场景下 AI Agent 的大规模应用提供了宝贵的数据反馈。[http://arxiv.org/abs/2607.08748v1](http://arxiv.org/abs/2607.08748v1)
+
+
+## 2026-07-14 · 📡 今日播报 · Parallight Lab
+
+一份精炼的今日 AI 与开源前沿播报。去重并按“基础设施与底层理论 > 框架与工具 > 垂直应用与脚手架”的重要性排序如下：
+
+### 🧠 核心理论与方法论
+1. **LLM 元认知系统综述**：探讨 LLM 的自我反思与监控能力，这是构建能自我纠错和规划的高阶 Agent 的核心基石。
+   [http://arxiv.org/abs/2607.11881v1](http://arxiv.org/abs/2607.11881v1)
+2. **LLM-as-Judge 偏见的机制可解释性剖析**：从底层机制剖析 LLM 作为评估者时的偏见来源，为构建更可靠的 Agent 评估与反馈闭环提供见解。
+   [http://arxiv.org/abs/2607.11871v1](http://arxiv.org/abs/2607.11871v1)
+3. **高级数学证明与验证新基准 (AdvancedMathBench)**：直接检验 LLM 在复杂多步推理上的能力上限，是评估 Agent 深度推理与工具调用的试金石。
+   [http://arxiv.org/abs/2607.11849v1](http://arxiv.org/abs/2607.11849v1)
+
+### 🛠️ 开发框架与上下文工程
+4. **Graphify：异构数据图谱化工具**：将代码库、文档、SQL schema 等转化为可查询知识图谱，为复杂项目上下文工程与高级 RAG 提供图谱融合新范式。
+5. **OpenManus：纯粹开放环境通用智能体框架**：主打无限制环境下的自主任务规划与执行，直击 Agent 落地痛点。
+6. **Statewright：可视化状态机驱动 AI Agent**：用确定性流程约束 LLM 行为，直击 Agent 运行不稳定的核心痛点。
+7. **Rowboat：开源多 Agent 系统 IDE**：提供可视化构建与管理多 LLM Agent 协作的开发环境。
+8. **Onyx：开源企业级 AI 聊天界面**：前 ChatOllama，支持接入多种 LLM 并内置 RAG 与工具调用，适合自建知识库 Agent。
+
+### 📊 垂直应用与实战脚手架
+9. **awesome-llm-apps：百大 Agent/RAG 实战库**：收录 100+ 可直接克隆部署的 AI Agent 与 RAG 应用代码，是快速复现和学习的优质脚手架。
+   [https://github.com/Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
+10. **金融多智能体框架与对话式交易**：`TradingAgents` 展现多角色 Agent 在复杂金融决策中的协作模式；`Vibe-Trading` 则展示了自然语言对话驱动的个人交易 Agent 编排。
+11. **Nao Labs：数据领域的 Cursor**：基于 LLM Agent 帮助用户通过自然语言完成复杂数据分析与处理工作流。
+12. **Evidence-Backed 视频问答**：提出为视频大模型的回答提供可验证的视觉证据支撑，其“证据溯源”机制对多模态 Agent 与 RAG 的可信度设计极具参考价值。
+    [http://arxiv.org/abs/2607.11862v1](http://arxiv.org/abs/2607.11862v1)
+13. **AIConsole：开源桌面端 AI 编辑器**：支持深度自定义 Agent 工作流、工具集成与本地上下文管理。
