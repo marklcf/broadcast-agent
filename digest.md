@@ -1377,3 +1377,31 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 12. **Evidence-Backed 视频问答**：提出为视频大模型的回答提供可验证的视觉证据支撑，其“证据溯源”机制对多模态 Agent 与 RAG 的可信度设计极具参考价值。
     [http://arxiv.org/abs/2607.11862v1](http://arxiv.org/abs/2607.11862v1)
 13. **AIConsole：开源桌面端 AI 编辑器**：支持深度自定义 Agent 工作流、工具集成与本地上下文管理。
+
+
+## 2026-07-15 · 📡 今日播报 · Parallight Lab
+
+这里是今日AI前沿精炼播报。我们按照**“底层理念与架构创新 > 开发框架与工具链 > 开源实战项目集”**的重要性排序，对多源信息进行了去重与整合：
+
+### 🎙️ 今日 AI 前线播报
+
+**1. 上下文工程反思：AI Agent 需“看菜下碟”**
+当前 LLM Agent 普遍盲目采用“最大上下文优先”策略，导致算力严重浪费。arxiv 新论提出应按任务复杂度动态调整推理与执行成本，为上下文工程的实操优化敲响了警钟；同时，另一项跨领域研究也探讨了额外上下文（如 RAG）在时间序列预测等场景中的实际增益判定。
+🔗 [论文字节：让 Agent 感知任务复杂度](http://arxiv.org/abs/2607.13034v1)
+🔗 [跨域视角：额外上下文何时真正有效？](http://arxiv.org/abs/2607.13006v1)
+
+**2. Agent 可靠性破局：从“原生端侧”到“确定性状态机”**
+针对 Agent 易跑偏的痛点，社区从架构与流程控制两端给出方案：arxiv 展示了原生手机端侧的多步工具调用框架 PalmClaw，探索边缘侧落地；GitHub 则涌现出 Statewright，主张用可视化的确定性状态机来接管流程，解决 LLM 的不可靠问题。
+🔗 [PalmClaw：原生端侧 Agent 框架](http://arxiv.org/abs/2607.13027v1)
+
+**3. Agent 开发工具链大爆发：IDE、工作流与 MCP 协议落地**
+围绕 Agent 的开发环境正快速成熟，开源社区带来多款利器：Rowboat 提供开箱即用的多 Agent 编排 IDE；AIConsole 将 LLM 能力固化为桌面端可复用流程；Vexa 则开源了内置 MCP server 的会议转录 API，让 Agent 直接接入工具调用。
+🔗 [Vexa：内置 MCP 的开源会议转录 API](https://github.com/Vexa-ai/vexa)
+
+**4. 知识检索范式升级：知识图谱比传统 RAG 更懂代码**
+在检索增强（RAG）领域，Graphify 提供了一种新范式：将代码库和文档转化为可查询的 AI 知识图谱，提供比传统 RAG 结构化更强的检索能力；此外，Onyx 提供了适合企业内部的开源对话 UI 与 RAG 知识库集成方案。
+
+**5. 实战宝典：100+ 开箱即用的 Agent 与 RAG 应用**
+如果你想快速上手或借鉴当前 LLM Agent 的常见构建模式，awesome-llm-apps 和 awesome-ai-apps 两个开源集合提供了大量可直接克隆部署的 AI Agent、RAG 应用与工作流代码。
+🔗 [awesome-llm-apps（100+ 实战应用集）](https://github.com/Shubhamsaboo/awesome-llm-apps)
+🔗 [awesome-ai-apps（多场景用例聚合）](https://github.com/Arindam200/awesome-ai-apps)
