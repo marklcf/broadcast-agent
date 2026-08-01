@@ -1405,3 +1405,62 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 如果你想快速上手或借鉴当前 LLM Agent 的常见构建模式，awesome-llm-apps 和 awesome-ai-apps 两个开源集合提供了大量可直接克隆部署的 AI Agent、RAG 应用与工作流代码。
 🔗 [awesome-llm-apps（100+ 实战应用集）](https://github.com/Shubhamsaboo/awesome-llm-apps)
 🔗 [awesome-ai-apps（多场景用例聚合）](https://github.com/Arindam200/awesome-ai-apps)
+
+
+## 2026-08-01 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 工程播报
+
+> 主题聚焦：Agent 可靠性 · RAG 工程 · 评估基础设施 · 工具链
+
+---
+
+## 🔬 研究进展
+
+**1. OSReward — computer-use agent 跨平台评估基准**
+为 GUI agent 建立标准化轨迹评估体系，填补"规则失效、通用 LLM 又不够准"的验证空白。agent eval 基础设施方向的重要工作。
+[arxiv](http://arxiv.org/abs/2607.28609v1)
+
+**2. ReToken — 单 token 解决 VLM 长上下文退化**
+用一个可学习 embedding 作为显式检索 token，大幅缓解多模态长上下文下性能衰减。对多模态 RAG 与 context engineering 有直接参考价值。
+[arxiv](http://arxiv.org/abs/2607.28627v1)
+
+**3. AISPA — System Prompt 用户侧审计框架**
+直指 context engineering 中 system prompt 的透明度与问责缺口，支持从用户侧对 LLM 应用的 prompt 行为进行审计与约束。
+[arxiv](http://arxiv.org/abs/2607.28617v1)
+
+**4. AskChem — 化学文献的 claim 级知识基础设施**
+以"claim"为最小单元，支持 agent 跨文献定位、溯源并组装碎片化发现，是专业领域 RAG 细粒度知识组装的典型范式。
+[arxiv](http://arxiv.org/abs/2607.28618v1)
+
+---
+
+## 🛠️ 工具与工程
+
+**5. Statewright — 用有限状态机约束 agent 行为**
+将可视化状态机引入 agent 控制流设计，从结构上收敛 LLM 的不确定性。关注 agent 可靠性的工程师值得一看。
+
+**6. Rowboat — multi-agent 系统开源 IDE**
+专为构建与调试多 agent 系统设计的集成开发环境，agent 工程工具链的新尝试。
+
+**7. Onyx (YC W24) — 支持 RAG 的企业级开源 Chat UI**
+前后端一体，可直接接入私有知识库，是搭建 RAG 对话应用的现成方案。
+
+---
+
+## 📦 开源示例（Agent Skill / RAG 实践参考）
+
+**8. last30days-skill — 多源跨平台信息聚合 agent**
+覆盖 Reddit / X / YouTube / HN / Polymarket，演示了 agent + RAG 多源 context 组织的典型模式。
+
+**9. huggingface/speech-to-speech — 本地语音 agent 完整 pipeline**
+全开源模型实现，对 voice agent 架构有较高参考价值。
+[GitHub](https://github.com/huggingface/speech-to-speech)
+
+**10. book-to-skill / trailofbits-skills — 静态知识注入 agent 的两种实践**
+前者将技术书 PDF 转为 Claude Code skill，后者覆盖安全审计工作流——分别体现通用知识库与垂直领域的 context engineering 思路。
+[book-to-skill](https://github.com/virgiliojr94/book-to-skill) · [trailofbits/skills](https://github.com/trailofbits/skills)
+
+---
+
+**一句话总结：** 今日内容高度集中于 agent 可靠性（状态机约束 + 评估基准）与 RAG 工程（长上下文检索 + 细粒度知识组装），工具链侧出现了 multi-agent IDE 与 system prompt 审计等基础设施补全信号。
