@@ -1464,3 +1464,41 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 ---
 
 **一句话总结：** 今日内容高度集中于 agent 可靠性（状态机约束 + 评估基准）与 RAG 工程（长上下文检索 + 细粒度知识组装），工具链侧出现了 multi-agent IDE 与 system prompt 审计等基础设施补全信号。
+
+
+## 2026-08-02 · 📡 今日播报 · Parallight Lab
+
+这里为您合成今日的 AI Agent 与大模型生态精炼播报。内容已去重，并按**“底层架构与框架 > 开发工具与基建 > 前沿研究与专项应用”**的重要性排序：
+
+### 🛠️ 架构演进与开发框架
+
+*   **Deer-flow (字节开源 SuperAgent 框架)**：集成了沙箱、记忆、子 agent 与工具调用，适合研究复杂多阶段 agent 架构的落地实现。
+    👉 [https://github.com/bytedance/deer-flow](https://github.com/bytedance/deer-flow)
+*   **Hermes-agent (可成长型 LLM agent)**：Nous Research 发布的项目，聚焦 agent 持续学习与个性化演进，适合关注模型自我迭代的开发者跟踪。
+    👉 [https://github.com/NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
+*   **Statewright (确定性状态机 Agent 框架)**：用可视化状态机驱动 AI agent，以确定性的状态流转直击 LLM agent 行为不可控、易跑飞的痛点。
+
+### 🧰 开发工具与可观测性基建
+
+*   **Rowboat (多 Agent 可视化 IDE)**：开源的多智能体系统 IDE，提供构建、编排和调试多智能体工作流的可视化环境，大幅降低 multi-agent 开发门槛。
+*   **Superlog (Agent 线上调试利器)**：自动安装的 AI 应用可观测性工具，能自动抓取 trace 上下文并辅助修复 Bug，解决 LLM agent 线上调试与排查难题。
+*   **Onyx (企业级 RAG 对话基座)**：开源的 AI 对话前端 UI，支持对接多种 LLM、RAG 知识库和企业数据源，适合快速落地企业级聊天助手。
+*   **AIConsole (本地 AI 桌面编辑器)**：支持深度自定义 LLM 工作流与工具调用，适合作为构建个人或本地 AI Agent 的轻量级控制台。
+
+### 📊 前沿研究与评测基准
+
+*   **OSReward (CUA 评测框架)**：针对跨平台计算机使用 agent (CUA) 提出标准化奖励模型评测框架，对 agent 轨迹验证与强化学习数据筛选具有直接参考价值。
+    👉 [http://arxiv.org/abs/2607.28609v1](http://arxiv.org/abs/2607.28609v1)
+*   **AISPA (系统提示词审计)**：提出以用户为中心的系统提示词审计框架，直击 context engineering 中系统指令的透明度与信任盲区，对 Agent 安全部署有警示意义。
+    👉 [http://arxiv.org/abs/2607.28617v1](http://arxiv.org/abs/2607.28617v1)
+*   **ReToken (多模态上下文压缩)**：通过引入单一可学习检索 token 解决视觉语言模型的长上下文干扰与显存瓶颈，为多模态 agent 的 context engineering 提供新思路。
+    👉 [http://arxiv.org/abs/2607.28627v1](http://arxiv.org/abs/2607.28627v1)
+
+### 🧪 专项应用与自动化科研
+
+*   **Autoresearch (单卡科研自动化)**：Karpathy 的自动化 AI 研究项目，用 agent 在单 GPU 上自动跑模型训练与分析，是 agent 驱动科研自动化的极简实战参考。
+    👉 [https://github.com/karpathy/autoresearch](https://github.com/karpathy/autoresearch)
+*   **AskChem (专业领域 RAG 基建)**：提出以断言为中心的文献合成基础设施，展示了 AI agent 如何在专业领域结合 RAG 跨文档定位、验证并组装细粒度信息。
+    👉 [http://arxiv.org/abs/2607.28618v1](http://arxiv.org/abs/2607.28618v1)
+*   **Speech-to-Speech (端到端语音 Agent)**：HuggingFace 开源的本地语音 agent 构建方案，基于开源模型实现端到端语音交互，适合多模态 agent 开发者参考。
+    👉 [https://github.com/huggingface/speech-to-speech](https://github.com/huggingface/speech-to-speech)
