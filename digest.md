@@ -1502,3 +1502,45 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
     👉 [http://arxiv.org/abs/2607.28618v1](http://arxiv.org/abs/2607.28618v1)
 *   **Speech-to-Speech (端到端语音 Agent)**：HuggingFace 开源的本地语音 agent 构建方案，基于开源模型实现端到端语音交互，适合多模态 agent 开发者参考。
     👉 [https://github.com/huggingface/speech-to-speech](https://github.com/huggingface/speech-to-speech)
+
+
+## 2026-08-03 · 📡 今日播报 · Parallight Lab
+
+一份精炼的“今日 AI Agent 播报”已为您整理完毕。内容已去重，并按照**架构与框架 > 开发工具 > 基础设施与基准 > 技能组件**的重要性排序：
+
+---
+
+### 📰 今日 AI Agent 前沿播报
+
+**1. 字节开源长周期 SuperAgent 框架「deer-flow」**
+字节跳动开源了处理复杂长时任务（数分钟至数小时）的 Agent 编排架构，深度集成沙箱、记忆、子 Agent 和技能系统，展示了长周期复杂任务的编排范本。
+
+**2. NousResearch 推出成长型 AI Agent 框架「hermes-agent」**
+该框架聚焦 Agent 的持续学习与自适应演进能力，为研究和构建能够随时间自我成长的 Agent 提供了重要参考实现。
+
+**3. 开源多 Agent 系统 IDE「Rowboat」**
+直击 LLM Agent 工程化痛点，提供开箱即用的多 Agent 编排、调试与可视化开发环境，大幅降低多智能体系统的开发门槛。
+
+**4. 用状态机拯救 LLM 不可控性「Statewright」**
+提出基于可视化状态机构建 AI Agent，通过确定性的状态流转解决纯 LLM 驱动的行为不可控问题，适合对可靠性要求极高的业务架构参考。
+
+**5. 零配置扩展 Agent 实时上下文「Agent-Reach」**
+为 LLM Agent 提供开箱即用的 CLI 工具，支持跨 Twitter、Reddit、YouTube 等全网数据源的读取与搜索，是提升 Agent 实时信息获取能力的高信噪工具。
+🔗 [https://github.com/Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)
+
+**6. 开源 RAG 智能聊天前端「Onyx」**
+前 Open WebUI 竞品，支持 RAG 管道、工具调用与多模型接入，适合需要快速搭建带知识检索能力的 Agent 前端团队直接复用。
+
+**7. 降低 Agent 推理成本的新机制「TokTier」**
+针对编码 Agent 反复重提交长对话导致重复分词开销的问题，提出有状态的精确分词缓存机制，可直接显著降低 LLM Agent 的推理服务成本。
+🔗 [http://arxiv.org/abs/2607.29678v1](http://arxiv.org/abs/2607.29678v1)
+
+**8. 企业级文档抽取基准测试「ExtractBench」**
+专为企业级文档抽取任务设计，重点评估 LLM Agent 严格遵循自定义 Schema 并输出溯源证据的能力，为行业提供了可信抽取的量化标准。
+🔗 [http://arxiv.org/abs/2607.29677v1](http://arxiv.org/abs/2607.29677v1)
+
+**9. 多平台调研摘要 Agent 技能「last30days-skill」**
+一个完美的 Agent Skill 参考实现，演示了如何将 RAG 思路与多源检索封装为可复用组件，实现跨多平台调研并合成 Grounded 摘要。
+
+**10. 轻量级桌面 AI 编辑器「AIConsole」**
+开源桌面级 AI 编辑器，支持自定义工作流与工具编排，可作为轻量级 Agent 运行时定制化的参考方案。
