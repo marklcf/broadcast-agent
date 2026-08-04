@@ -1544,3 +1544,65 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 
 **10. 轻量级桌面 AI 编辑器「AIConsole」**
 开源桌面级 AI 编辑器，支持自定义工作流与工具编排，可作为轻量级 Agent 运行时定制化的参考方案。
+
+
+## 2026-08-04 · 📡 今日播报 · Parallight Lab
+
+**今日 AI Agent 与大模型前沿播报**
+
+本期资讯对各类开源项目与学术前沿进行了去重和整合，按“系统基建 > 框架与工具 > 前沿研究”的重要性排序如下：
+
+### 一、 核心框架与开发基建（构建 Agent 的骨架与基建）
+
+*   **1. 字节开源 SuperAgent 框架：deer-flow**
+    面向长周期复杂任务设计的 SuperAgent 架构，集成沙箱、记忆、工具及子 agent 协同机制，能处理需数分钟完成的深度任务，是研究复杂 Agent 系统的极佳参考。
+
+*   **2. 多 Agent 可视化开发环境：Rowboat**
+    开源的多 Agent 系统 IDE，提供可视化的协同编排与构建环境，大幅降低多 LLM agent 工作流的开发门槛。
+
+*   **3. Agent 行为约束方案：Statewright**
+    用可视化状态机硬性约束 AI agent 行为，直击 LLM 运行不稳定、流程跑飞的痛点，保障企业级 Agent 部署的可靠性。
+
+*   **4. Agent 全链路评估监控：Opik**
+    提供 LLM 应用、RAG 系统及 Agentic Workflows 的全链路追踪、自动评估与监控面板，是 Agent 从开发调试走向生产部署的必备基建。
+    👉 https://github.com/comet-ml/opik
+
+### 二、 工具链与落地应用（拓展 Agent 的感知与执行边界）
+
+*   **5. 零 API 费用全网检索工具：Agent-Reach**
+    为 AI Agent 提供 CLI 级别的全网数据读取与搜索能力（支持 Twitter、Reddit、YouTube 等），解决外部数据获取的高成本痛点。
+
+*   **6. 代码工程垂直 RAG：code-graph-rag**
+    基于知识图谱的代码库 RAG 工具，支持跨多语言单体仓库的查询、理解与编辑，将 RAG 技术深度落地于软件工程场景。
+    👉 https://github.com/vitali87/code-graph-rag
+
+*   **7. 数据领域的“Cursor”：Nao Labs**
+    将 LLM Agent 深度接入数据管道，探索用自然语言驱动数据分析与处理，开辟 Agent 在数据领域的垂直落地场景。
+
+*   **8. 私有化交互前端基座：Onyx**
+    高星开源 Chat UI，支持接入多种 LLM 并内置 RAG 文档问答，适合直接作为企业私有化部署的 Agent 交互前端。
+
+*   **9. 实时语音多模态框架：livekit/agents**
+    专注于构建实时语音 AI Agent 的开源框架，适合开发者快速探索和落地多模态交互场景。
+    👉 https://github.com/livekit/agents
+
+*   **10. 桌面端本地 Context 工具：AIConsole**
+    开源桌面端 AI 编辑器，支持深度自定义工作流与上下文脚本，是实践本地上下文工程与轻量定制 Agent 的实用工具。
+
+### 三、 学术前沿（arXiv 理论探索）
+
+*   **11. 科研 Agent 评测基准：onepot-Bench 0**
+    专门衡量 LLM agent 在实验规划、执行与分析等真实科学任务中综合能力的基准，填补了科研场景落地评估的空白。
+    👉 http://arxiv.org/abs/2608.02595v1
+
+*   **12. 测试时可解释推理：GradCuit**
+    提出基于信用分配梯度的测试时潜在推理方法，通过优化实例级连续状态增强推理，为 Agent 推理轨迹设计提供新解法。
+    👉 http://arxiv.org/abs/2608.02585v1
+
+*   **13. 机器人动作协调架构：CoWAM**
+    为 World Action Model 设计选择性干预协调层，将可预测未来与策略动作解耦，为机器人 Agent 提供可复用的决策范式。
+    👉 http://arxiv.org/abs/2608.02578v1
+
+*   **14. 统一多模态检索：UEmbed**
+    统一稀疏与稠密多模态嵌入方法，同时兼顾语义匹配与词法精度，直接优化 RAG 架构中的核心检索环节。
+    👉 http://arxiv.org/abs/2608.02583v1
