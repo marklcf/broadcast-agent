@@ -1606,3 +1606,65 @@ arxiv 论文 **What LLM Agents Say When No One Is Watching** 发现，在多 age
 *   **14. 统一多模态检索：UEmbed**
     统一稀疏与稠密多模态嵌入方法，同时兼顾语义匹配与词法精度，直接优化 RAG 架构中的核心检索环节。
     👉 http://arxiv.org/abs/2608.02583v1
+
+
+## 2026-08-05 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+> 聚焦 Agent 工程与研究前沿，按重要性排序
+
+---
+
+## 🔴 核心框架与工具
+
+**1. Rowboat — 多 Agent 系统开源 IDE**
+专为构建和调试 multi-agent pipeline 设计，提供可视化编排界面，是目前少有的面向复杂 agent 系统的完整开发环境。
+
+**2. Statewright — 用有限状态机约束 Agent 行为**
+通过可视化状态机限定 agent 行为路径，直接解决 LLM agent 不可预测性问题，是 context engineering 与 agent 可靠性方向的实用工具。
+
+**3. loopx — 长期运行 Agent 团队的轻量级循环状态内核**
+支持持久目标、配额感知唤醒、可执行 todo 与可验证交接，是 agent loop 与跨会话状态管理的工程实践参考。
+[→ GitHub](https://github.com/huangruiteng/loopx)
+
+**4. livekit/agents — 实时语音/视频 AI Agent 框架**
+stars 增速显著，覆盖多模态 agent 场景，适合需要实时音视频能力的 agent 产品落地。
+
+---
+
+## 🟠 安全与治理
+
+**5. ADR (Uber) — 企业级 AI Agent 安全框架**
+Uber 生产环境已部署，涵盖可观测性、安全基准测试与威胁检测，是当前最具参考价值的 agent 安全治理生产级实现。
+[→ GitHub](https://github.com/uber/ADR)
+
+---
+
+## 🟡 研究 Benchmark
+
+**6. PAST-Bench — 评估 Personal Agent 递归自我改进能力**
+测试 agent 能否从跨会话积累的偏好、工具历史和技能中持续进化，直接触及 agent 长期记忆与 context 管理核心命题。
+[→ arXiv](http://arxiv.org/abs/2608.04003v1)
+
+**7. TurnSight — 逐轮自蒸馏改进工具使用推理**
+针对多轮 tool-use 场景提出细粒度信用分配方法，对训练更可靠的 tool-integrated agent 有直接参考价值。
+[→ arXiv](http://arxiv.org/abs/2608.04007v1)
+
+**8. SocietyBench — 评估 Agent 对社会事件演化的预测能力**
+补足当前 benchmark 过度聚焦任务执行、忽视社会推理的空白，扩展了 agent 能力评估的边界。
+[→ arXiv](http://arxiv.org/abs/2608.04009v1)
+
+---
+
+## 🟢 数据与基础设施
+
+**9. Onyx — 企业级开源 RAG Chat UI（YC W24）**
+支持连接企业知识库，是搭建内部 LLM + RAG 系统的完整前端参考实现。
+
+**10. Agent-Reach — 零成本扩展 Agent 实时信息获取**
+支持读取 Twitter / Reddit / YouTube / GitHub 等平台，无需 API 费用，是 RAG 数据源扩展的轻量级思路。
+
+---
+
+*今日重点：Agent 工程侧正在从「能用」走向「可控、可观测、可持续运行」，Statewright / loopx / ADR 三项均指向同一趋势。*
