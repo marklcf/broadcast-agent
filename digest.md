@@ -1668,3 +1668,72 @@ Uber 生产环境已部署，涵盖可观测性、安全基准测试与威胁检
 ---
 
 *今日重点：Agent 工程侧正在从「能用」走向「可控、可观测、可持续运行」，Statewright / loopx / ADR 三项均指向同一趋势。*
+
+
+## 2026-08-06 · 📡 今日播报 · Parallight Lab
+
+# 🗞️ AI Agent 今日播报
+
+> 聚焦 Agent 架构 · Context Engineering · RAG · 安全部署
+
+---
+
+## 🔥 重点关注
+
+**1. Argus：面向长时序任务的通用 Agent 运行时**
+提出 Manager / Planner / Engineer 多角色持久化自进化架构，支持动态 pivot 与持久推进，是当前 LLM Agent 架构设计最直接的参考。
+→ [arxiv 论文](http://arxiv.org/abs/2608.05144v1)
+
+**2. Uber ADR：生产级 AI Agent 安全框架**
+Uber 开源，覆盖可观测性、安全基准测试与威胁检测，是目前少见的 enterprise agent 部署真实工程参考。
+
+**3. Statewright：用状态机约束 Agent 行为**
+通过可视化状态机限定 agent 控制流路径，直击 LLM agent 不确定性与失控问题，是 context engineering 中控制流设计的实用方案。
+
+---
+
+## ⚙️ Agent 工程工具
+
+**4. loopx：多 Agent 协作的轻量级循环状态内核**
+专为长时运行 agent 团队设计，支持持久目标、可执行 todo、证据日志与可验证交接，跨 Codex / Claude Code 等 agent 通用。
+
+**5. Rowboat：多 Agent 系统开源 IDE**
+可视化编排与调试 multi-agent 工作流，适合快速搭建 agent pipeline 的开发者。
+
+**6. hermes-agent：NousResearch 成长型 Agent**
+今日涨星最多，值得关注其 agent 架构设计与能力扩展思路。
+
+---
+
+## 📚 训练数据 & 模型能力
+
+**7. Reasoning Core：可扩展推理训练数据集**
+50 个过程生成器批量产出可验证推理问题，为 agent 推理能力训练提供高质量、可扩展的数据来源。
+→ [arxiv 论文](http://arxiv.org/abs/2608.05148v1)
+
+**8. OctoLong：跨仓库代码上下文中间训练**
+通过跨仓库代码语料的 mid-training 提升长上下文建模能力，直接服务于长上下文 agentic workflow。
+→ [arxiv 论文](http://arxiv.org/abs/2608.05141v1)
+
+---
+
+## 🔍 RAG 专题
+
+**9. Onyx：开源企业级 RAG 聊天 UI**
+支持多数据源接入，提供完整检索增强对话界面，是自托管 RAG 方案的成熟选项。
+
+**10. Teaching Nemotron Greek：多语言 RAG 适配实践**
+端到端适配 Nemotron 检索栈支持希腊语，覆盖语料挖掘 → 检索微调 → 生成落地全流程，多语言 RAG 工程参考。
+→ [arxiv 论文](http://arxiv.org/abs/2608.05138v1)
+
+---
+
+## 🎓 学习资源
+
+**11. ai-agents-from-zero：中文 Agent 实战教程**
+系统覆盖 LLM Agent / RAG / MCP / LangChain / LangGraph，含完整学习路径与企业级落地项目，适合快速建立知识体系。
+→ [GitHub](https://github.com/didilili/ai-agents-from-zero)
+
+---
+
+*今日共 11 条，去重合并自 arxiv / HackerNews / GitHub Trending*
