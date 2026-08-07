@@ -1737,3 +1737,67 @@ Uber 开源，覆盖可观测性、安全基准测试与威胁检测，是目前
 ---
 
 *今日共 11 条，去重合并自 arxiv / HackerNews / GitHub Trending*
+
+
+## 2026-08-07 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报
+
+> 聚焦 Agent 工程化、评测、安全与 RAG 核心议题，按重要性排序
+
+---
+
+## 🔥 重点关注
+
+**1. LLM 何时信任上下文？选择性偏好优化新方法**
+训练模型在上下文可信时采纳、不可信时忽略，直接解决 RAG 与 context-grounded agent 中"噪声污染答案"的核心痛点，是上下文可靠性问题的系统性解法。
+[→ 论文](http://arxiv.org/abs/2608.06377v1)
+
+**2. Tool Calling 的苦涩教训：代码 vs JSON**
+系统评测"用代码替代 JSON 调用工具"的范式，揭示 LLM agent tool use 的真实瓶颈，对 MCP/agent 工具链设计具有直接参考价值。
+[→ 论文](http://arxiv.org/abs/2608.06370v1)
+
+**3. Uber 生产级 AI Agent 安全框架 ADR**
+Uber 开源的企业级 agent 安全框架，覆盖可观测性、安全基准与威胁检测，是目前少见的真实生产落地参考，agent 安全治理必读。
+
+---
+
+## ⚙️ Agent 工程与工具链
+
+**4. Rowboat — 多 Agent 系统开源 IDE**
+专为构建和调试 multi-agent 系统设计的 IDE 级开发环境，填补了 agent 开发工具链中的空白。
+
+**5. Statewright — 有限状态机约束 Agent 行为**
+用可视化状态机限定 agent 行为路径，从工程层面解决 LLM 输出不确定性导致的可靠性问题，思路务实。
+
+**6. loopx — Agent 持久化状态内核**
+面向长期运行 agent 团队的轻量级状态管理内核，支持持久目标、配额感知自唤醒与可验证交接，兼容 Codex/Claude Code，解决 agent 上下文跨会话持久化难题。
+
+---
+
+## 📊 评测与治理
+
+**7. Agent 评测成本降低 74x — AV-AIVAT**
+提出统计上有保证的 anytime-valid 停止方法，大幅压缩 agent 对战评估成本，解决"何时停止评测"的经典工程问题。
+[→ 论文](http://arxiv.org/abs/2608.06362v1)
+
+**8. AI Agent 参与式治理的机制设计模型**
+用算力预算使权限授权自我执行，为已部署 agent 的持续权限与资源管控提供形式化框架，切入 agent 长期治理的制度层。
+[→ 论文](http://arxiv.org/abs/2608.06353v1)
+
+---
+
+## 🗄️ RAG 与上下文工程
+
+**9. code-review-graph — 本地代码智能图谱**
+为 MCP 和 CLI 构建代码库持久映射，让 AI 工具仅读取相关上下文，实测显著降低 code review 的 context 消耗，直接切中 context engineering 痛点。
+
+**10. crawl4ai — LLM 友好网页爬虫**
+开源 RAG 数据采集层，专为 LLM 管道提供结构化输入，构建 agent 知识库的常用基础组件。
+
+**11. Onyx (YC W24) — 自托管 RAG 前端**
+含 RAG 能力的开源聊天 UI，支持对接多种数据源，适合需要自托管问答系统的团队快速落地。
+
+---
+
+**今日主线**：Agent 可靠性（状态机约束 + 上下文信任）、工具链成熟化（IDE + 评测降本）、安全治理（Uber ADR + 机制设计）三条线索同步推进，agent 工程化进入全栈深水区。
