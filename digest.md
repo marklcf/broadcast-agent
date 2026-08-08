@@ -1801,3 +1801,38 @@ Uber 开源的企业级 agent 安全框架，覆盖可观测性、安全基准�
 ---
 
 **今日主线**：Agent 可靠性（状态机约束 + 上下文信任）、工具链成熟化（IDE + 评测降本）、安全治理（Uber ADR + 机制设计）三条线索同步推进，agent 工程化进入全栈深水区。
+
+
+## 2026-08-08 · 📡 今日播报 · Parallight Lab
+
+这里为您合成了一份去重、按重要性排序的今日 AI 领域精炼播报。内容聚焦于**Agent 评估与治理、Context Engineering 进阶、Agent 编排基建**三大核心方向：
+
+---
+
+### 📰 今日 AI 前沿播报
+
+**1. [研究突破] 解决 Agent 评估难题：统计可认证方法大幅降低成本**
+评估 AI Agent 能力往往消耗巨大。本研究提出 AV-AIVAT，通过统计上可认证的 Anytime-Valid 停止机制，解决了 Agent 对比评估中“何时停止对局”的问题，实现以原本 1/74 的成本进行可靠评估。
+
+**2. [研究突破] 直击 RAG 痛点：让 LLM 学会“何时信任”外部上下文**
+在 Context Engineering 中，大模型常被错误检索内容误导。该研究提出通过选择性上下文偏好优化（Selective Context Preference Optimization），训练 LLM 在外部信息有用时利用它，在有害时主动抵制，直接解决了 RAG 系统的核心可靠性难题。
+
+**3. [研究突破] 探讨 Agent 工具调用的新范式：代码替代 JSON Schema**
+《The Bitter Lesson of Tool Calling》系统评估了使用“直接编写代码”来替代传统 JSON schema 进行工具调用的方案，为当前 LLM Agent 的工具调用设计提供了极具价值的底层反思与新思路。
+
+**4. [研究突破] Deployed AI Agent 的持续治理：基于资源分配的机制设计**
+随着自主 Agent 走向落地，如何控制与授权成为关键。该研究提出“资源化授权”模型，将计算资源分配作为控制手段，为部署级 AI Agent 的安全与持续治理提供了形式化的机制设计参考。
+
+**5. [开源基建] 多智能体与状态机编排：解决大模型规划不可靠痛点**
+针对大模型直接做规划易跑偏的问题，社区涌现两大利器：**Rowboat** 提供可视化多智能体系统 IDE，降低多 Agent 协同开发门槛；**Statewright** 则用可视化状态机编排工作流，将复杂的 Agent 控制流显式化，保障执行稳定性。
+
+**6. [开源基建] Context Engineering 前沿：图原生与代码图谱压缩上下文**
+为解决 AI 上下文爆炸与不可追溯问题，**Semantica** 提出以知识图谱为底层的图原生 AI 基础设施，提供结构化上下文与可追责性；**code-review-graph** 则专为 MCP 与 CLI 设计，通过本地持久化代码库映射大幅压缩 AI 编程工具的上下文窗口。
+🔗 [Semantica](https://github.com/semantica-agi/semantica) | [code-review-graph](https://github.com/tirth8205/code-review-graph)
+
+**7. [应用生态] Agent 工具标准化与企业级落地基座**
+工具化与私有化部署持续火热：Google 官方维护了 **Agent Skills 集合**，探索 Agent 工具化与标准化集成；老牌全自主框架 **AutoGPT** 持续迭代其工具链生态；企业级应用方面，**Onyx** 提供开箱即用的开源 RAG 对话前端，**AIConsole** 则提供深度可定制的本地化桌面端 AI 编辑器。
+🔗 [google/skills](https://github.com/google/skills) | [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | [Onyx](https://news.ycombinator.com/item?id=46045987) | [AIConsole](https://aiconsole.ai)
+
+---
+*播报小结：今日前沿焦点在于“让 Agent 更可控”——从学术界的低成本评估、信任机制与治理模型，到工程界的可视化编排与图谱上下文压缩，整个生态正在系统性地解决 Agent 落地时的“幻觉、跑偏与高昂算力”三大顽疾。*
