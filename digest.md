@@ -1836,3 +1836,65 @@ Uber 开源的企业级 agent 安全框架，覆盖可观测性、安全基准�
 
 ---
 *播报小结：今日前沿焦点在于“让 Agent 更可控”——从学术界的低成本评估、信任机制与治理模型，到工程界的可视化编排与图谱上下文压缩，整个生态正在系统性地解决 Agent 落地时的“幻觉、跑偏与高昂算力”三大顽疾。*
+
+
+## 2026-08-09 · 📡 今日播报 · Parallight Lab
+
+今日 AI 领域的重点动态集中在 **Agent 工程化落地、底层工具链升级与 RAG 机制优化**。以下是为您合成的精炼播报（已去重并按重要性排序）：
+
+### 🌟 今日前沿速递
+
+**1. 解决 RAG 核心矛盾：让大模型学会“何时该信上下文”**
+[arxiv] **Learning When to Trust via Selective Context Preference Optimization** 
+提出选择性上下文偏好优化方法，训练 LLM 在外部信息有用时利用它、有害时抵抗它，直接解决 RAG/上下文工程中“模型该信上下文还是自身知识”的核心痛点。
+
+**2. Agent 工具调用的“苦涩教训”**
+[arxiv] **The Bitter Lesson of Tool Calling** 
+系统评估了“用代码调用工具”替代传统 JSON schema 的方案，对构建高可靠 LLM Agent 的工具调用流程有直接参考价值。
+
+**3. Agent 评估成本骤降 74 倍的新范式**
+[arxiv] **AV-AIVAT: 74x Cheaper Agent Evaluation** 
+提出在不完全信息博弈中以统计有效方式大幅降低 Agent 对比评估成本，为未来的 Agent Benchmark 设计提供了重要的方法论。
+
+**4. AI Agent 持续治理的形式化机制**
+[arxiv] **Resourced Authority** 
+用计算资源分配作为约束手段，给出了已部署 AI Agent 持续治理的形式化机制，涉及 Agent 授权与控制的系统底层设计。
+
+---
+
+### 🛠️ 开源与工具生态
+
+**5. 大厂标杆：Google 官方开源 Agent Skills 集合**
+[github] **google/skills** 
+Google 官方出品的 Agent 能力模块集合，可直接用于其产品和技术生态，适合作为构建 LLM Agent 的参考或直接集成。
+
+**6. 状态机赋能：解决 Agent 执行跑偏问题**
+[github] **Statewright** 
+通过可视化状态机约束 AI Agent 行为，解决 LLM Agent 执行流程不可控、易跑偏的可靠性痛点。
+
+**7. 上下文工程实践：将技术 PDF 转化为 Agent 技能**
+[github] **virgiliojr94/book-to-skill** 
+可将任意技术书籍 PDF 转化为 Claude Code 可用的 Skill，展示了将非结构化知识封装为 Agent 可调用技能的实用解法。
+
+**8. 领域多 Agent 协作：金融交易框架**
+[github] **TauricResearch/TradingAgents** 
+提供多角色 LLM Agent 协作的金融交易框架，为复杂金融决策场景中的多 Agent 架构设计提供落地参考。
+
+**9. 多 Agent 系统专属 IDE**
+[github] **Rowboat** 
+开源的多 Agent 系统 IDE，提供构建和编排多 LLM Agent 协作的集成开发环境，降低多 Agent 开发门槛。
+
+**10. 企业级 AI 知识库问答利器**
+[hackernews] **Onyx** 
+开源 AI 对话界面，支持接入多种 LLM 并自带 RAG 管道，适合企业直接落地内部知识库问答。
+
+**11. Agent 链路异常排查工具**
+[hackernews] **Superlog** 
+主打“自动安装并修 Bug”的可观测性工具，为排查 LLM Agent 复杂运行链路和异常状态提供监控能力。
+
+**12. Agent 生产级推理基础设施**
+[github] **superlinked/sie** 
+开源的推理服务器与生产级集群，专为 Agent 所需的各类模型部署设计，是构建 Agent 生产环境的关键组件。
+🔗 [查看项目](https://github.com/superlinked/sie)
+
+*(注：原列表中的 AutoGPT 和 AIConsole 因偏向通用/老牌工具，去重后未单列，其核心功能已被 Rowboat/Onyx 等新锐工具覆盖)*
