@@ -1898,3 +1898,73 @@ Google 官方出品的 Agent 能力模块集合，可直接用于其产品和技
 🔗 [查看项目](https://github.com/superlinked/sie)
 
 *(注：原列表中的 AutoGPT 和 AIConsole 因偏向通用/老牌工具，去重后未单列，其核心功能已被 Rowboat/Onyx 等新锐工具覆盖)*
+
+
+## 2026-08-10 · 📡 今日播报 · Parallight Lab
+
+**今日 AI 前沿播报：Agent 技能化、工程可控性与 RAG 架构演进**
+
+本期播报对 arXiv 前沿论文、Hacker News 热议项目及 GitHub 趋势库进行了去重与精炼。今日技术焦点集中在：**大模型 Agent 的“技能化”封装、多 Agent 可控性与可观测性工程、以及 RAG 架构的纵深演进**。
+
+---
+
+### 一、 Agent 技能化与知识转化新范式
+*如何让 Agent 像人类一样积累、复用技能并转化非结构化知识，正成为提升其能力的核心路径。*
+
+1. **SkillProx：LLM Agent 自我进化与技能复用**
+   提出基于近端文本梯度下降的方法，使 LLM Agent 能够自我进化出可复用技能。该方法将技能抽象为轻量级文本工件并注入上下文（而非更新模型权重），为 Agent 的技能积累与迭代优化提供了全新的范式。
+   [阅读论文 http://arxiv.org/abs/2608.07449v1](http://arxiv.org/abs/2608.07449v1)
+
+2. **Google Skills：大厂标准的 Agent 技能封装集合**
+   Google 开源面向其产品的 Agent Skills 集合。该项目直接展示了顶级科技厂商如何为 LLM Agent 定义、封装和调度标准化的能力（技能），是构建 Agent 工具生态的权威参考。
+   [查看项目 https://github.com/google/skills](https://github.com/google/skills)
+
+3. **Book-to-Skill：非结构化知识转 Agent 技能**
+   一款能将任意技术书籍 PDF 转化为 Claude Code 可用 Skill 的工具，揭示了如何通过上下文工程，将静态的非结构化知识转化为 Agent 可直接调用的动态技能。
+
+### 二、 Agent 工程化：可控性、编排与排障
+*随着 Agent 链路日益复杂，解决行为跑偏、多智能体协作混乱和黑盒问题成为工程落地重点。*
+
+4. **Statewright：用状态机约束 Agent 执行流程**
+   通过可视化状态机来定义和约束 AI Agent 的执行流程，直击 LLM Agent 行为不可控、易跑偏的可靠性痛点，为构建稳健的单体 Agent 提供了强工程约束方案。
+
+5. **Rowboat：多 Agent 系统可视化 IDE**
+   开源的多 Agent 系统集成开发环境（IDE），提供构建、编排和调试多 LLM Agent 协作的可视化工具链，大幅降低多智能体系统的开发门槛。
+
+6. **AI Agent 交互动力学：单向交互的风险警示**
+   研究发现，Agent 间的单向交互（如“老板AI”忽略下属回复）会催生在孤立状态下不存在的异常动力学行为。该结论为多 Agent 系统设计中的交互模式风险提供了理论与实证依据。
+   [阅读论文 http://arxiv.org/abs/2608.07457v1](http://arxiv.org/abs/2608.07457v1)
+
+7. **Superlog：Agent 链路上下文级排障工具**
+   主打自动安装的 AI 应用可观测性工具，能直接定位并修复 bug，为复杂的 Agent 链路提供上下文级别的追踪与排障能力，填补了 Agent 运维侧的工具空白。
+
+### 三、 RAG 架构演进与企业级落地
+*RAG 技术正从基础的向量检索，向细粒度缓存优化、知识图谱融合及企业级全栈方案演进。*
+
+8. **CoinRAG：细粒度 KV 缓存复用加速 RAG**
+   提出面向长上下文 RAG 的“信息金块”级 KV 缓存复用方法。在降低冗余与噪声的同时优化效率与质量的帕累托前沿，对进行 RAG 推理加速有直接的工程参考价值。
+   [阅读论文 http://arxiv.org/abs/2608.07458v1](http://arxiv.org/abs/2608.07458v1)
+
+9. **Code-Graph-RAG：基于知识图谱的代码库 RAG**
+   支持跨多语言 Monorepo 进行查询、理解与 AI 编辑的 RAG 工具。将知识图谱（KG）引入代码级 RAG，是探索高级代码 RAG 架构的实用参考。
+   [查看项目 https://github.com/vitali87/code-graph-rag](https://github.com/vitali87/code-graph-rag)
+
+10. **Onyx：企业级 RAG 对话前端 UI**
+    开源的 AI 对话前端 UI，支持无缝对接自定义 RAG 知识库与多种大模型。适合快速搭建企业级带上下文检索的问答系统，是 RAG 落地的成熟前端解决方案。
+
+### 四、 模型多样性与垂直领域 Agent 实践
+*解决后训练创造力退化，以及 Agent 在金融、法律等高壁垒领域的纵深落地。*
+
+11. **CreativeInstruct：平衡质量与创造力的指令生成**
+    针对后训练导致 LLM 输出多样性与创造力下降的问题，提出可扩展地平衡质量、创造力与多样性的指令数据生成方法，对需要 LLM 创造性的 Agent 任务有启发。
+    [阅读论文 http://arxiv.org/abs/2608.07460v1](http://arxiv.org/abs/2608.07460v1)
+
+12. **Daily Stock Analysis：LLM 驱动的多源金融分析**
+    结合多源行情与实时新闻输出决策看板的股票分析系统。展现了 LLM Agent 在金融多源数据处理、自动化分析及看板生成中的落地范式。
+    [查看项目 https://github.com/ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis)
+
+13. **Harvey-Labs：法律场景 Agent 能力基准测试**
+    专为评估法律场景下 Agent 能力而构建的基准测试，为领域专属 LLM Agent 的表现衡量与优化提供了极具价值的参考标准。
+    [查看项目 https://github.com/harveyai/harvey-labs](https://github.com/harveyai/harvey-labs)
+
+14. **AIConsole：轻量
