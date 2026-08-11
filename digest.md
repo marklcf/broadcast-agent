@@ -1968,3 +1968,59 @@ Google 官方出品的 Agent 能力模块集合，可直接用于其产品和技
     [查看项目 https://github.com/harveyai/harvey-labs](https://github.com/harveyai/harvey-labs)
 
 14. **AIConsole：轻量
+
+
+## 2026-08-11 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报
+
+> 主题聚焦：**RAG 进化 · Agent 工程化 · 多 Agent 协作**
+
+---
+
+## 🔥 重点关注
+
+**1. DSPy — 以编程方式构建 LLM Pipeline**
+Stanford 出品，用结构化编程替代手写 Prompt，是 context engineering 与 agent 编排的核心基础框架，持续高热。
+→ [github.com/stanfordnlp/dspy](https://github.com/stanfordnlp/dspy)
+
+**2. Semantica — 图原生 AI 基础设施**
+直接挑战传统向量 RAG：用知识图谱管理 context，主打可追责（accountable）AI，是 Graph RAG 方向的系统性方案。
+
+---
+
+## 🤖 Agent 工程化
+
+**3. Statewright — 用有限状态机约束 Agent 行为**
+把 agent 的流转逻辑显式建模为可视化状态机，直击 LLM agent 不可控、难调试的核心痛点，工程化思路值得借鉴。
+
+**4. Rowboat — 多 Agent 系统开源 IDE**
+专为构建与调试 multi-agent 系统设计的开发环境，对做 agent orchestration 的开发者有直接参考价值。
+
+**5. Google Agent Skills — 官方 Agent 能力规范**
+Google 官方定义 agent 与其产品交互的能力单元集合，对理解 agent tool/skill 的标准化设计有参考意义。
+
+---
+
+## 📚 RAG 实践
+
+**6. KGCaRe — 知识图谱增强 RAG，专攻专业场景复杂问答**
+自动构建领域知识图谱，结合非结构化与结构化双路检索，提供可解释的条件问答方案，对 RAG 在垂直领域的局限性有直接改进。
+→ [arxiv.org/abs/2608.09779v1](http://arxiv.org/abs/2608.09779v1)
+
+**7. code-graph-rag — 用知识图谱对 Monorepo 做 RAG**
+支持多语言大型代码库的图结构查询与编辑，是 Graph RAG 落地工程实践的典型参考案例。
+
+**8. Onyx (YC W24) — 开源企业级对话 UI + RAG 管道**
+完整的 RAG 应用参考实现：开箱即用的聊天前端，内置知识库接入能力，适合快速搭建企业内部问答系统。
+
+---
+
+## 🌐 垂直应用
+
+**9. TradingAgents — LLM 多 Agent 金融交易框架**
+多个 LLM agent 分饰不同金融角色（分析师、交易员等）协作决策，展示了 multi-agent 在垂直行业的多角色分工范式。
+
+---
+
+**今日主线**：RAG 正从向量检索向**图结构**演进（KGCaRe / Semantica / code-graph-rag 三个项目同日出现，信号明显）；Agent 可靠性工程化（Statewright + Rowboat）成为开发者关注热点。
