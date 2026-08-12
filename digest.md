@@ -2024,3 +2024,62 @@ Google 官方定义 agent 与其产品交互的能力单元集合，对理解 ag
 ---
 
 **今日主线**：RAG 正从向量检索向**图结构**演进（KGCaRe / Semantica / code-graph-rag 三个项目同日出现，信号明显）；Agent 可靠性工程化（Statewright + Rowboat）成为开发者关注热点。
+
+
+## 2026-08-12 · 📡 今日播报 · Parallight Lab
+
+# 🗞️ AI Agent & RAG 今日播报
+
+---
+
+## 🔴 重磅关注
+
+**1. Anthropic 官方发布 Agent Skills 仓库**
+Claude 团队公开 agent 能力封装与技能模块化设计的一手资料，是理解 LLM agent 工程化落地的权威参考。
+👉 [anthropics/skills](https://github.com/anthropics/skills)
+
+**2. Semantica：图原生 AI 基础设施**（今日 +893 ⭐）
+图原生的上下文组织与可解释 AI 架构，直接对应 context engineering 核心命题，增长势头强劲。
+
+---
+
+## 🟠 Agent 工程实践
+
+**3. Rowboat：Multi-Agent 系统开源 IDE**
+专为构建和调试多 agent 系统设计的集成开发环境，填补 agent 工程工具链空缺。
+
+**4. Statewright：用状态机约束 Agent 行为**
+以可视化状态机规范 agent 流转，针对 LLM 不确定性的可靠性工程思路，值得借鉴。
+
+**5. OpenMontage：700+ Agent Skill 的视频生产系统**
+开源 agentic 视频流水线，含 12 条生产流程与大量 skill 文件，是 multi-agent 工具链组织的大规模工程样本。
+
+**6. GUI Agent 测试时自进化（arxiv）**
+通过反思引导的 on-policy 自蒸馏，实现 GUI agent 部署后的持续自适应——探索 agent 在动态环境中的自我更新机制。
+👉 [arxiv 2608.11191](http://arxiv.org/abs/2608.11191v1)
+
+---
+
+## 🟡 RAG & 上下文工程
+
+**7. code-graph-rag：知识图谱增强的代码库理解**
+Graph + RAG 结合，专为大型多语言 monorepo 设计，可查询、理解并编辑代码——上下文构建方式值得参考。
+
+**8. ConVAWG：检索增强的受控合成对话生成（arxiv）**
+RAG 驱动的敏感领域合成对话框架，展示检索增强在数据稀缺场景中的实用价值。
+👉 [arxiv 2608.11200](http://arxiv.org/abs/2608.11200v1)
+
+**9. Onyx：高热度开源 Chat UI**（254pts 🔥）
+支持接入多种后端的对话前端，适合快速搭建 RAG/agent 产品交互层。
+
+---
+
+## 🔵 前沿研究
+
+**10. AI Agent 协助研究 Grothendieck 常数（arxiv）**
+LLM agent 在真实数学开放课题中的长程协作案例，对 agent 能力边界有直接参考意义。
+👉 [arxiv 2608.11195](http://arxiv.org/abs/2608.11195v1)
+
+---
+
+> 📌 **今日主线**：Anthropic 官方 skills 仓库 + Semantica 图原生基础设施是本日最值得深读的两个项目；Agent 可靠性（Statewright）与工程调试（Rowboat）方向出现实用工具；Graph+RAG 融合趋势在代码理解场景持续落地。
