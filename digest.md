@@ -2083,3 +2083,53 @@ LLM agent 在真实数学开放课题中的长程协作案例，对 agent 能力
 ---
 
 > 📌 **今日主线**：Anthropic 官方 skills 仓库 + Semantica 图原生基础设施是本日最值得深读的两个项目；Agent 可靠性（Statewright）与工程调试（Rowboat）方向出现实用工具；Graph+RAG 融合趋势在代码理解场景持续落地。
+
+
+## 2026-08-13 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报
+
+> 聚焦 Agent 工程化、RAG 落地与轻量部署，共 8 条精选
+
+---
+
+## 🔴 重点关注
+
+**1. Anthropic 官方 Agent Skills 仓库开源**
+Anthropic 直接示范如何构建可复用的 LLM agent 能力模块，是目前最具参考价值的 agent 工程化一手资料。
+
+**2. Rowboat — 多 Agent 系统开源 IDE（YC 背书）**
+专为 multi-agent 编排与调试设计的集成开发环境，填补 agent 工具链空白，对构建复杂 agent 系统者必看。
+
+**3. Statewright — 用有限状态机约束 Agent 行为**
+将可视化状态机引入 agent 控制流，直接应对 LLM agent 不确定性与失控问题，为 agent reliability 提供工程解法。
+
+---
+
+## 🟠 工程与架构
+
+**4. Semantica — 图原生 Agent 记忆与上下文基础设施**
+专为 context engineering 设计，支持结构化知识图谱驱动的 RAG 与 agent 溯源，适合需要可问责 AI 的企业场景。
+
+**5. Onyx — 开源企业 RAG 聊天 UI（YC W24，254pts）**
+开源 chat 界面原生支持企业知识库接入，社区热度验证其实用性，可作为 RAG 产品化的参考起点。
+
+**6. RAG + LLM 自动构建工程诊断知识图谱**
+用检索增强 LLM 替代专家手工构建层级逻辑模型，解决复杂系统诊断的可扩展性瓶颈，RAG 落地工程领域的典型案例。
+[→ arxiv 论文](http://arxiv.org/abs/2608.12304v1)
+
+---
+
+## 🟡 模型与表征
+
+**7. AVA-Encoder — 面向 Agent 原生推理的视频表征**
+针对 agentic reasoning 场景设计结构化视频表征框架，补全视频 agent 感知-决策链路中的表示层缺口。
+[→ arxiv 论文](http://arxiv.org/abs/2608.12313v1)
+
+**8. Needle — 14MB 端侧基础模型**
+面向手机、可穿戴、机器人等资源受限设备，为轻量化 LLM agent 的边缘部署提供直接参考。
+[→ cactus-compute/needle](https://github.com/cactus-compute/needle)
+
+---
+
+*已合并同类项：I2V agentic 优化论文（Beyond Trial-and-Error）与上述 agent 循环主题高度重叠，降级合入背景参考。*
