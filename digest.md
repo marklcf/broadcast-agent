@@ -2133,3 +2133,55 @@ Anthropic 直接示范如何构建可复用的 LLM agent 能力模块，是目�
 ---
 
 *已合并同类项：I2V agentic 优化论文（Beyond Trial-and-Error）与上述 agent 循环主题高度重叠，降级合入背景参考。*
+
+
+## 2026-08-14 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+---
+
+## 🔬 研究前沿
+
+**1. OmniScientist — 全模态 AI 科学家 Agent**
+覆盖假设生成→代码执行→论文写作完整工作流，跨学科、全模态，是当前 research agent 能力边界的代表性工作。
+[→ 论文](http://arxiv.org/abs/2608.13558v1)
+
+**2. AutoDesign — 元级 Harness 自动优化框架**
+将多模态长流程设计任务建模为 agentic 过程，自动对齐人类先验并积累可复用经验，探索 agent 系统自我优化路径。
+[→ 论文](http://arxiv.org/abs/2608.13560v1)
+
+**3. QuoteBench — LLM Coding Agent 失败点评测**
+聚焦 Bash 命令执行链路，揭示"匹配分数"掩盖的真实失败模式（生成 vs. 序列化/重解析），对 agent 可靠性评估有直接参考价值。
+[→ 论文](http://arxiv.org/abs/2608.13547v1)
+
+---
+
+## 🛠️ 工具与基础设施
+
+**4. Anthropic/skills — 官方 Agent Skills 公开仓库**
+Anthropic 首次公开 agent 能力模块化构建的官方设计思路，值得重点跟踪。
+
+**5. Statewright — 用状态机约束 Agent 控制流**
+通过可视化状态机规范 agent 行为路径，直接对抗 LLM 不确定性，是 agent 控制流工程的务实方案。
+
+**6. Rowboat — Multi-Agent 系统开源 IDE**
+专为 agent orchestration 场景设计的开发环境，降低多 agent 系统的构建门槛。
+
+**7. semantica-agi/semantica — 图原生 Agent 上下文基础设施**
+面向 agent 系统的知识图谱结构化上下文管理，与 context engineering / RAG 高度互补。
+
+**8. unsloth — 本地 LLM 微调与运行 UI**
+支持 Qwen3、DeepSeek-V4 等主流模型，是 agent 本地部署与模型定制的实用底层工具。
+[→ GitHub](https://github.com/unslothai/unsloth)
+
+---
+
+## 📦 应用层参考
+
+**9. Onyx (YC W24) — 企业级开源 RAG + Chat UI**
+支持多知识库接入，是 RAG 应用层的典型实现，适合作为企业内部知识问答的参考架构。
+
+---
+
+> **今日重点**：Anthropic 官方 skills 仓库公开（#4）+ OmniScientist 全流程科研 agent（#1）值得优先关注。
