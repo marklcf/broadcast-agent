@@ -2185,3 +2185,54 @@ Anthropic 首次公开 agent 能力模块化构建的官方设计思路，值得
 ---
 
 > **今日重点**：Anthropic 官方 skills 仓库公开（#4）+ OmniScientist 全流程科研 agent（#1）值得优先关注。
+
+
+## 2026-08-15 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent & 工程 播报
+
+> 去重后共 9 条，按重要性排序
+
+---
+
+## 🔬 前沿研究
+
+**1. OmniScientist — 全模态全学科 AI 科学家 Agent**
+覆盖假设生成 → 代码执行 → 论文撰写完整工作流，RAG + 多模态证据整合在复杂 agent pipeline 中的系统性落地，目前最完整的 AI 科学家 agent 方案之一。
+
+**2. AutoDesign — 长程设计任务的元优化 Agent 架构**
+将多模态长程设计任务建模为 agent + harness 系统，通过元优化自动对齐人类设计先验并积累可复用经验，是 context engineering 与 long-horizon agent 的典型探索。
+
+**3. QuoteBench — 揭示 LLM Coding Agent 的真实失败模式**
+聚焦 Bash 命令执行链路中"命令生成错误"与"序列化/重解析引入的错误"的区分，揭示匹配分数掩盖的 agent 真实失败边界，对构建可靠工具调用流程有直接参考价值。
+
+---
+
+## 🛠️ 工具与平台
+
+**4. Statewright — 用有限状态机约束 Agent 行为路径**
+以可视化状态机替代"祈祷式"提示词，从结构层面解决 LLM agent 不可预测的核心痛点，是目前 agent 可靠性工程方向少见的工程化方案。
+
+**5. Rowboat — Multi-Agent 系统的开源 IDE**
+专为构建和调试多 agent 系统设计的开发环境，agent 工程工具链中罕见的 IDE 级产品，填补了 agent 系统开发体验的空白。
+
+**6. semantica — 图原生的上下文与可追责 AI 基础设施**
+针对 context engineering 和 agent 系统的结构化知识表示，以图原生方式替代或增强传统 RAG，值得关注其在复杂知识推理场景的表现。
+
+**7. Onyx — 内置 RAG 的开源 Chat UI（YC 背书）**
+支持私有部署，内置 RAG 管道，适合快速搭建企业级 LLM + 知识库问答系统，YC 背景提供一定可信度背书。
+
+---
+
+## 📦 资源与生态
+
+**8. scientific-agent-skills — 161 个即用型科学 Agent Skill 库**
+覆盖 100+ 科学数据库，可直接挂载到 Cursor / Claude Code 等 LLM agent 工具链，是垂直域 agent 技能库的典型范本，科研 agent 场景可直接取用。
+
+**9. awesome-copilot — 社区 Copilot Instructions / Agent 配置集合**
+GitHub 官方维护的社区贡献集，汇聚 instructions、agents、skills 最佳实践，是研究 LLM agent prompt/context 工程的一手参考素材。
+[→ GitHub](https://github.com/github/awesome-copilot)
+
+---
+
+*📌 今日主线：agent 可靠性（QuoteBench / Statewright）× agent 工程基础设施（Rowboat / semantica）× 垂直域 agent 能力扩展（OmniScientist / scientific-agent-skills）三条线索并进。*
