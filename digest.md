@@ -2236,3 +2236,46 @@ GitHub 官方维护的社区贡献集，汇聚 instructions、agents、skills �
 ---
 
 *📌 今日主线：agent 可靠性（QuoteBench / Statewright）× agent 工程基础设施（Rowboat / semantica）× 垂直域 agent 能力扩展（OmniScientist / scientific-agent-skills）三条线索并进。*
+
+
+## 2026-08-16 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报 · 精选 7 条
+
+---
+
+## 🏗️ Agent 工程与可靠性
+
+**1. Statewright — 用有限状态机约束 Agent 行为路径**
+通过可视化状态机限定 LLM agent 的合法执行路径，从架构层解决幻觉与不可预测问题，是当前 agent 可靠性工程最直接的实践方案之一。
+
+**2. Rowboat — Multi-Agent 系统开源 IDE（YC）**
+专为构建与调试多 agent 系统设计的集成开发环境，覆盖 orchestration 与上下文管理，适合 agent 工程团队日常使用。
+
+**3. CLI-Anything — 将任意 CLI 工具封装为 Agent 原生接口**
+让 LLM agent 直接调用所有命令行软件，大幅扩展工具调用边界，是构建通用 agent 工具层的实用基础设施。
+→ [github.com/HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)
+
+---
+
+## 📐 上下文与知识管理
+
+**4. semantica — 图原生上下文管理与知识图谱 RAG 基础设施**
+以图结构组织上下文，支持可追责的知识溯源，为结构化 RAG 场景提供有别于向量检索的方案，值得关注其长期演进。
+
+**5. Onyx — 开源企业级 Chat UI + RAG（YC W24）**
+内置 RAG 能力，可直连企业内部知识库，是 RAG 生产落地的成熟参考实现，适合快速搭建私有知识问答系统。
+
+---
+
+## 🤖 Agent Pipeline 与评估
+
+**6. OmniScientist — 全模态全学科 AI 科学家 Agent**
+覆盖假设生成 → 代码执行 → 论文撰写的完整研究工作流，是迄今最复杂的多步骤 agent pipeline 公开案例，展示了跨模态、跨学科的上下文与工具整合方式。
+
+**7. QuoteBench — 拆解 Agent 工具调用中的「执行链错误」**
+发现 LLM coding agent 在序列化/重解析 Bash 命令时会引入隐性失败，提出以精确最终状态验证区分「生成错误」与「执行链错误」，对 agent benchmark 设计和可靠性评估有直接参考价值。
+
+---
+
+> **编辑按：** 今日焦点集中在 **agent 可靠性工程**（状态机约束、工具调用评估）与 **上下文结构化**（图原生 RAG、企业知识库）两条主线，前者侧重如何让 agent 少出错，后者侧重如何让 agent 更"有记忆"。本地微调工具 Soup 因与主线相关性稍弱已合并至参考，如需单独报道可告知。
