@@ -2279,3 +2279,51 @@ GitHub 官方维护的社区贡献集，汇聚 instructions、agents、skills �
 ---
 
 > **编辑按：** 今日焦点集中在 **agent 可靠性工程**（状态机约束、工具调用评估）与 **上下文结构化**（图原生 RAG、企业知识库）两条主线，前者侧重如何让 agent 少出错，后者侧重如何让 agent 更"有记忆"。本地微调工具 Soup 因与主线相关性稍弱已合并至参考，如需单独报道可告知。
+
+
+## 2026-08-17 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 工程播报 · 精选 8 条
+
+---
+
+## 🔧 Agent 工程与可靠性
+
+**1. Statewright — 用可视化状态机约束 Agent 行为**
+通过状态机建模 agent 的行为流，从架构层面解决 LLM agent 不确定性与失控问题，是当前 agent 可靠性工程中最直接可落地的方案之一。
+
+**2. 跨会话上下文状态移交（Arxiv）**
+系统研究 LLM 在 context 窗口耗尽或 agent 切换时如何保留任务状态，对长任务 agent 设计和 context engineering 有重要方法论参考。
+🔗 [arxiv.org/abs/2608.14528v1](http://arxiv.org/abs/2608.14528v1)
+
+**3. Rowboat — 多 Agent 系统开源 IDE**
+专为 multi-agent 系统设计的可视化开发与调试环境，适合需要编排多 LLM agent 的工程团队。
+
+---
+
+## 📚 RAG 与知识检索
+
+**4. 证据解读与聚合分离（Arxiv）**
+提出将多源证据的"解读"与"聚合"拆分为两步，为 RAG 中 retrieval 后的推理架构提供清晰的分层设计思路，对多文档问答场景有直接指导价值。
+🔗 [arxiv.org/abs/2608.14509v1](http://arxiv.org/abs/2608.14509v1)
+
+**5. Onyx (YC W24) — 开源 RAG 聊天 UI**
+支持连接多数据源、可自托管的开源 RAG 前端，适合快速搭建企业内部知识问答系统。
+
+---
+
+## 🛠️ 工具扩展与模型定制
+
+**6. CLI-Anything — 将任意软件封装为 Agent 工具**
+把任意 CLI 软件包装成 LLM agent 可调用的工具接口，直接扩展 agent 的 tool-use 边界，是构建工具生态的实用基础设施。
+
+**7. Unsloth — 本地 LLM 运行与微调框架**
+支持 Qwen3、DeepSeek-V4 等主流模型的本地微调与部署，适合需要在本地构建 RAG/agent 底座的团队。
+
+**8. Soup — 单 YAML 配置微调 LLM**
+4GB 显存笔记本即可训练 8B 模型，极大降低 agent 专用模型定制门槛，适合资源受限场景下的快速迭代。
+🔗 [github.com/MakazhanAlpamys/Soup](https://github.com/MakazhanAlpamys/Soup)
+
+---
+
+> 💡 **今日主线**：Agent 可靠性（状态机 + 跨会话状态管理）与模型定制门槛的双向突破，是本期最值得关注的工程趋势。
