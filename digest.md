@@ -2327,3 +2327,61 @@ GitHub 官方维护的社区贡献集，汇聚 instructions、agents、skills �
 ---
 
 > 💡 **今日主线**：Agent 可靠性（状态机 + 跨会话状态管理）与模型定制门槛的双向突破，是本期最值得关注的工程趋势。
+
+
+## 2026-08-18 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent & Context Engineering 播报
+
+> 聚焦：Agent 可靠性工程 · RAG/上下文管理 · 工具扩展 · 科学发现
+
+---
+
+## 🔥 重点关注
+
+**1. volcengine/OpenViking — AI Agent 自演化上下文数据库**
+火山引擎开源，统一管理 Agent Memory、Knowledge RAG 和 Skills，直接命中 RAG + agent 上下文工程核心场景，是目前少见的将三者统一抽象的工程实践。
+→ [github.com/volcengine/OpenViking](https://github.com/volcengine/OpenViking)
+
+**2. Statewright — 用可视化状态机约束 Agent 行为**
+通过状态机建模 agent 行为流转，系统性解决 LLM agent 不可预测性问题，是 agent 可靠性工程的具体落地方向。
+
+**3. Rowboat — 多 Agent 系统开源 IDE**
+专为构建和调试 multi-agent 系统设计的开发环境，补齐 agent orchestration 工具链中"可观测与调试"的缺口。
+
+---
+
+## 🧠 研究论文
+
+**4. Towards Computational Provenance（arxiv）**
+研究 LLM 生成文本能否内嵌可验证的因果状态证据，直接关联 RAG/agent 输出溯源与可信度问题——若可行，将从根本上改变 agent 输出审计方式。
+→ [arxiv.org/abs/2608.16868v1](http://arxiv.org/abs/2608.16868v1)
+
+**5. BATON：长链 Agent 子任务探索 + 转换感知记忆（arxiv）**
+针对长程任务中错误累积问题，提出 agentic 子任务分解与跨步骤记忆机制，对 LLM agent 长程规划有直接参考价值。
+→ [arxiv.org/abs/2608.16889v1](http://arxiv.org/abs/2608.16889v1)
+
+**6. AutoSR：持久研究状态空间中的自动符号回归（arxiv）**
+构建在"持久研究状态"中跨轮次搜索的科学发现 agent，是 agent 维护长期上下文做自主探索的具体实例。
+→ [arxiv.org/abs/2608.16876v1](http://arxiv.org/abs/2608.16876v1)
+
+---
+
+## 🛠 工具与工程
+
+**7. HKUDS/CLI-Anything — 将 CLI 工具转化为 Agent 原生工具**
+将任意命令行软件统一抽象为 agent 可调用接口，是 agent 工具扩展方向值得关注的抽象思路。
+
+**8. 0x4m4/hexstrike-ai — MCP 协议驱动的安全工具 Agent**
+基于 MCP 让 Claude/GPT 自主调用 150+ 安全工具，是 **MCP + LLM agent 工具调用**的典型实现，可作为 MCP server 设计参考。
+→ [github.com/0x4m4/hexstrike-ai](https://github.com/0x4m4/hexstrike-ai)
+
+**9. mukul975/Anthropic-Cybersecurity-Skills — 结构化安全技能知识库**
+817 条结构化安全技能，适配 Claude Code 等 20+ 平台，本质是面向 LLM agent 的结构化 context 注入方案，可借鉴其知识组织方式。
+
+**10. Onyx (YC W24) — 企业级开源对话 UI**
+定位企业知识库对话，通常集成 RAG 与上下文管理，可关注其 RAG 架构与多轮上下文设计。
+
+---
+
+**今日主线**：Agent 可靠性（状态机约束 + 记忆机制）与 上下文统一管理（OpenViking）是当前工程侧最活跃的两个方向，学术侧则开始探索输出溯源与长程自主探索。
