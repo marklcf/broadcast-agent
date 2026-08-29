@@ -2385,3 +2385,63 @@ GitHub 官方维护的社区贡献集，汇聚 instructions、agents、skills �
 ---
 
 **今日主线**：Agent 可靠性（状态机约束 + 记忆机制）与 上下文统一管理（OpenViking）是当前工程侧最活跃的两个方向，学术侧则开始探索输出溯源与长程自主探索。
+
+
+## 2026-08-29 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+*去重 · 按重要性排序 · 2025*
+
+---
+
+## 🔬 研究前沿
+
+**1. WikiSkill — Agent 技能知识库自动编译框架**
+将 agent 交互经验自动编译为可持久化、可演化的技能知识库，直接解决技能发现缺乏深层洞察的瓶颈，对构建长期自适应 agent 有方法论参考价值。
+[→ 论文](http://arxiv.org/abs/2608.27454v1)
+
+**2. SWE-Prime — Agent 训练轨迹质量工程**
+研究如何从少量高质量 agent 轨迹做 SFT，核心发现：**成功轨迹 ≠ 高质量监督**，对 context/trajectory engineering 提供了重要方法论启示。
+[→ 论文](http://arxiv.org/abs/2608.27449v1)
+
+**3. RedEvoAgent — 产品级 Agent 红队安全框架**
+经验驱动的技能演化红队 agent，专攻 LLM agent 在真实执行环境中的 jailbreak 风险（含工具滥用、持久状态篡改），是 agent 安全测试的实用框架。
+[→ 论文](http://arxiv.org/abs/2608.27439v1)
+
+**4. CritICL — 轻量级推理时 Context 增强**
+用小模型失败模式在推理时引导大模型，无需重复采样或外部验证器，可直接嵌入 agent 推理链，成本低、易集成。
+[→ 论文](http://arxiv.org/abs/2608.27455v1)
+
+---
+
+## 🛠️ 工程工具
+
+**5. Statewright — 可视化状态机约束 Agent 行为**
+用状态机显式管理 agent 行为流转，直击 LLM agent 不可控/不稳定的核心痛点，设计思路值得参考。
+
+**6. Rowboat — Multi-Agent 系统开源 IDE**
+专为 multi-agent 编排设计的开发环境，对做 agent 工作流/context engineering 的开发者有较高参考价值。
+
+**7. LiveKit Agents — 实时多模态 Agent 框架**
+持续维护的实时语音/视频 AI agent 构建框架，适合低延迟多模态 agent 场景的工程落地参考。
+
+**8. Graphify — 代码库/文档转可查询知识图谱**
+将代码、文档、SQL schema 转为知识图谱，本地确定性 AST 解析、无需向量数据库，可作为 Claude Code/Cursor 等工具的 skill 使用，是 RAG 的结构化替代方案。
+
+---
+
+## 📦 资源库
+
+**9. scientific-agent-skills — 163 个科研领域即用 Agent Skills**
+兼容主流 AI 编程工具，覆盖 100+ 科学数据库，是构建科研 LLM agent 的现成技能库。
+
+**10. OpenMontage — 大规模 Agentic 视频生产系统**
+含 700+ agent skill 文件与 100+ 工具，展示了大规模 agent skill 工程化组织的实践范式，可作为复杂 agent 系统的架构参考。
+
+**11. Onyx — 开源 RAG 对话 UI（YC W24）**
+开箱即用的对话界面，支持 RAG 接入，适合快速搭建企业内部知识库问答系统。
+
+---
+
+> **今日主线**：技能工程（WikiSkill / skills 库）× 训练数据质量（SWE-Prime）× Agent 可控性（Statewright / RedEvoAgent）三条脉络同步推进，agent 从"能用"走向"可信、可演化"的趋势明显。
