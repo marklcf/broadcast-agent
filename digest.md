@@ -2445,3 +2445,30 @@ GitHub 官方维护的社区贡献集，汇聚 instructions、agents、skills �
 ---
 
 > **今日主线**：技能工程（WikiSkill / skills 库）× 训练数据质量（SWE-Prime）× Agent 可控性（Statewright / RedEvoAgent）三条脉络同步推进，agent 从"能用"走向"可信、可演化"的趋势明显。
+
+
+## 2026-08-30 · 📡 今日播报 · Parallight Lab
+
+# 今日 LLM Agent 播报
+
+## 🔥 头条：Agent Skills 生态迎来爆发期
+今日多源信息共同指向同一趋势——"技能库（Skills）"正成为 Agent 能力复用与标准化的核心范式：
+
+- **[WikiSkill](http://arxiv.org/abs/2608.27454v1)**：将 agent 执行任务中积累的经验编译为可复用、持续演化的技能库，触及长期记忆与技能进化的理论核心。
+- **[K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)**：165 个验证过的科研 skills + 100+ 科学数据库，是垂直领域技能库规模化落地的典型案例。
+- **[calesthio/OpenMontage](https://github.com/calesthio/OpenMontage)**：12 条视频生产流水线 + 700 余个 agent skill/知识文件，展示技能体系编排复杂多步任务的实践。
+- **[google/skills](https://github.com/google/skills)** & **[anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)**：Google 与 Anthropic 官方相继发布 Agent Skills/插件标准，大厂开始定义生态规范。
+- **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**：Claude Skills 生态索引合集，方便快速掌握全貌。
+
+## 🛡️ Agent 安全与评估
+- **[RedEvoAgent](http://arxiv.org/abs/2608.27439v1)**：面向工具调用型 LLM agent 的自动化红队框架，经验驱动攻击技能演化以发现越狱风险。
+- **[SWE-Prime](http://arxiv.org/abs/2608.27449v1)**：揭示"任务成功≠高质量监督"，提出筛选高质量轨迹子集提升 SWE agent 微调效果，对训练数据构建有实操价值。
+- **[MCR-Bench](http://arxiv.org/abs/2608.27442v1)**：首个动态多轮交互式代码评审基准，暴露当前 agent 在真实迭代场景下的局限。
+
+## 🔧 Agent 工程化与编排工具
+- **[Statewright](https://github.com/statewright/statewright)**：用可视化状态机约束 agent 执行流程，解决可靠性与调试难题。
+- **[Rowboat (YC S24)](https://github.com/rowboatlabs/rowboat)**：开源多 agent 系统 IDE，可视化搭建/调试 multi-agent 工作流。
+- **[OzBrain](https://ozbrain.com)**：为多 agent/团队构建共享知识记忆库，实现跨会话持久化上下文。
+
+## 💻 本地化部署与客户端
+- **[Osmantic/ODS](https://github.com/Osmantic/ODS)**：一键搭建私有 AI 服务器
