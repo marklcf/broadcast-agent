@@ -2472,3 +2472,22 @@ GitHub 官方维护的社区贡献集，汇聚 instructions、agents、skills �
 
 ## 💻 本地化部署与客户端
 - **[Osmantic/ODS](https://github.com/Osmantic/ODS)**：一键搭建私有 AI 服务器
+
+
+## 2026-08-31 · 📡 今日播报 · Parallight Lab
+
+# 今日 LLM Agent 播报
+
+**1. Agent Skills 标准化加速——主流工具厂商入局**
+Warp 官方发布通用 Agent Skills 集合，同时 K-Dense 推出 165 个验证过的科研技能库（兼容 Cursor/Claude Code/Codex），Skills 正从社区实践走向厂商标准化，成为 agent 能力复用的关键单元。
+[warpdotdev/common-skills](https://github.com/warpdotdev/common-skills) | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)
+
+**2. 多 Agent 编排/调试工具集中涌现**
+Rowboat（YC S24）开源了可视化多 agent 协作 IDE，Statewright 用可视化状态机约束 agent 执行流程以提升可靠性，两者共同指向"agent 工程化"这一核心痛点——如何让多 agent 系统可控、可调试。
+
+**3. Logos：跨进程总线的 Agent Harness（学术）**
+提出将能力抽象为"带追踪逆的组件"，以插件方式动态组装 agent 的新型运行时架构，为 agent 组合与编排范式提供形式化思路，值得关注其对未来框架设计的影响。
+[arXiv:2608.28553](http://arxiv.org/abs/2608.28553v1)
+
+**4. LiveKit Agents：实时语音 Agent 框架**
+构建实时语音 AI agent 的开源框架，代表 agent 向实时多模态交互方向的工程化落地，是语音助手/客服类应用的重要基础设施
