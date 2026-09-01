@@ -2491,3 +2491,34 @@ Rowboat（YC S24）开源了可视化多 agent 协作 IDE，Statewright 用可�
 
 **4. LiveKit Agents：实时语音 Agent 框架**
 构建实时语音 AI agent 的开源框架，代表 agent 向实时多模态交互方向的工程化落地，是语音助手/客服类应用的重要基础设施
+
+
+## 2026-09-01 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent / RAG 播报
+
+**1. K-Dense-AI/scientific-agent-skills** — 面向 Cursor/Claude Code/Codex 等主流 agent 的科学研究技能库，含 165 个验证过的技能与 100+ 科学数据库集成，是"agent skills"规模化落地的代表性案例。
+
+**2. Configurable Semantic Chunking for Biomedical RAG**（arXiv）— 针对固定长度分块导致证据碎片化的问题，提出结合实体/语义边界的可配置分块框架，提升生物医学 RAG 检索质量，是工程化落地的实用改进。
+http://arxiv.org/abs/2608.31139v1
+
+**3. Statewright** — 用可视化状态机约束和管理 agent 行为，直击 LLM agent 可靠性差、流程不可控的核心痛点。
+
+**4. crawl4ai** — 专为 LLM 优化的开源网页爬虫，是搭建 RAG 数据管道、获取高质量上下文的常用基础设施。
+
+**5. Rowboat (YC S24)** — 开源多 agent 系统 IDE，提供可视化构建、调试、编排 agent 工作流的环境。
+
+**6. OzBrain** — 面向多 agent/团队的共享知识大脑，解决协作时上下文与知识割裂问题，是 context engineering 的实践案例。
+https://ozbrain.com
+
+**7. Osmantic/ODS** — 把本地 PC 打造成一体化 AI 服务器，集成 LLM 推理、agents、workflows、RAG，可作自建技术栈参考架构。
+https://github.com/Osmantic/ODS
+
+**8. Onyx (YC W24)** — 开源 Chat UI，可能集成 RAG/知识库检索能力，可作对话式 agent 前端参考实现。
+
+**9. browser-use/video-use** — 用 coding agent 编辑视频，展示 LLM agent 从网页操作扩展到多模态生产工具链的新场景。
+
+**10. Superlog (YC P26)** — 自动安装并自我修复 bug 的可观测性工具，代表 agent 在系统运维/自愈场景的实际应用。
+
+**11. p-e-w/heretic** — 自动化去除语言模型审查限制的工具，对研究 LLM 对齐机制与 agent 自主性边界有参考价值。
+https://github.com/p-e-w/heretic
