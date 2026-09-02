@@ -2522,3 +2522,70 @@ https://github.com/Osmantic/ODS
 
 **11. p-e-w/heretic** — 自动化去除语言模型审查限制的工具，对研究 LLM 对齐机制与 agent 自主性边界有参考价值。
 https://github.com/p-e-w/heretic
+
+
+## 2026-09-02 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报
+
+> 主题聚焦：**Agent 工程化** · **RAG** · **评估基准**
+
+---
+
+## 🔥 重点关注
+
+**1. Verbal Reinforcement Learning 综述：下一代 agent 自我改进框架**
+首个系统梳理"语言反馈驱动 agent 改进"范式的综述，覆盖以自然语言作为训练信号优化 LLM agent 的完整方法论。理解 agent 如何从交互中自主进化的必读框架性工作。
+→ [arxiv](http://arxiv.org/abs/2609.01597v1)
+
+**2. Rowboat：多 agent 系统开源 IDE（YC S24）**
+专为构建和调试 multi-agent 系统设计的集成开发环境，是当前 agent 工程化工具链中少有的面向开发体验的专项工具。
+
+**3. Statewright：用有限状态机约束 agent 行为**
+通过可视化状态机限定 agent 的合法状态转移，从架构层面解决 LLM 不确定性与幻觉导致的可靠性问题，与 MCP 工具链的生命周期管理思路高度契合。
+
+---
+
+## 📐 评估与基准
+
+**4. CordisBench：评估 LLM 在动态 agent harness 中的推理能力**
+1200 题基准，专测 LLM 在类 MCP 插件生命周期场景下推理依赖传播与资源清理的能力。直接量化了当前 agent 工具链可靠性的短板。
+→ [arxiv](http://arxiv.org/abs/2609.01600v1)
+
+**5. SWE Agent 轨迹感知评估：降低多步骤 agent 测试成本**
+提出以轨迹为单位的评估方法，大幅降低 SWE-bench 类任务的评测开销，对需要长链工具调用的 agent 评估体系有直接方法论参考价值。
+→ [arxiv](http://arxiv.org/abs/2609.01603v1)
+
+---
+
+## 🗂️ RAG 与 Context Engineering
+
+**6. 关键 Token 感知检索：仓库级代码生成 RAG 方案**
+针对真实仓库超出 LLM 上下文窗口的核心痛点，提出关键 token 感知的自适应检索策略，对 context engineering 实践有直接参考价值。
+→ [arxiv](http://arxiv.org/abs/2609.01601v1)
+
+**7. crawl4ai：LLM 友好的开源网络爬虫**
+专为 RAG pipeline 数据采集优化，输出格式对 LLM 解析友好，是构建 RAG 系统抓取层的优先参考方案。
+
+**8. Onyx：开源企业级 RAG Chat UI（YC W24）**
+内置 RAG 能力的对话界面，可接入内部知识库，是企业自建 LLM 问答系统的成熟参考实现。
+
+---
+
+## 🛠️ 工具与资源
+
+**9. claude-code：Anthropic 官方 agentic coding 工具**
+深度理解代码库并通过自然语言执行任务，是研究 agent 如何做 codebase 理解与 context 压缩的第一手参考。
+
+**10. scientific-agent-skills：165 个验证过的科研 agent 技能库**
+覆盖生物/化学/医学，对接 100+ 科学数据库，兼容 Cursor/Claude Code 等主流环境，是构建科研垂直 agent 的高密度工具集。
+
+**11. ODS：本地全栈 AI 服务器（LLM + Agent + RAG + 图像生成）**
+将本地机器变成集成 LLM 推理、agent、workflow、RAG 于一体的 AI 服务节点，适合研究本地部署全栈 agent 架构。
+
+**12. video-use：用 coding agent 编辑视频（实验性）**
+browser-use 团队探索将 agent tool use 延伸至视频编辑任务，展示 agent 多模态能力边界扩展的典型路径。
+
+---
+
+*今日关键词：**agent 可靠性** · **RAG pipeline** · **评估成本** · **本地部署***
