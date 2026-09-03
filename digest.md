@@ -2589,3 +2589,50 @@ browser-use 团队探索将 agent tool use 延伸至视频编辑任务，展示 
 ---
 
 *今日关键词：**agent 可靠性** · **RAG pipeline** · **评估成本** · **本地部署***
+
+
+## 2026-09-03 · 📡 今日播报 · Parallight Lab
+
+**【今日 AI Agent 领域精炼播报】**
+
+本期播报聚焦 AI Agent 的底层算法突破、工程基础设施、开发工具链以及落地应用。已对多源信息进行去重与重要性排序：
+
+### 一、 核心算法与安全机制（理论与基础突破）
+1. **判别式世界模型重塑 Web Agent 动作选择**（arXiv）
+   提出以判别式世界模型替代传统的生成式下一状态预测。该机制在降低计算成本的同时，显著提升了测试时动作排序的准确性，为高效 Web Agent 提供了新范式。
+   [http://arxiv.org/abs/2609.02885v1](http://arxiv.org/abs/2609.02885v1)
+2. **证明用户反馈包含 LLM 无法检测的独特信号**（arXiv）
+   研究表明，自然交互中产生的用户反馈携带着 LLM 自身无法感知的独有信息。这为 Agent 的在线学习与反馈闭环利用提供了坚实的理论依据。
+   [http://arxiv.org/abs/2609.02859v1](http://arxiv.org/abs/2609.02859v1)
+3. **LLM“语言不可读性”带来 Agent 安全新挑战**（arXiv）
+   揭示了 LLM 外部语言输出与内部计算不一致的“语言不可读性”现象，这对 Agent 系统的 Prompt 安全审计与可解释性构成了全新挑战。
+   [http://arxiv.org/abs/2609.02852v1](http://arxiv.org/abs/2609.02852v1)
+
+### 二、 Agent 工程基建与底层框架（部署与集群）
+4. **Claude Code：Anthropic 官方终端 Agentic 编码工具**（GitHub Trending）
+   作为 Agent 落地软件工程的标杆，它能深度理解代码库并自主处理常规开发任务与 Git 工作流，是端侧 Agent 执行力的集中展示。
+5. **Hermes-agent：随用户共同演进的 LLM Agent 框架**（GitHub Trending）
+   强调 Agent 架构的动态扩展与演进设计，框架本身具备随用户需求共同成长的特性。
+6. **SIE：Agent 生产级模型推理服务器**（GitHub Trending）
+   为 Agent 提供所需各类模型的开源推理服务器与生产级集群，直击 Agent 基础设施部署与算力调度的痛点。
+   [https://github.com/superlinked/sie](https://github.com/superlinked/sie)
+
+### 三、 多智能体编排与开发工具链（构建与调试）
+7. **Rowboat：开源多智能体系统 IDE**（Hacker News）
+   提供构建、编排和管理复杂 LLM agent 协作的本地化环境，解决多 Agent 通信与任务分配的开发难题。
+8. **Statewright：可视化状态机工具**（Hacker News）
+   通过状态机约束 Agent 行为，提升执行的可靠性与确定性，适合需要精准控制 Agent 执行流程的开发者。
+9. **Superlog：主打“自动接入”的 Agent 可观测性工具**（Hacker News）
+   能监控 Agent 执行链路并辅助修复 Bug，是 LLM Agent 调试与上下文诊断的利器。
+10. **AIConsole：开源桌面端 AI 编辑器**（Hacker News）
+    支持深度自定义工作流，有助于探索 LLM 在本地端侧的上下文管理与任务编排能力。
+
+### 四、 Agent 技能集与交互前端（应用与落地）
+11. **学术研究全流程 Agent 技能集**（GitHub Trending）
+    实现了“研究-撰写-审阅-修订-定稿”的完整学术闭环，是观察 Agent 复杂工作流编排的极佳参考。
+    [https://github.com/Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)
+12. **Humanizer：去 AI 痕迹 Agent 技能插件**（GitHub Trending）
+    通过特定 Skill 扩展 Agent 的实用能力，展示了如何让 Agent 生成的文本更拟人化。
+    [https://github.com/blader/humanizer](https://github.com/blader/humanizer)
+13. **Onyx：高热度开源 AI 聊天界面**（Hacker News）
+    可作为搭建 RAG 知识库问答和定制化企业级 Agent 交互的强前端基座。
