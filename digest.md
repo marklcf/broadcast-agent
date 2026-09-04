@@ -2636,3 +2636,44 @@ browser-use 团队探索将 agent tool use 延伸至视频编辑任务，展示 
     [https://github.com/blader/humanizer](https://github.com/blader/humanizer)
 13. **Onyx：高热度开源 AI 聊天界面**（Hacker News）
     可作为搭建 RAG 知识库问答和定制化企业级 Agent 交互的强前端基座。
+
+
+## 2026-09-04 · 📡 今日播报 · Parallight Lab
+
+**今日 AI 与开源精炼播报**
+
+本期播报聚焦 LLM Agent 工程化落地、开发工具链演进以及模型推理可靠性评估。去重合并后，按“基础设施与官方指南 > 开发编排工具 > 学术与评估洞察”重要性排序如下：
+
+### 一、 基础设施与官方指南
+
+- **Anthropic 官方发布 Agent Skills 仓库**：直接展示了如何为 Claude 等模型构建可复用的 agent 技能，是开发者构建复杂 Agent 能力的官方基准参考。
+
+- **NousResearch 推出 hermes-agent 框架**：主打“与你共同成长”的 LLM agent 框架，适合关注 agent 架构设计与持续演进机制的开发者深入研究。
+
+- **将自然语言规格直接编译为本地神经函数**：提出“Compile by Training”新范式，解决 agent 频繁调用大模型带来的高延迟与高成本问题。
+  [查看详情](http://arxiv.org/abs/2609.04199v1)
+
+### 二、 Agent 编排与开发工具链
+
+- **Statewright：用可视化状态机编排 LLM agent**：从工程结构层面解决 agent 执行不可靠、状态失控的痛点，保障工作流稳定性。
+
+- **Rowboat：开源多 agent 系统 IDE**：提供图形化开发环境，大幅降低构建和编排复杂 LLM agent 架构的门槛。
+
+- **学术研究全流程 Agent 技能集**：面向 Claude Code，串联“研究→撰写→评审→修订→定稿”全流程，是复杂 agent 工作流编排的优秀参考实现。
+  [查看详情](https://github.com/Imbad0202/academic-research-skills)
+
+- **企业级知识库前端 Onyx**：开源 AI 聊天界面（前 ChatOllama），深度对接 RAG 数据源与多模型，适合直接落地为带知识库的企业级 agent 前端。
+
+### 三、 评估洞察与提示词工程
+
+- **CoT 可读性不等于可解释性**：研究揭示 Chain-Of-Thought 推理轨迹的“可读性”并不等同于“可解释性”，为评估 LLM agent 推理过程与可靠性提供关键经验依据。
+  [查看详情](http://arxiv.org/abs/2609.04194v1)
+
+- **ESPO：解决进化式 Prompt 冗余膨胀**：提出通过诊断、多样化和稳定化优化提示词，对 LLM agent 与 context engineering 的实践有直接参考价值。
+  [查看详情](http://arxiv.org/abs/2609.04197v1)
+
+- **警惕黑盒 LLM 评估的时间不稳定性**：审计发现 LLM 评判者在共享端点上存在不可复现性，提醒开发者在 agent 评估流水线中警惕黑盒模型分数的波动。
+  [查看详情](http://arxiv.org/abs/2609.04198v1)
+
+---
+*注：本期已对源数据中的轻量级/同质化工具（如 AIConsole、Nao Labs、Humanizer）进行去重折叠，优先保留对架构设计和核心评估有重大参考价值的内容。*
