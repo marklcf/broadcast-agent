@@ -2677,3 +2677,64 @@ browser-use 团队探索将 agent tool use 延伸至视频编辑任务，展示 
 
 ---
 *注：本期已对源数据中的轻量级/同质化工具（如 AIConsole、Nao Labs、Humanizer）进行去重折叠，优先保留对架构设计和核心评估有重大参考价值的内容。*
+
+
+## 2026-09-05 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 工程播报
+
+> 聚焦 Agent / RAG / Context Engineering，去重整合，按重要性排序
+
+---
+
+## 🔴 基础设施 · 可信度
+
+**1. LLM-as-Judge 可靠性存在系统性缺陷**
+审计发现同一模型名称在共享端点上输出不可复现，直接动摇依赖 LLM judge 的 agent 评估流水线与 RAG 质量评分的可信度基础。**当前所有用 LLM 打分的流水线都应审视其稳定性假设。**
+
+---
+
+## 🟠 Agent 工程化
+
+**2. Anthropic 官方 Agent Skills 仓库公开**
+第一手 MCP/agent tool 设计参考，直接代表官方对 agent 能力边界的定义方式，是当前生态最权威的工具链规范来源。
+
+**3. Statewright — 用可视化状态机约束 Agent 行为**
+通过有限状态机限定 agent 执行流，从工程层面解决 LLM 不确定性导致的可靠性问题。与第1条形成呼应：评估不可信时，约束行为本身更重要。
+
+**4. NousResearch/hermes-agent — 随用户成长的 Agent**
+NousResearch 出品，重点关注其 context 持久化与 memory 管理设计，代表 agent 长期陪伴场景的工程探索方向。
+
+**5. Rowboat — 多 Agent 系统开源 IDE**
+专为构建和调试 multi-agent 系统设计，集成可视化 context 管理与工具链，工程效率直接提升。
+
+---
+
+## 🟡 Prompt / Context 优化
+
+**6. ESPO — 解决 Prompt 自动优化"越优化越臃肿"问题**
+提出诊断-多样化-稳定化三步框架，直接针对进化式 prompt 优化器的长度膨胀失控问题，context engineering 实践中的实用补丁。
+
+**7. Compile by Training — 将自然语言规范编译为本地小模型**
+把 LLM 调用"编译"为轻量神经函数，高频调用场景下延迟与成本大幅下降。适合 agent pipeline 中规则明确的子任务替换。
+
+---
+
+## 🟢 学习资源 · 工具底座
+
+**8. datawhalechina/hello-agents — Agent 从零构建系统教程**
+覆盖原理到实践的完整路径，适合快速建立 agent 工程知识体系，社区维护质量有保障。
+
+**9. Sumanth077/Hands-On-AI-Engineering — RAG + Agent 工程项目合集**
+包含 RAG、agent、OCR 等实际可运行项目，动手参考价值高，适合作为工程模板起点。
+→ [GitHub](https://github.com/Sumanth077/Hands-On-AI-Engineering)
+
+**10. OzBrain — 多 Agent 协作共享知识层**
+面向 multi-agent 场景的共享 RAG/上下文中间件，探索 agent 间知识共享的落地方案，方向值得跟踪。
+
+**11. Onyx (YC W24) — 开源多后端 Chat UI**
+HN 254分，支持接入多种后端的对话界面，适合作为 RAG/agent 应用前端底座快速集成。
+
+---
+
+> **今日核心矛盾**：Agent 评估基础设施（LLM judge）的可信度正受到系统性质疑，而工具链、状态机约束、编译优化等工程手段正在从另一侧弥补这一缺口。
