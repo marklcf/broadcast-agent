@@ -2738,3 +2738,66 @@ HN 254分，支持接入多种后端的对话界面，适合作为 RAG/agent 应
 ---
 
 > **今日核心矛盾**：Agent 评估基础设施（LLM judge）的可信度正受到系统性质疑，而工具链、状态机约束、编译优化等工程手段正在从另一侧弥补这一缺口。
+
+
+## 2026-09-06 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 工程播报
+
+> 主题聚焦：Agent 可靠性 · 安全审计 · 工具链
+
+---
+
+## 🔴 重要研究警示
+
+**1. LLM Judge 一致性失效**
+同一请求在同一端点跨时间返回不同结果——凡依赖 LLM-as-judge 做 RAG 评估、agent 评分或数据标注的流程均受影响，需引入确定性校验层。
+
+**2. CoT 可读性 ≠ 可解释性**
+"看起来重要"的推理步骤与实际因果影响步骤不一致，LLM judge 对此判断尤其不可靠——直接影响以 CoT trace 作为 agent 中间状态监控或过程奖励信号的设计。
+
+> ⚠️ 以上两条联读：LLM judge 本身不稳定 + CoT 监控信号不可信，依赖 LLM 自评的 agent pipeline 存在系统性测量风险。
+
+---
+
+## 🟠 工程实践工具
+
+**3. NVIDIA/SkillSpector — MCP 安全扫描工具**
+检测 agent skills 中的 prompt injection、数据泄露、供应链风险，MCP 落地必备审查工具。
+
+**4. Anthropic/skills — 官方 Agent Skills 仓库**
+Claude + MCP 生态 agent 能力扩展的第一手参考，skill-based agent 架构必读。
+
+**5. Statewright — 可视化状态机约束 agent 行为**
+用有限状态机限定 agent 执行路径，是当前 agent 可靠性工程的务实解法。
+
+**6. Rowboat — 开源多 agent IDE**
+构建、调试 multi-agent workflow 的集成环境，专为 agent 开发设计的工具链，稀缺。
+
+---
+
+## 🟡 优化与替代方案
+
+**7. ESPO：防止 Prompt 优化膨胀**
+迭代优化导致 prompt 体积膨胀 3× 却不涨精度，ESPO 提出诊断-多样化-稳定化三步框架，直接关乎自动化 prompt 压缩实践。
+
+**8. Compile by Training — NL 规格编译为本地神经函数**
+将自然语言描述的文本处理函数编译成可复用小模型，消除高频调用远程大模型的延迟与成本，对固定子任务 agent pipeline 有直接替代价值。
+
+---
+
+## 🟢 基础设施 & 应用层
+
+**9. sglang — 高性能 LLM serving 框架**
+支持结构化生成与多模态，今日 +708 stars，RAG/agent 推理链路降延迟的关键基础设施。
+→ [GitHub](https://github.com/sgl-project/sglang)
+
+**10. NousResearch/hermes-agent — 成长型 agent 框架**
+定位"随用户成长"，值得关注其上下文管理与 agent 架构设计思路。
+
+**11. Onyx (YC W24) — 可自托管企业 RAG**
+开源 chat UI + 企业知识库 RAG 接入，今日 HN 254pts 高热，RAG 应用层可自托管方案。
+
+---
+
+**一句话总结：** 今日核心信号是 **agent 可靠性危机**——从 judge 不稳定、CoT 不可信，到安全审计工具涌现（SkillSpector）、状态机约束方案（Statewright），工程侧正在系统性响应。
