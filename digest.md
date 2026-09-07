@@ -2801,3 +2801,66 @@ Claude + MCP 生态 agent 能力扩展的第一手参考，skill-based agent 架
 ---
 
 **一句话总结：** 今日核心信号是 **agent 可靠性危机**——从 judge 不稳定、CoT 不可信，到安全审计工具涌现（SkillSpector）、状态机约束方案（Statewright），工程侧正在系统性响应。
+
+
+## 2026-09-07 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报
+
+*按重要性排序，去重合并*
+
+---
+
+## 🔧 Agent 工程与可靠性
+
+**1. Statewright — 用可视化状态机约束 Agent 行为**
+通过形式化状态机限定 LLM agent 的动作边界，从工程层面解决不确定性问题，是当前 agent 可靠性方向的直接实践方案。
+
+**2. Rowboat — Multi-Agent 系统的开源 IDE**
+专为构建与调试多 agent 系统设计，提供可视化编排界面，覆盖 agent 协作、context 管理全流程，适合作为工程基础设施评估。
+
+**3. hermes-agent — NousResearch 出品的 LLM Agent 框架**
+定位"随用户成长"的 agent 框架，值得关注其工具调用实现与 agent 架构设计思路。
+
+---
+
+## 🤖 Multi-Agent 协作模式
+
+**4. AutoHedge — 基于 Swarm 的自主对冲基金框架**
+涵盖市场分析、风控、交易执行的完整多 agent 协作案例，是研究 multi-agent 任务分解与角色协同的典型参考实现。
+→ [GitHub](https://github.com/The-Swarm-Corporation/AutoHedge)
+
+---
+
+## 📊 Agent 评测与可解释性
+
+**5. 多步工具调用 Benchmark（韩国政府开放 API）**
+针对真实 government API 链式调用的 LLM agent benchmark，含数据合成方案，直接量化开源模型在多步工具调用中的能力缺口。
+→ [arXiv](http://arxiv.org/abs/2609.05395v1)
+
+**6. LLM 解释是否真实反映决策依据？**
+通过行为证据评估 LLM 在 agent 工作流中产生的解释是否可信，对 agent 错误诊断与上下文可靠性研究有直接参考价值。
+→ [arXiv](http://arxiv.org/abs/2609.05385v1)
+
+---
+
+## 🗄️ RAG 与检索增强
+
+**7. Onyx — 开源 RAG 聊天 UI（YC W24）**
+完整的开源 RAG 前端 + 后端方案，支持自托管与多数据源对接，适合评估 RAG 产品化落地的完整链路。
+
+**8. RegionFed — 联邦学习个性化查询理解**
+面向零售搜索异构查询的联邦学习方案，对多源、隐私敏感的 RAG 检索场景有方法论借鉴意义。
+→ [arXiv](http://arxiv.org/abs/2609.05403v1)
+
+---
+
+## 🔌 MCP 与垂直领域落地
+
+**9. blender-mcp — 用 MCP 协议让 LLM 控制 Blender 3D**
+MCP 落地非文本领域的典型案例，展示协议扩展至 3D 创作工具的可行路径。
+→ [GitHub](https://github.com/ahujasid/blender-mcp)
+
+**10. text-to-cad — CAD 领域 Agent Skills 库**
+面向工程垂直领域的 agent skill 模块化拆解，适合参考 skill 库的设计范式。
+→ [GitHub](https://github.com/earthtojake/text-to-cad)
