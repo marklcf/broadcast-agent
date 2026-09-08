@@ -2864,3 +2864,62 @@ MCP 落地非文本领域的典型案例，展示协议扩展至 3D 创作工具
 **10. text-to-cad — CAD 领域 Agent Skills 库**
 面向工程垂直领域的 agent skill 模块化拆解，适合参考 skill 库的设计范式。
 → [GitHub](https://github.com/earthtojake/text-to-cad)
+
+
+## 2026-09-08 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+> 去重合并后共 10 条，按重要性排序
+
+---
+
+## 🏗️ 框架与工具链
+
+**1. bytedance/deer-flow — 字节开源长周期 SuperAgent 框架**
+支持沙箱、记忆、工具调用、子 agent 与消息网关，可处理分钟至小时级复杂任务，是目前最完整的多层 agent 架构开源参考之一。
+
+**2. Rowboat — 多 agent 系统开源 IDE**
+专为构建与调试 multi-agent 系统设计的开发环境，填补 agent 工程化工具链空白，与 deer-flow 等框架形成互补。
+
+**3. Statewright — 用可视化状态机约束 Agent 行为**
+通过状态机对 LLM agent 的行为流进行显式约束，从工程角度缓解不确定性问题，思路值得借鉴。
+
+**4. browser-use — AI Agent 操控真实网页的工具库**
+解决 agent web 交互能力问题的基础组件，是构建 web-native agent 的常用选择，持续保持高热度。
+[→ GitHub](https://github.com/browser-use/browser-use)
+
+---
+
+## 🔌 MCP 与工具扩展
+
+**5. mukul975/cve-mcp-server — 生产级安全情报 MCP Server**
+通过标准 MCP 协议向 Claude 暴露 27 个安全工具（CVE / EPSS / Shodan / VirusTotal 等），是 MCP 工具扩展的典型落地案例。
+[→ GitHub](https://github.com/mukul975/cve-mcp-server)
+
+---
+
+## 📊 基准测试与评估
+
+**6. Multi-Step Tool-Calling over Korean Open Public APIs**
+针对链式 API 调用场景的 agent 基准，量化开源模型在多步工具调用上的性能差距，并提供数据合成方案，对提升 agent 工具调用能力有直接参考价值。
+
+**7. Necessary or Sufficient? Evaluating LLM Explanations With Behavioural Evidence**
+评估 agent 工作流中 LLM 解释的可靠性，直指可信度与错误诊断问题，对 agent 监控与决策设计有实践意义。
+
+**8. WearableQA — 可穿戴健康数据推理基准**
+基于真实用户纵向数据构建的 QA 基准，可作为 RAG + 个人健康数据场景的评测参考。
+[→ arXiv](http://arxiv.org/abs/2609.05405v1)
+
+---
+
+## 🏢 垂直应用
+
+**9. AutoHedge — 多 Agent 协作的自主对冲基金**
+覆盖市场分析、风控与交易执行全流程，展示了 swarm intelligence 在金融垂直领域的落地方式。
+
+**10. Onyx (YC W24) — 支持多数据源的开源 Chat UI**
+内置 RAG 能力，可快速接入企业知识库，适合作为内部问答系统基础设施。
+
+---
+*今日重点关注：deer-flow（字节级生产框架）+ Rowboat（工程调试）+ Statewright（可靠性约束）三者组合，初步构成一条完整的 multi-agent 工程化路径。*
