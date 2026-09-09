@@ -2923,3 +2923,68 @@ MCP 落地非文本领域的典型案例，展示协议扩展至 3D 创作工具
 
 ---
 *今日重点关注：deer-flow（字节级生产框架）+ Rowboat（工程调试）+ Statewright（可靠性约束）三者组合，初步构成一条完整的 multi-agent 工程化路径。*
+
+
+## 2026-09-09 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报 · 精选
+
+> 聚焦 Agent 架构、Context Engineering、Multi-Agent 系统三大主线，去重排序如下：
+
+---
+
+## 🔬 研究前沿
+
+**1. AI Agent 在真实环境中自发涌现集体行为**
+数千个无协调 AI agent 被观测到在野外自发产生协作行为——这是 multi-agent 集体行为的首批实证研究之一，对理解大规模 agent 系统的涌现机制有重要意义。
+→ [arxiv](http://arxiv.org/abs/2609.09150v1)
+
+**2. 程序图：让 LLM Agent 自进化执行结构**
+提出将 agent 执行过程结构化为可进化的「程序图」，显式管理长程规划中的隐式知识，直接关联 agent 架构与 context engineering 设计。
+→ [arxiv](http://arxiv.org/abs/2609.09153v1)
+
+**3. 循环模型长度外推学习**
+研究循环模型如何泛化到训练长度之外，直接影响 LLM context window 能力的天花板，与长上下文工程高度相关。
+→ [arxiv](http://arxiv.org/abs/2609.09157v1)
+
+**4. ReCite：用 Agentic 推理提升引用准确性**
+将检索与推理链结合，解决 RAG 场景下学术引用不忠实的问题，对垂直领域 RAG + agent 落地有工程参考价值。
+→ [arxiv](http://arxiv.org/abs/2609.09156v1)
+
+---
+
+## 🛠️ 工具与框架
+
+**5. browser-use — Agent 直接操控浏览器**
+让 agent 实时抓取与操作 web 页面，可替代静态知识库的 RAG 方案，是 web-grounded agent 的核心基础设施。
+
+**6. TradingAgents — 多 Agent 金融交易框架**
+多 LLM agent 分工协作（分析 / 风控 / 执行），是 multi-agent 分层架构设计的典型参考实现。
+
+**7. Rowboat — Multi-Agent 系统开源 IDE（YC 背书）**
+专为构建与调试 multi-agent 系统设计的集成开发环境，对研究 agent 编排与工具链有直接参考价值。
+
+**8. Statewright — 用状态机约束 Agent 行为路径**
+以可视化状态机限定 agent 的合法执行路径，从结构层面解决 LLM 不确定性导致的可靠性问题。
+
+**9. hexstrike-ai — 基于 MCP 的安全测试 Agent**
+通过 MCP 协议让 Claude/GPT 调用 150+ 渗透工具，是 MCP 落地垂直领域（安全方向）的典型实现案例。
+
+---
+
+## 🧩 实用组件
+
+**10. i-have-adhd — 约束 Coding Agent 输出格式的 Skill**
+防止 agent 将关键答案淹没在冗长响应中，直接针对 context engineering 中的输出结构化问题，小而实用。
+→ [github](https://github.com/ayghri/i-have-adhd)
+
+**11. markitdown — 微软出品的文档转 Markdown 工具**
+支持 Office 等多种格式，是 RAG 流水线文档预处理阶段的标准化组件，开箱即用。
+→ [github](https://github.com/microsoft/markitdown)
+
+**12. Onyx — 开源 Chat UI + RAG（YC W24）**
+企业内部 LLM 应用的常见参考实现，支持接入知识库，适合快速搭建私有化对话系统。
+
+---
+
+*今日主线：agent 可靠性（状态机 / 程序图）× multi-agent 协作（涌现行为 / 框架工具）× RAG 工程化（引用准确性 / 文档处理）三条脉络同步推进。*
