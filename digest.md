@@ -2988,3 +2988,63 @@ MCP 落地非文本领域的典型案例，展示协议扩展至 3D 创作工具
 ---
 
 *今日主线：agent 可靠性（状态机 / 程序图）× multi-agent 协作（涌现行为 / 框架工具）× RAG 工程化（引用准确性 / 文档处理）三条脉络同步推进。*
+
+
+## 2026-09-10 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+> 按重要性排序，去重合并，聚焦 Agent / RAG / 具身化方向
+
+---
+
+## 🔥 重点关注
+
+**1. browser-use — Web Agent 最活跃实现，今日 +705 星**
+让 Agent 直接操控浏览器的框架，当前 web agent 领域最具人气的开源实现，可直接上手。
+
+**2. Statewright — 用状态机约束 Agent 行为路径**
+通过可视化状态机限定 LLM agent 的执行路径，正面回应 agent 不可预测这一核心工程痛点，可靠性思路值得借鉴。
+
+**3. Rowboat — Multi-Agent 系统的开源 IDE（YC 背书）**
+专为构建和调试多 agent 系统设计的开发环境，有 YC 背书，是 agent 编排开发者的直接参考工具。
+
+---
+
+## 🤖 Agent 能力与范式
+
+**4. openai/skills — OpenAI 官方 Codex Skills Catalog**
+定义了 agent skill 的模块化组织方式，代表 OpenAI 对 agent 能力拆分的官方思路，理解 agent 能力架构的重要参考。
+
+**5. Show-Harness — VLM Agent 控制机器人的新范式**
+通过紧凑语义接口让 VLM agent 落地物理世界，是具身 agent 方向的新探索路径。
+👉 http://arxiv.org/abs/2609.10522v1
+
+**6. TradingAgents — 多 Agent 金融交易框架**
+Multi-agent 协作在金融垂直领域的落地案例，展示了 agent 编排的实际业务价值。
+
+---
+
+## 🧱 RAG / 基础设施
+
+**7. Onyx (YC W24) — 企业级开源 RAG + Chat UI**
+支持多数据源接入的企业 RAG 参考实现，是当前 RAG 落地的成熟模板。
+
+**8. experiential — BYOK 模型网关，能从流量中学习推荐最优模型**
+从真实调用流量中学习并推荐/训练专属模型，是 RAG/agent 基础设施层的新思路。
+👉 https://github.com/experientiallabs/experiential
+
+---
+
+## 🔬 Context Engineering / 评测
+
+**9. i-have-adhd — 让 Coding Agent 不"埋答案"的提示技巧集**
+直接解决 LLM agent 输出冗余、context 浪费问题，做 context engineering 的实用参考。
+
+**10. IdeaAMBIG — 评测研究 Idea 的可实施性基准**
+衡量研究方法描述是否足够清晰可执行，直指 LLM 自动科研场景中 specification 质量的核心问题。
+👉 http://arxiv.org/abs/2609.10539v1
+
+---
+
+*今日关键词：Web Agent 🔥 · 状态机可靠性 · Agent IDE · Skill 模块化 · 具身化*
