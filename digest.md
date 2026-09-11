@@ -3048,3 +3048,54 @@ Multi-agent 协作在金融垂直领域的落地案例，展示了 agent 编排�
 ---
 
 *今日关键词：Web Agent 🔥 · 状态机可靠性 · Agent IDE · Skill 模块化 · 具身化*
+
+
+## 2026-09-11 · 📡 今日播报 · Parallight Lab
+
+# 🗞️ AI Agent 今日播报
+
+---
+
+## 🔴 重要度 TOP
+
+### 1. Agentic AI 的持续对齐问题：目标内化与行为约束
+探讨 agent 从单次任务执行转向**跨任务持续运行**时的控制挑战，涵盖目标内化、重试机制、验证逻辑、停止规则等核心对齐设计，对 LLM agent 架构设计有直接参考价值。
+[📄 arxiv 论文](http://arxiv.org/abs/2609.11911v1)
+
+---
+
+### 2. Rowboat — 多 Agent 系统开源 IDE
+专为 **multi-agent 编排**设计的 IDE，支持可视化流程构建与调试，是 agent 工程化落地的实用工具，填补了 agent 开发缺少专属 IDE 的空白。
+
+---
+
+### 3. Statewright — 用状态机约束 Agent 行为流
+通过**可视化状态机**限定 agent 执行路径，从工程层面解决 LLM 输出不确定性与可靠性问题，思路与上方对齐论文形成呼应。
+
+---
+
+## 🟡 工程实践
+
+### 4. TradingAgents — 金融领域 Multi-Agent 框架
+多 agent 协作的量化交易框架，是 LLM multi-agent **垂直领域落地**的典型参考案例，可作为行业 agent 设计的蓝本。
+
+---
+
+### 5. Onyx (YC W24) — 开源企业级 RAG Chat UI
+内置 RAG 支持的企业级聊天界面，适合快速搭建**知识库问答系统**，HN 社区热度 254pts，活跃度验证其实用性。
+
+---
+
+### 6. speech-to-speech — 语音 Agent 完整方案
+HuggingFace 出品，基于开源模型构建端到端**语音交互 agent**，是 agent 能力向语音模态扩展的标准参考实现。
+
+---
+
+## 🟢 开发小工具
+
+### 7. i-have-adhd — 让 Agent 输出不再废话连篇
+强制 coding agent 输出**结构化、重点前置**内容的 skill，直接解决 LLM 输出冗余、关键信息难定位的日常痛点，轻量实用。
+
+---
+
+> 💡 **今日主线**：从理论对齐（论文）→ 工程约束（Statewright / Rowboat）→ 垂直落地（TradingAgents / Onyx）→ 能力扩展（语音）构成完整的 agent 开发视角闭环。
