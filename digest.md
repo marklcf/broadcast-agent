@@ -3099,3 +3099,53 @@ HuggingFace 出品，基于开源模型构建端到端**语音交互 agent**，�
 ---
 
 > 💡 **今日主线**：从理论对齐（论文）→ 工程约束（Statewright / Rowboat）→ 垂直落地（TradingAgents / Onyx）→ 能力扩展（语音）构成完整的 agent 开发视角闭环。
+
+
+## 2026-09-12 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+> 主题聚焦：**Agent 可靠性 · 工程工具链 · 学习资源**
+
+---
+
+## 🔥 重点关注
+
+**1. 《深入理解 AI Agent：设计原理与工程实践》全书开源**
+系统覆盖 agent 设计原理与工程实践的中文书籍，含 PDF 及配套代码，是目前中文领域少见的高质量工程向参考书，适合系统性补课。
+→ [ai-agent-book](https://github.com/bojieli/ai-agent-book)
+
+**2. Agentic AI 的持续对齐与控制机制（论文）**
+研究 agent 从单次任务转向跨任务持续运行时的控制问题，提出将目标设定、重试策略、验证逻辑、停止规则等内嵌为系统属性而非硬编码，对设计长运行 LLM agent 有直接参考价值。
+
+---
+
+## 🛠️ 工程工具
+
+**3. Rowboat — 多 agent 系统开源 IDE**（YC S24）
+专为构建和调试 multi-agent 系统设计，填补 agent 工程工具链空白。
+
+**4. Statewright — 用状态机约束 agent 行为**
+通过可视化状态机管理 agent 流转，从结构上解决 LLM 行为不可预测问题，与论文（#2）的对齐思路形成呼应。
+
+**5. i-have-adhd — 约束 agent 输出格式的 skill**
+防止关键答案被冗长输出淹没，context engineering 的实用小工具，可直接集成到现有 coding agent 流程。
+
+---
+
+## 🔬 架构参考
+
+**6. hyperresearch — RAG + Agent 协同研究知识库**
+自动采集、检索、综合网页信息并持久化写入 wiki，是 RAG + agent 协同架构的完整参考实现。
+→ [hyperresearch](https://github.com/jordan-gibbs/hyperresearch)
+
+**7. MathModelAgent — 垂直领域 agent 落地案例**
+专为数学建模设计，自动完成全流程并生成可提交论文，展示 task-specific agent 的 skills 拆解思路。
+→ [MathModelAgent](https://github.com/jihe520/MathModelAgent)
+
+**8. Onyx — 开源 RAG 对话 UI**（YC W24）
+内置 RAG 支持的开源 LLM 对话界面，可作为企业知识库问答基础设施的起点。
+
+---
+
+**今日主线**：从理论对齐（#2）→ 工程约束（#3 #4 #5）→ 架构模式（#6 #7 #8）→ 系统学习（#1），形成一条完整的 agent 工程认知链路。
