@@ -3149,3 +3149,51 @@ HuggingFace 出品，基于开源模型构建端到端**语音交互 agent**，�
 ---
 
 **今日主线**：从理论对齐（#2）→ 工程约束（#3 #4 #5）→ 架构模式（#6 #7 #8）→ 系统学习（#1），形成一条完整的 agent 工程认知链路。
+
+
+## 2026-09-13 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI Agent 播报
+
+> 去重整合 · 按重要性排序 · 2025
+
+---
+
+## 🔧 Agent 开发工具链
+
+**1. Rowboat — 多 Agent 系统开源 IDE**（YC S24）
+专为构建与调试 multi-agent 系统设计的集成开发环境，对 agent 编排与工具链有直接参考价值。
+
+**2. Statewright — 用可视化状态机约束 Agent 行为**
+以有限状态机限制 LLM agent 的行为边界，直击 agent 不确定性与失控问题，是可靠性工程的实用方案。
+
+---
+
+## 📦 资源索引 & 案例参考
+
+**3. awesome-llm-apps — 100+ LLM Agent / RAG 应用合集**
+覆盖 Agent、Agent Skills、RAG 的开源实践全景索引，快速了解当前落地现状的首选入口。
+
+**4. MathModelAgent — 数学建模全流程自动化 Agent**
+自动完成建模、求解并生成可提交论文，是 agent 处理复杂结构化任务的典型参考案例。
+
+---
+
+## ✍️ Context Engineering & Prompt 设计
+
+**5. book-to-skill — 将技术书 PDF 转化为 Claude Code Skill**
+把外部知识结构化为 `SKILL.md` 注入 agent 上下文，是 context engineering 的具体落地实践。
+
+**6. i-have-adhd — 让 Coding Agent 输出更直接的 Skill Prompt**
+通过 prompt 设计约束 agent 输出结构，减少冗余、直达答案，值得借鉴其 context 控制思路。
+
+---
+
+## 💬 前端 & 界面
+
+**7. Onyx — 开源 Chat UI**（YC W24，254pts）
+支持对接多种后端的聊天界面，适合作为 RAG / LLM Agent 产品前端，社区热度高。
+
+---
+
+> **今日主线**：工具链成熟化（IDE + 状态机）、context engineering 精细化（书转 skill + prompt 约束）是本日两条并行趋势。
