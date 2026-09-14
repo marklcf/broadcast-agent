@@ -3197,3 +3197,47 @@ HuggingFace 出品，基于开源模型构建端到端**语音交互 agent**，�
 ---
 
 > **今日主线**：工具链成熟化（IDE + 状态机）、context engineering 精细化（书转 skill + prompt 约束）是本日两条并行趋势。
+
+
+## 2026-09-14 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报
+
+*去重整合 · 按重要性排序*
+
+---
+
+## 🔧 Agent 工具链与基础设施
+
+**1. OpenMontage — 首个开源 Agentic 视频生产系统**
+700+ agent skill 文件 + 100+ 工具，是目前规模最大的 context engineering 与多 agent 协作工程实践案例，极具参考价值。
+
+**2. Rowboat — 多 Agent 系统开源 IDE**
+专为构建和调试 multi-agent 工作流设计，是目前少有的针对 agent 开发的专用工具链，值得开发者关注。
+
+**3. Statewright — 用可视化状态机约束 AI Agent 行为**
+通过状态机管控 agent 流转，直击 LLM agent 不可预测的核心痛点，设计思路值得深入研究。
+
+---
+
+## 📚 RAG 与知识库应用
+
+**4. Onyx — 开源对话式 RAG 前端**
+YC W24 项目，提供完整 Chat UI + RAG 集成方案，可自托管，适合快速搭建企业内部知识问答系统。
+
+**5. crawl4ai — 专为 LLM 优化的开源网页爬虫**
+RAG pipeline 数据采集的实用基础设施，针对 LLM 输入格式专项优化。
+
+---
+
+## 🗂 资源合集与垂直应用
+
+**6. awesome-llm-apps — 100+ LLM Agent 与 RAG 应用开源合集**
+高密度选型参考库，涵盖 Agent、Agent Skills、RAG 多个方向，适合快速调研。
+
+**7. MathModelAgent — 数学建模专用 Agent**
+自动完成从建模到论文生成的全流程，展示了 Agent + 技能文件在垂直领域的落地范式。
+
+---
+
+> **今日主线**：Agent 工程化持续提速——从 IDE 工具、状态机约束到千量级 skill 文件的大规模协作，**Agent 可靠性与可维护性**正成为新的竞争焦点。
