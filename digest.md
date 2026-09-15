@@ -3241,3 +3241,53 @@ RAG pipeline 数据采集的实用基础设施，针对 LLM 输入格式专项�
 ---
 
 > **今日主线**：Agent 工程化持续提速——从 IDE 工具、状态机约束到千量级 skill 文件的大规模协作，**Agent 可靠性与可维护性**正成为新的竞争焦点。
+
+
+## 2026-09-15 · 📡 今日播报 · Parallight Lab
+
+# 今日 AI 播报
+
+> 今日重点：Multi-Agent 工程化持续升温，工具层与可靠性成核心议题
+
+---
+
+## 🔧 Agent 工程与可靠性
+
+**1. Statewright – 用可视化状态机约束 Agent 行为**
+通过状态机限定 LLM agent 的行为流转，系统性解决不确定性与失控问题。对 agent 工程化落地有直接参考价值。
+
+**2. Rowboat – Multi-Agent 系统开源 IDE**
+专为构建和调试多 agent 系统设计的开发环境，填补了 agent 工程工具链的空白。
+
+---
+
+## 🤝 Multi-Agent 架构实践
+
+**3. TradingAgents – 多 Agent 协作金融交易框架**
+LLM 驱动的多 agent 协作框架，应用于真实金融决策场景，是 multi-agent 架构设计的典型参考案例。
+
+**4. Agent-Reach – Agent 外部工具扩展层**
+为 AI agent 提供访问 Twitter / Reddit / YouTube / GitHub 等平台的工具接口，zero API fees，是 agent 上下文增强与工具调用的轻量实践。
+
+---
+
+## 🧠 记忆与 Context 管理
+
+**5. oh-my-hermes – Hermes Agent 全功能插件**
+集成长期记忆系统（RAG）与 model-optimized workflow，直接针对 agent 记忆与上下文管理痛点。
+→ [GitHub](https://github.com/rlaope/oh-my-hermes)
+
+---
+
+## 🏗️ 基础设施与落地案例
+
+**6. Onyx – 开源 Chat UI（YC W24）**
+支持多后端接入的开源聊天界面，常与 RAG pipeline 结合，可作为 LLM 应用前端基础设施的参考起点。
+
+**7. ai-job-search – Claude Code 驱动的 Agentic 求职框架**
+覆盖岗位评估、简历裁剪、Cover Letter 生成全流程，是 LLM agent + context engineering 的具体落地示范。
+→ [GitHub](https://github.com/MadsLorentzen/ai-job-search)
+
+---
+
+**今日关键趋势：** Agent 可靠性（状态机/IDE 工具链）× 多 agent 协作（金融/工具层）× 记忆管理（RAG/长期上下文）三条线索同步推进，工程化程度明显提升。
